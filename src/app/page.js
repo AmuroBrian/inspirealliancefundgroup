@@ -1,17 +1,18 @@
 "use client";
 import React from 'react';
 import { ReactTyped } from 'react-typed'; 
+import About from './components/About';
 
 export default function HeroVideoSection() {
   return (
-    <div className="relative h-[700px] w-full overflow-hidden flex flex-col justify-end">
+    <div className="relative h-full w-full overflow-hidden flex flex-col justify-end">
       {/* Background Video */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute z-0 w-full h-full object-cover"
+        className="relative z-0 w-full h-full object-cover"
       >
         <source src="/videobg.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -21,7 +22,7 @@ export default function HeroVideoSection() {
       <div className="absolute z-10 inset-0 bg-black/20" />
 
       {/* Main Content */}
-      <div className="relative z-20 flex flex-col justify-center h-full pl-12">
+      <div className="absolute z-20 bottom-[150px] flex flex-col justify-center h-full pl-12">
         <h1 className="text-white text-5xl md:text-6xl font-light mb-6 mt-20">
           <ReactTyped
             strings={[
@@ -42,6 +43,7 @@ export default function HeroVideoSection() {
         </p>
 
       </div>
+      <About />
     </div>
   );
 }
