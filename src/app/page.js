@@ -1,17 +1,35 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ReactTyped } from 'react-typed';
-import About from './components/About';
+import About from "./components/About";
+import SplashScreen from "./components/SplashScreen";
 
-export default function HeroVideoSection() {
+export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const sectionRef = useRef(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+    // Add a small delay before showing content
+    setTimeout(() => {
+      setShowContent(true);
+    }, 500);
+  };
 
   useEffect(() => {
+    if (!showContent) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-width-expand');
+          if (entry.isIntersecting && !isAnimating) {
+            entry.target.style.width = '100%';
+            setIsAnimating(true);
+          } else if (!entry.isIntersecting) {
+            entry.target.style.width = '0%';
+            setIsAnimating(false);
           }
         });
       },
@@ -27,12 +45,17 @@ export default function HeroVideoSection() {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
+  }, [isAnimating, showContent]);
 
   return (
     <div className="relative">
+      <SplashScreen onLoadingComplete={handleLoadingComplete} />
+
       {/* Background Video */}
-      <div className="fixed inset-0 w-full h-full -z-10">
+      <div
+        className={`fixed inset-0 w-full h-full -z-10 transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'
+          }`}
+      >
         <video
           autoPlay
           loop
@@ -47,11 +70,12 @@ export default function HeroVideoSection() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-0">
+      <div className={`relative z-0 transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'
+        }`}>
         {/* Hero Section */}
         <section className="min-h-screen flex flex-col">
           {/* Main Content */}
-          <div className="flex-grow flex items-center px-12">
+          <div className="flex-grow flex items-end px-12 pb-8">
             <div className="space-y-4 relative z-20">
               <h1 className="text-white text-5xl md:text-6xl font-light">
                 <ReactTyped
@@ -69,19 +93,25 @@ export default function HeroVideoSection() {
                   loop
                   showCursor={true}
                   cursorChar="|"
+                  startDelay={showContent ? 1000 : 0}
                 />
               </h1>
-              <div className="relative w-full mt-4 bg-black/30 p-1 rounded">
-                <div
-                  ref={sectionRef}
-                  className="h-3 w-0 opacity-100"
-                  style={{
-                    background: 'linear-gradient(90deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)',
-                    boxShadow: '0 0 15px rgba(128, 195, 42, 0.7)',
-                    borderRadius: '2px'
-                  }}
-                />
-              </div>
+            </div>
+          </div>
+
+          {/* Progress Bar - Between Typed and Info Bar */}
+          <div className="relative mb-8 z-30">
+            <div className="relative w-[70%] p-1 rounded">
+              <div
+                ref={sectionRef}
+                className="h-15"
+                style={{
+                  background: 'linear-gradient(90deg, rgb(128, 195, 42) 0%, rgb(75, 136, 139) 50%, rgb(56, 115, 175) 100%)',
+                  borderRadius: '2px',
+                  width: '0%',
+                  transition: 'width 2s ease-out'
+                }}
+              />
             </div>
           </div>
 

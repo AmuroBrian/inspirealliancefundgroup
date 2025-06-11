@@ -1,29 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/app/**/*.{js,jsx,ts,tsx}',
+        './src/components/**/*.{js,jsx,ts,tsx}',
+        './src/pages/**/*.{js,jsx,ts,tsx}',
     ],
     theme: {
         extend: {
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'gradient-conic':
+                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            },
             keyframes: {
-                'width-expand': {
-                    '0%': {
-                        width: '0%',
-                        opacity: '0',
-                        transform: 'scaleX(0)'
-                    },
-                    '100%': {
-                        width: '100%',
-                        opacity: '1',
-                        transform: 'scaleX(1)'
-                    }
-                }
+                shine: {
+                    '0%': { transform: 'translateX(-100%)' },
+                    '50%': { transform: 'translateX(100%)' },
+                    '100%': { transform: 'translateX(100%)' },
+                },
             },
             animation: {
-                'width-expand': 'width-expand 3s cubic-bezier(0.4, 0, 0.2, 1) forwards'
-            }
+                shine: 'shine 2s ease-in-out infinite',
+            },
         },
     },
     plugins: [],
