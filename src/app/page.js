@@ -1,8 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import { ReactTyped } from 'react-typed';
-import About from "./components/About";
+import News from "./components/News";
+import Mission from "./components/Mission";
+import Contact from "./components/Contact";
 import SplashScreen from "./components/SplashScreen";
+import About from './components/About';
+
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -124,10 +128,24 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
+        {/* News Section */}
+           <section className="relative bg-black">
+          <News />
+        </section>
+
+        {/* Mission Section */}
         <section className="relative bg-white">
+          <Mission />
+        </section>
+            {/* About Section */}
+        <section className="relative bg-gray-100">
           <About />
         </section>
+
+        {/* Contact Section */}
+        <section className="relative bg-gray-100">
+          <Contact />
+          </section>
       </div>
     </div>
   );
