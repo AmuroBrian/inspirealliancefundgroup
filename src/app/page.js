@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import SplashScreen from "./components/SplashScreen";
 import About from './components/About';
 import Subsidiaries from './components/Subsidiaries';
+import ServicesAndSolution from './components/ServicesAndSolution';
 
 
 export default function Home() {
@@ -133,7 +134,6 @@ export default function Home() {
         <section className="relative bg-black">
           <News />
         </section>
-
         {/* Mission Section */}
         <section className="relative bg-white">
           <Mission />
@@ -142,7 +142,9 @@ export default function Home() {
         <section className="relative bg-gray-100">
           <About />
         </section>
-
+        <section className="relative bg-gray-100">
+          <ServicesAndSolution />
+        </section>
         {/* Contact Section */}
         <section className="relative bg-gray-100">
           <Contact />
