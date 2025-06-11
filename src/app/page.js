@@ -1,103 +1,134 @@
-import Image from "next/image";
+"use client";
+import React, { useEffect, useRef, useState } from 'react';
+import { ReactTyped } from 'react-typed';
+import About from "./components/About";
+import SplashScreen from "./components/SplashScreen";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isLoading, setIsLoading] = useState(true);
+  const sectionRef = useRef(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [showContent, setShowContent] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+    // Add a small delay before showing content
+    setTimeout(() => {
+      setShowContent(true);
+    }, 500);
+  };
+
+  useEffect(() => {
+    if (!showContent) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isAnimating) {
+            entry.target.style.width = '100%';
+            setIsAnimating(true);
+          } else if (!entry.isIntersecting) {
+            entry.target.style.width = '0%';
+            setIsAnimating(false);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [isAnimating, showContent]);
+
+  return (
+    <div className="relative">
+      <SplashScreen onLoadingComplete={handleLoadingComplete} />
+
+      {/* Background Video */}
+      <div
+        className={`fixed inset-0 w-full h-full -z-10 transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'
+          }`}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <source src="/videobg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
+
+      {/* Main Content */}
+      <div className={`relative z-0 transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'
+        }`}>
+        {/* Hero Section */}
+        <section className="min-h-screen flex flex-col">
+          {/* Main Content */}
+          <div className="flex-grow flex items-end px-12 pb-8">
+            <div className="space-y-4 relative z-20">
+              <h1 className="text-white text-5xl md:text-6xl font-light">
+                <ReactTyped
+                  strings={[
+                    'Welcome to Inspire Alliance Fund Group',
+                    'Empowering Global Financial Innovation',
+                    'Your Trusted Partner in Investment Excellence',
+                    'Building Tomorrow\'s Financial Solutions Today',
+                    'Where Vision Meets Financial Expertise',
+                    'Driving Sustainable Investment Growth',
+                    'Connecting Opportunities, Creating Value'
+                  ]}
+                  typeSpeed={50}
+                  backSpeed={30}
+                  loop
+                  showCursor={true}
+                  cursorChar="|"
+                  startDelay={showContent ? 1000 : 0}
+                />
+              </h1>
+            </div>
+          </div>
+
+          {/* Progress Bar - Between Typed and Info Bar */}
+          <div className="relative mb-8 z-30">
+            <div className="relative w-[70%] p-1 rounded">
+              <div
+                ref={sectionRef}
+                className="h-15"
+                style={{
+                  background: 'linear-gradient(90deg, rgb(128, 195, 42) 0%, rgb(75, 136, 139) 50%, rgb(56, 115, 175) 100%)',
+                  borderRadius: '2px',
+                  width: '0%',
+                  transition: 'width 2s ease-out'
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Bottom Black Info Bar with Blur */}
+          <div className="relative bg-gradient-to-r from-black/95 via-black/85 to-black/70 px-4 py-2 backdrop-blur-md">
+            <p className="text-white text-xl font-bold mb-2">Transforming Financial Futures</p>
+            <p className="text-white text-lg font-semibold">
+              At Inspire Alliance Fund Group, we're dedicated to revolutionizing the financial landscape through innovative investment strategies and unwavering commitment to excellence. Our comprehensive suite of financial services, combined with cutting-edge technology and expert insights, empowers businesses and individuals to achieve their financial goals. Join us in shaping a future where financial success knows no bounds.
+            </p>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section className="relative bg-white">
+          <About />
+        </section>
+      </div>
     </div>
   );
 }
