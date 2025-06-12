@@ -8,7 +8,7 @@ import SplashScreen from "./components/SplashScreen";
 import About from './components/About';
 import Subsidiaries from './components/Subsidiaries';
 import ServicesAndSolution from './components/ServicesAndSolution';
-
+import CryptoNews from './components/CryptoNews';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -130,6 +130,9 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="relative bg-gray-100">
+          <About />
+        </section>
         {/* News Section */}
         <section className="relative bg-black">
           <News />
@@ -138,12 +141,11 @@ export default function Home() {
         <section className="relative bg-white">
           <Mission />
         </section>
-        {/* About Section */}
-        <section className="relative bg-gray-100">
-          <About />
-        </section>
         <section className="relative bg-gray-100">
           <ServicesAndSolution />
+        </section>
+        <section className="relative bg-gray-100">
+          <CryptoNews />
         </section>
         {/* Contact Section */}
         <section className="relative bg-gray-100">
