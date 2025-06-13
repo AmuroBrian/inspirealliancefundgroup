@@ -9,6 +9,7 @@ import About from './components/About';
 import Subsidiaries from './components/Subsidiaries';
 import ServicesAndSolution from './components/ServicesAndSolution';
 import CryptoNews from './components/CryptoNews';
+import Organization from './components/Organization';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -147,6 +148,11 @@ export default function Home() {
         <section className="relative bg-gray-100 w-full">
           <CryptoNews />
         </section>
+        {/* Organization */}            
+        <section className="relative bg-white"> 
+        <Organization />
+        </section>       
+
         {/* Contact Section */}
         <section className="relative bg-gray-100 w-full">
           <Contact />
