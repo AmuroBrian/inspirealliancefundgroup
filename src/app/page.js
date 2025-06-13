@@ -54,7 +54,7 @@ export default function Home() {
   }, [isAnimating, showContent]);
 
   return (
-    <div className="relative">
+    <div className="relative w-full overflow-x-hidden">
       <SplashScreen onLoadingComplete={handleLoadingComplete} />
 
       {/* Background Video */}
@@ -76,14 +76,14 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-      <div className={`relative z-0 transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'
+      <div className={`relative z-0 w-full transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'
         }`}>
         {/* Hero Section */}
-        <section className="min-h-screen flex flex-col">
+        <section className="min-h-screen flex flex-col w-full">
           {/* Main Content */}
-          <div className="flex-grow flex items-end px-12 pb-8">
-            <div className="space-y-4 relative z-20">
-              <h1 className="text-white text-5xl md:text-6xl font-light">
+          <div className="flex-grow flex items-end px-4 sm:px-8 md:px-12 pb-4 sm:pb-6 md:pb-8">
+            <div className="space-y-4 relative z-20 w-full">
+              <h1 className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light">
                 <ReactTyped
                   strings={[
                     'Welcome to Inspire Alliance Fund Group',
@@ -106,8 +106,8 @@ export default function Home() {
           </div>
 
           {/* Progress Bar - Between Typed and Info Bar */}
-          <div className="relative mb-8 z-30">
-            <div className="relative w-[70%] p-1 rounded">
+          <div className="relative mb-4 sm:mb-6 md:mb-8 z-30 px-4 sm:px-8 md:px-12">
+            <div className="relative w-full sm:w-[85%] md:w-[70%] p-1 rounded">
               <div
                 ref={sectionRef}
                 className="h-15"
@@ -122,36 +122,36 @@ export default function Home() {
           </div>
 
           {/* Bottom Black Info Bar with Blur */}
-          <div className="relative bg-gradient-to-r from-black/95 via-black/85 to-black/70 px-4 py-2 backdrop-blur-md">
-            <p className="text-white text-xl font-bold mb-2">Transforming Financial Futures</p>
-            <p className="text-white text-lg font-semibold">
+          <div className="relative bg-gradient-to-r from-black/95 via-black/85 to-black/70 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 backdrop-blur-md">
+            <p className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Transforming Financial Futures</p>
+            <p className="text-white text-sm sm:text-base md:text-lg font-semibold leading-relaxed">
               At Inspire Alliance Fund Group, we're dedicated to revolutionizing the financial landscape through innovative investment strategies and unwavering commitment to excellence. Our comprehensive suite of financial services, combined with cutting-edge technology and expert insights, empowers businesses and individuals to achieve their financial goals. Join us in shaping a future where financial success knows no bounds.
             </p>
           </div>
         </section>
 
-        <section className="relative bg-gray-100">
+        <section className="relative bg-gray-100 w-full">
           <About />
         </section>
         {/* News Section */}
-        <section className="relative bg-black">
+        <section className="relative bg-black w-full">
           <News />
         </section>
         {/* Mission Section */}
-        <section className="relative bg-white">
+        <section className="relative bg-white w-full">
           <Mission />
         </section>
-        <section className="relative bg-gray-100">
+        <section className="relative bg-gray-100 w-full">
           <ServicesAndSolution />
         </section>
-        <section className="relative bg-gray-100">
+        <section className="relative bg-gray-100 w-full">
           <CryptoNews />
         </section>
         {/* Contact Section */}
-        <section className="relative bg-gray-100">
+        <section className="relative bg-gray-100 w-full">
           <Contact />
         </section>
-        <section className="relative bg-gray-100">
+        <section className="relative bg-gray-100 w-full">
           <Subsidiaries />
         </section>
       </div>

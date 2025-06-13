@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
     id: 1,
     title: "International Banking Solutions",
     description:
-      "Streamline your financial journey with our comprehensive international banking services. We facilitate seamless account opening processes, offering expert guidance through documentation and compliance requirements.",
+      "Expert consultancy services helping foreigners open bank accounts in the Philippines. We provide comprehensive guidance through the Philippine banking system, payment solutions, and financial growth strategies tailored for international clients.",
     image: "/bankingsolution.jpg",
+    slug: "international-banking-solutions",
   },
   {
     id: 2,
@@ -15,6 +17,7 @@ const services = [
     description:
       "Leverage our expertise in business strategy and market analysis. Our consultants provide tailored solutions to help your business thrive in the Japanese market, from market entry strategies to operational optimization.",
     image: "/business.jpg",
+    slug: "strategic-business-advisory",
   },
   {
     id: 3,
@@ -22,6 +25,7 @@ const services = [
     description:
       "Travel with confidence through our comprehensive protection services. We offer extensive coverage and support for international travelers, ensuring peace of mind throughout your journey.",
     image: "/travelprotection.png",
+    slug: "comprehensive-travel-security",
   },
   {
     id: 4,
@@ -29,6 +33,7 @@ const services = [
     description:
       "Discover exceptional real estate opportunities in Japan. Our dedicated team provides end-to-end property services, from investment consultation to property management, tailored to your specific needs.",
     image: "/realestate.jpg",
+    slug: "premium-real-estate-solutions",
   },
   {
     id: 5,
@@ -36,6 +41,7 @@ const services = [
     description:
       "Bridge the gap between Japanese innovation and global markets. We specialize in marketing and promoting authentic Japanese products, helping businesses expand their reach while maintaining cultural authenticity.",
     image: "/marketing.jpeg",
+    slug: "japanese-product-innovation",
   },
 ];
 
@@ -118,7 +124,10 @@ const ServicesAndSolution = () => {
                 <p className="text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
-                <button className="mt-6 text-blue-600 font-semibold flex items-center group-hover:translate-x-2 transition-transform duration-300">
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="mt-6 text-blue-600 font-semibold flex items-center group-hover:translate-x-2 transition-transform duration-300"
+                >
                   Learn More
                   <svg
                     className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
@@ -133,7 +142,7 @@ const ServicesAndSolution = () => {
                       d="M17 8l4 4m0 0l-4 4m4-4H3"
                     />
                   </svg>
-                </button>
+                </Link>
               </div>
             </div>
           ))}
