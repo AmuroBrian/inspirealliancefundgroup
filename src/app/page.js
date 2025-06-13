@@ -3,12 +3,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ReactTyped } from 'react-typed';
 import News from "./components/News";
 import Mission from "./components/Mission";
+import SuccessStories from './components/SuccessStories';
 import Contact from "./components/Contact";
 import SplashScreen from "./components/SplashScreen";
 import About from './components/About';
 import Subsidiaries from './components/Subsidiaries';
 import ServicesAndSolution from './components/ServicesAndSolution';
 import CryptoNews from './components/CryptoNews';
+
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -140,6 +142,9 @@ export default function Home() {
         {/* Mission Section */}
         <section className="relative bg-white w-full">
           <Mission />
+        </section>
+        <section className="relative bg-gray-100 w-full">
+          <SuccessStories />
         </section>
         <section className="relative bg-gray-100 w-full">
           <ServicesAndSolution />
