@@ -1,6 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import BankingPartners from '../../components/BankingPartners';
+import SECPhilippines from '../../components/SECPhilippines';
 
 const servicesMetadata = {
     'international-banking-solutions': {
@@ -9,9 +10,9 @@ const servicesMetadata = {
         keywords: 'Philippines bank account, foreigner banking Philippines, BDO BPI CTBC UnionBank Security Bank, Philippine banking consultancy, international clients Philippines, expatriate banking, foreign investment Philippines, Philippine payment solutions'
     },
     'strategic-business-advisory': {
-        title: 'Strategic Business Advisory | Inspire Alliance Fund Group',
-        description: 'Expert business strategy and market analysis for Japanese market expansion. Professional consulting services for market entry, operational optimization, and strategic planning.',
-        keywords: 'business advisory, market analysis, Japanese market, strategic planning, business consulting, market entry, operational optimization'
+        title: 'Strategic Business Advisory - Philippines Business Setup | Inspire Alliance Fund Group',
+        description: 'Expert business consulting for foreigners establishing businesses in the Philippines. Complete SEC registration, business banking, corporate setup, and company protection services.',
+        keywords: 'Philippines business setup, SEC registration, foreign business Philippines, business consulting Philippines, corporate registration, business banking Philippines, company protection, BIR registration, DTI registration'
     },
     'comprehensive-travel-security': {
         title: 'Comprehensive Travel Security | Inspire Alliance Fund Group',
@@ -82,17 +83,29 @@ const servicesData = {
     },
     'strategic-business-advisory': {
         title: 'Strategic Business Advisory',
-        description: `In today's rapidly evolving business landscape, strategic guidance is not just an advantage—it's a necessity. Our strategic business advisory services provide you with the insights, expertise, and actionable strategies needed to navigate complex market dynamics and achieve sustainable growth.
+        description: `Starting a business in the Philippines as a foreigner can be complex and overwhelming, with numerous legal requirements, registration processes, and regulatory compliance measures to navigate. At Inspire Alliance Fund Group, we specialize in providing comprehensive business advisory services specifically designed to help international entrepreneurs successfully establish and operate their businesses in the Philippines.
 
-    Our team of seasoned consultants brings decades of experience across diverse industries, offering a unique perspective that combines global best practices with local market intelligence. We specialize in helping businesses expand into the Japanese market, one of the world's most sophisticated and rewarding business environments.
+    Our expert team understands the unique challenges foreign investors face when entering the Philippine business landscape. We provide end-to-end consulting services that guide you through every step of the business establishment process, from initial planning and market research to full operational setup and ongoing compliance management.
 
-    Our advisory services encompass market entry strategies, competitive analysis, operational optimization, and long-term strategic planning. We conduct comprehensive market research to identify opportunities and potential challenges, developing customized roadmaps that align with your business objectives and risk tolerance.
+    Our comprehensive business registration services begin with helping you choose the most appropriate business structure for your specific needs and circumstances. Whether you're looking to establish a corporation, partnership, sole proprietorship, or foreign branch office, we provide detailed guidance on the advantages and requirements of each business type. We assist with all necessary documentation and ensure compliance with Philippine corporate law and foreign investment regulations.
 
-    From initial market assessment to full-scale implementation support, we provide continuous guidance throughout your business journey. Our services include feasibility studies, regulatory compliance guidance, partnership facilitation, cultural integration strategies, and performance optimization.
+    One of our core specialties is Securities and Exchange Commission (SEC) registration, a critical requirement for establishing any business entity in the Philippines. Our experienced consultants handle the entire SEC registration process, including preparation of all required documents such as Articles of Incorporation, By-Laws, corporate resolutions, and other essential paperwork. We ensure all submissions meet SEC requirements and standards, minimizing delays and avoiding common pitfalls that often plague foreign investors navigating this process independently.
 
-    We believe that successful business expansion requires more than just capital—it requires deep understanding of local business culture, consumer behavior, and regulatory landscape. Our team provides this crucial knowledge, ensuring your business not only enters new markets but thrives in them.
+    Beyond SEC registration, we provide comprehensive support for all other regulatory requirements including Bureau of Internal Revenue (BIR) registration for tax identification numbers and permits, Department of Trade and Industry (DTI) registration for business names, local government unit permits and licenses, and specialized industry permits depending on your business activities. Our team stays current with all regulatory changes and requirements, ensuring your business remains compliant throughout the registration process.
 
-    Partner with us to transform your business vision into market reality, where strategic planning meets exceptional execution.`
+    Our business banking services complement our registration expertise by helping you establish corporate bank accounts with leading Philippine financial institutions. We understand the specific documentation and requirements that foreign-owned businesses must meet to open business accounts, and we work closely with our banking partners to streamline this process. Our team assists with preparation of all necessary banking documents, coordinates with bank representatives, and ensures you have access to the financial services your business needs to operate effectively.
+
+    Company protection services form another crucial component of our advisory offerings. We provide guidance on intellectual property protection, trademark registration, copyright protection, and other measures to safeguard your business interests in the Philippines. Our team helps you understand local laws regarding business protection and implements appropriate safeguards to protect your investments, trade secrets, and competitive advantages.
+
+    Our strategic planning services extend beyond initial setup to include ongoing business development support. We provide market analysis and competitive intelligence to help you understand the Philippine business environment, identify opportunities for growth, and develop effective strategies for market penetration. Our consultants offer insights into local consumer behavior, cultural considerations that impact business operations, and strategies for building relationships with local partners and stakeholders.
+
+    We also provide ongoing compliance monitoring and support to ensure your business continues to meet all regulatory requirements after establishment. This includes assistance with annual compliance requirements, tax filing support, regulatory reporting, and updates on changing laws and regulations that may impact your business operations.
+
+    For businesses requiring specialized permits or operating in regulated industries, we provide expert guidance on sector-specific requirements. Whether you're establishing a business in food service, retail, manufacturing, technology, or professional services, our team has the expertise to navigate industry-specific regulations and ensure proper compliance.
+
+    Our commitment to your success extends beyond the initial setup phase. We build long-term relationships with our clients, providing ongoing strategic advice, business development support, and expansion planning as your business grows and evolves in the Philippine market. We understand that successful business operations require continuous adaptation to local market conditions, and we're here to support you throughout your business journey.
+
+    Trust Inspire Alliance Fund Group to be your comprehensive partner in establishing and growing your business presence in the Philippines, where expert guidance meets practical execution, and your entrepreneurial vision becomes a thriving Philippine business reality.`
     },
     'comprehensive-travel-security': {
         title: 'Comprehensive Travel Security',
@@ -241,6 +254,9 @@ export default function ServicePage({ params }) {
 
             {/* Banking Partners Section - Only for International Banking Solutions */}
             {slug === 'international-banking-solutions' && <BankingPartners />}
+
+            {/* SEC Philippines Section - Only for Strategic Business Advisory */}
+            {slug === 'strategic-business-advisory' && <SECPhilippines />}
 
             {/* Content Section Continued */}
             <div className="px-4 sm:px-6 lg:px-8 pb-20">

@@ -15,7 +15,7 @@ const services = [
         id: 2,
         title: "Strategic Business Advisory",
         description:
-            "Leverage our expertise in business strategy and market analysis. Our consultants provide tailored solutions to help your business thrive in the Japanese market, from market entry strategies to operational optimization.",
+            "Comprehensive business consulting for foreigners establishing businesses in the Philippines. We handle SEC registration, business banking, corporate setup, and complete regulatory compliance to help you successfully launch your Philippine business.",
         image: "/business.jpg",
         slug: "strategic-business-advisory",
     },
