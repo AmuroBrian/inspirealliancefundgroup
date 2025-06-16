@@ -2,6 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import BankingPartners from '../../components/BankingPartners';
 import SECPhilippines from '../../components/SECPhilippines';
+import RealEstate from '../../components/RealEstate';
 
 const servicesMetadata = {
     'international-banking-solutions': {
@@ -20,9 +21,9 @@ const servicesMetadata = {
         keywords: 'travel security, travel protection, travel insurance, emergency assistance, international travel, travel safety, risk assessment'
     },
     'premium-real-estate-solutions': {
-        title: 'Premium Real Estate Solutions | Inspire Alliance Fund Group',
-        description: 'Exclusive Japanese real estate investment opportunities. Professional property services from investment consultation to property management in premium Japanese markets.',
-        keywords: 'Japanese real estate, property investment, real estate consulting, property management, Tokyo real estate, commercial real estate, residential investment'
+        title: 'Premium Real Estate Solutions - Philippines Property Investment | Inspire Alliance Fund Group',
+        description: 'Discover exceptional real estate opportunities in the Philippines through our network of 14+ trusted developer partners. Expert guidance for suitable and affordable properties from luxury condominiums to affordable housing.',
+        keywords: 'Philippines real estate, property investment Philippines, real estate developers Philippines, Ayala Land, SMDC, Megaworld, Century Properties, Filinvest, property consulting Philippines, condominium investment, house and lot Philippines'
     },
     'japanese-product-innovation': {
         title: 'Japanese Product Innovation | Inspire Alliance Fund Group',
@@ -123,17 +124,29 @@ const servicesData = {
     },
     'premium-real-estate-solutions': {
         title: 'Premium Real Estate Solutions',
-        description: `The Japanese real estate market represents one of the world's most stable and lucrative investment opportunities, offering unique advantages for discerning investors seeking long-term growth and portfolio diversification. Our premium real estate solutions provide comprehensive access to this exclusive market through expert guidance and unparalleled local expertise.
+        description: `The Philippine real estate market offers exceptional opportunities for both local and international investors, with a rapidly growing economy, expanding urban centers, and increasing demand for quality housing and commercial spaces. At Inspire Alliance Fund Group, we connect you with the Philippines' most reputable real estate developers through our extensive network of trusted partners, ensuring you have access to the best properties that match your lifestyle and investment goals.
 
-    Our dedicated real estate team combines deep market knowledge with extensive networks of developers, property managers, and legal specialists to offer you exclusive access to prime investment opportunities. From luxury residential properties in Tokyo's most prestigious districts to commercial real estate with exceptional yield potential, we curate a portfolio of opportunities that match your investment criteria.
+    Our comprehensive real estate solutions are designed to help you find suitable and affordable properties across the Philippines, whether you're looking for your dream home, a smart investment opportunity, or commercial real estate for your business needs. We work with over 14 affiliated developers, including industry leaders like Ayala Land, SMDC, Megaworld, Century Properties, Filinvest, Federal Land, and many others, giving you access to a diverse portfolio of properties from luxury condominiums to affordable housing solutions.
 
-    Our services encompass the entire real estate investment lifecycle, from initial market analysis and property identification to acquisition support, property management, and eventual disposition strategies. We provide detailed due diligence reports, market valuations, and investment projections to ensure you make informed decisions.
+    Our expert team understands that choosing the right property is one of the most important decisions you'll make, which is why we provide personalized consultation services to help you navigate the Philippine real estate landscape. We take the time to understand your specific requirements, budget constraints, and long-term goals, then match you with properties that align with your needs from our extensive network of developer partners.
 
-    Whether you're interested in residential properties for personal use, commercial real estate for income generation, or development opportunities for capital appreciation, our team provides the expertise and local connections necessary to navigate Japan's unique real estate landscape.
+    From luxury high-rise condominiums in Metro Manila's central business districts to affordable house and lot packages in master-planned communities, our affiliated developers offer a comprehensive range of property types to suit different lifestyles and budgets. Whether you're interested in modern urban living with world-class amenities, family-friendly suburban communities, or investment-grade properties with strong rental potential, we have options that meet your criteria.
 
-    Our comprehensive property management services ensure your investments are professionally maintained and optimized for maximum returns. We handle tenant relations, maintenance coordination, financial reporting, and regulatory compliance, providing you with truly passive investment opportunities.
+    Our services extend beyond simple property matching to include comprehensive support throughout your property acquisition journey. We provide detailed information about each development, including location advantages, amenities, payment schemes, and investment potential. Our team assists with site visits, developer meetings, and negotiations to ensure you get the best possible terms for your property purchase.
 
-    Partner with us to unlock the potential of Japanese real estate, where traditional stability meets modern investment opportunities, and your property portfolio reaches new heights of performance and prestige.`
+    We understand that financing is often a crucial consideration in property acquisition, which is why we work closely with our developer partners to provide information about available payment schemes, in-house financing options, and bank financing partnerships. Many of our affiliated developers offer flexible payment terms, including low down payment options, extended payment periods, and competitive interest rates to make property ownership more accessible.
+
+    For investors, we provide detailed market analysis and investment projections to help you make informed decisions about property purchases. Our team offers insights into rental yields, capital appreciation potential, and market trends that could impact your investment returns. We also provide guidance on property management services and rental strategies to help you maximize your investment returns.
+
+    Our commitment to your success extends beyond the initial property purchase. We maintain ongoing relationships with our clients, providing updates on new developments, market opportunities, and investment strategies. We also facilitate connections with property management companies, legal services, and other professionals you may need throughout your property ownership journey.
+
+    The Philippine real estate market offers unique advantages including affordable property prices compared to other major Asian markets, strong economic growth driving demand, government infrastructure investments improving connectivity, and a growing middle class increasing housing demand. Our affiliated developers are at the forefront of these market trends, developing properties in strategic locations with excellent growth potential.
+
+    Whether you're a first-time homebuyer, an experienced investor, or someone looking to relocate to the Philippines, our premium real estate solutions provide the expertise, connections, and support you need to make successful property decisions. We believe that everyone deserves access to quality housing and smart investment opportunities, and we're committed to making that vision a reality through our comprehensive real estate services.
+
+    To explore our complete portfolio of available properties and get detailed information about units, floor plans, pricing, and amenities from all our affiliated developers, we invite you to visit our dedicated Inspire Real Estate platform. This comprehensive online resource provides you with direct access to the latest listings, virtual tours, and detailed property information, making it easier than ever to find your perfect property match.
+
+    Trust Inspire Alliance Fund Group to be your reliable partner in Philippine real estate, where expert guidance meets exceptional opportunities, and your property dreams become reality through our network of trusted developer partnerships.`
     },
     'japanese-product-innovation': {
         title: 'Japanese Product Innovation',
@@ -257,6 +270,9 @@ export default function ServicePage({ params }) {
 
             {/* SEC Philippines Section - Only for Strategic Business Advisory */}
             {slug === 'strategic-business-advisory' && <SECPhilippines />}
+
+            {/* Real Estate Section - Only for Premium Real Estate Solutions */}
+            {slug === 'premium-real-estate-solutions' && <RealEstate />}
 
             {/* Content Section Continued */}
             <div className="px-4 sm:px-6 lg:px-8 pb-20">

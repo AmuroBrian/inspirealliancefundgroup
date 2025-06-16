@@ -1,75 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 const SECPhilippines = () => {
-  const [animatedElements, setAnimatedElements] = useState(new Set());
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const elementId = entry.target.dataset.animateId;
-            if (elementId && !animatedElements.has(elementId)) {
-              setAnimatedElements((prev) => new Set([...prev, elementId]));
-
-              if (elementId === "sec-section") {
-                // Animate image
-                const image = entry.target.querySelector(".sec-image");
-                const content = entry.target.querySelector(".sec-content");
-
-                if (image) {
-                  // Reset any existing transforms
-                  image.style.transform = "translateX(-60px) scale(0.95)";
-                  image.style.opacity = "0";
-
-                  // Trigger animation after a brief reset
-                  setTimeout(() => {
-                    image.style.opacity = "1";
-                    image.style.transform = "translateX(0) scale(1)";
-                  }, 100);
-                }
-
-                if (content) {
-                  setTimeout(() => {
-                    content.style.opacity = "1";
-                    content.style.transform = "translateY(0)";
-                  }, 400);
-                }
-
-                // Animate feature items
-                const features = entry.target.querySelectorAll(".sec-feature");
-                features.forEach((feature, idx) => {
-                  setTimeout(() => {
-                    feature.style.opacity = "1";
-                    feature.style.transform = "translateX(0)";
-                  }, 600 + idx * 150);
-                });
-              }
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.05,
-        rootMargin: "0px 0px 0px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [animatedElements]);
-
   const secServices = [
     {
       icon: "📋",
@@ -145,11 +79,7 @@ const SECPhilippines = () => {
         </div>
       </div>
 
-      <div
-        ref={sectionRef}
-        data-animate-id="sec-section"
-        className="container mx-auto px-4 relative z-10"
-      >
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <div
@@ -196,7 +126,7 @@ const SECPhilippines = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-20">
           {/* SEC Image Section */}
           <div className="w-full lg:w-1/2 flex justify-center items-center px-4 lg:px-8">
-            <div className="relative w-full flex justify-center items-center">
+            <div className="relative w-full max-w-lg mx-auto">
               {/* Decorative Background */}
               <div
                 className="absolute -inset-6 rounded-3xl opacity-20"
@@ -207,17 +137,16 @@ const SECPhilippines = () => {
               ></div>
 
               {/* Main Image Container */}
-              <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 w-full">
-                <div className="sec-image opacity-0 transform translate-x-[-60px] scale-95 transition-all duration-1000 ease-out p-6">
-                  <div className="relative aspect-[16/9] w-full flex items-center justify-center">
+              <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 w-full mx-auto">
+                <div>
+                  <div className="relative aspect-[4/3] w-full justify-center items-center">
                     <Image
                       src="/secph.jpg"
                       alt="Securities and Exchange Commission Philippines"
                       fill
-                      className="rounded-xl hover:scale-105 transition-transform duration-300 object-contain"
+                      className="rounded-xl hover:scale-105 transition-transform duration-300 object-cover"
                       style={{
-                        maxWidth: "100%",
-                        maxHeight: "100%",
+                        objectPosition: "center",
                       }}
                       priority
                     />
@@ -229,7 +158,7 @@ const SECPhilippines = () => {
 
           {/* Content Section */}
           <div className="w-full lg:w-1/2">
-            <div className="sec-content opacity-0 transform translate-y-8 transition-all duration-800 ease-out space-y-6">
+            <div className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-3xl font-bold text-gray-800 mb-4">
                   What is SEC Philippines?
@@ -332,7 +261,7 @@ const SECPhilippines = () => {
             {secServices.map((service, index) => (
               <div
                 key={index}
-                className="sec-feature opacity-0 transform translate-x-[-30px] transition-all duration-600 ease-out bg-white rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h4 className="text-xl font-semibold text-gray-800 mb-3">
