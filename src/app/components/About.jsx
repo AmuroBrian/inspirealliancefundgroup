@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 export default function CollaborationsSection() {
   return (
     <section className="w-full min-h-screen bg-[#f7f7f7] py-6 md:py-12">
@@ -61,6 +62,8 @@ export default function CollaborationsSection() {
           </motion.div>
         </div>
       </motion.div>
+
+     
     </section>
   );
 }
