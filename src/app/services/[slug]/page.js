@@ -2,6 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import BankingPartners from '../../components/BankingPartners';
 import SECPhilippines from '../../components/SECPhilippines';
+import TravelSecurity from '../../components/TravelSecurity';
 
 const servicesMetadata = {
     'international-banking-solutions': {
@@ -257,6 +258,9 @@ export default function ServicePage({ params }) {
 
             {/* SEC Philippines Section - Only for Strategic Business Advisory */}
             {slug === 'strategic-business-advisory' && <SECPhilippines />}
+
+            {/* SEC Philippines Section - Only for Strategic Business Advisory */}
+            {slug === 'comprehensive-travel-security' && <TravelSecurity />}
 
             {/* Content Section Continued */}
             <div className="px-4 sm:px-6 lg:px-8 pb-20">
