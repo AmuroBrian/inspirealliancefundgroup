@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 const TravelSecurity = () => {
   const [animatedElements, setAnimatedElements] = useState(new Set());
@@ -288,7 +289,7 @@ const TravelSecurity = () => {
             {metroManilaCities.map((area, index) => (
               <div
                 key={index}
-                className="coverage-item opacity-0 transform translate-y-8 scale-95 transition-all duration-800 ease-out bg-white rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+                className="coverage-item bg-white rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
               >
                 <div className={`h-3 bg-gradient-to-r ${area.color}`}></div>
                 <div className="p-6">
@@ -337,7 +338,7 @@ const TravelSecurity = () => {
           </div>
         </div>
 
-                {/* Protection Services */}
+        {/* Protection Services */}
         <div className="mb-20">
           <div className="max-w-6xl mx-auto px-6">
             <h3 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -348,7 +349,7 @@ const TravelSecurity = () => {
                 {protectionServices.map((service, index) => (
                   <div
                     key={index}
-                    className="protection-feature opacity-0 transform translate-x-[-40px] transition-all duration-600 ease-out bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 w-full max-w-sm mx-auto"
+                    className="protection-feature bg-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 w-full max-w-sm mx-auto"
                   >
                     <div className="text-4xl mb-4 text-center">{service.icon}</div>
                     <h4 className="text-xl font-bold text-gray-800 mb-2 text-center">{service.title}</h4>
@@ -367,7 +368,7 @@ const TravelSecurity = () => {
                       ))}
                     </ul>
                   </div>
-                                  ))}
+                ))}
               </div>
             </div>
           </div>
@@ -476,6 +477,232 @@ const TravelSecurity = () => {
           </div>
         </div>
 
+        {/* Why Choose Us Section */}
+        <div className="mb-20 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-2xl overflow-hidden">
+          <div className="relative py-16 px-8 md:px-16">
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 right-0 opacity-10">
+              <svg className="w-96 h-96 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+              </svg>
+            </div>
+            
+            {/* Dashed Circle */}
+            <div className="absolute bottom-10 right-32 w-32 h-32 border-2 border-dashed border-white/20 rounded-full"></div>
+            
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div>
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-12">
+                  WHY CHOOSE US?
+                </h3>
+                
+                <div className="space-y-8">
+                  {/* 24/7 Support */}
+                  <div className="flex items-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 1 0 0 19.5 9.75 9.75 0 0 0 0-19.5zm0 0v.002a3.75 3.75 0 0 1 0 7.496 3.75 3.75 0 0 1 0-7.498z"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center">
+                        <h4 className="text-xl font-bold text-white mr-4">24/7 SUPPORT</h4>
+                        <div className="flex-1 h-0.5 bg-gradient-to-r from-orange-500 to-transparent"></div>
+                      </div>
+                      <p className="text-gray-300 mt-2">Round-the-clock emergency assistance and monitoring</p>
+                    </div>
+                  </div>
+
+                  {/* Quick & Easy */}
+                  <div className="flex items-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center">
+                        <h4 className="text-xl font-bold text-white mr-4">QUICK & EASY</h4>
+                        <div className="flex-1 h-0.5 bg-gradient-to-r from-orange-500 to-transparent"></div>
+                      </div>
+                      <p className="text-gray-300 mt-2">Streamlined processes and rapid response deployment</p>
+                    </div>
+                  </div>
+
+                  {/* Trust & Protection */}
+                  <div className="flex items-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center">
+                        <h4 className="text-xl font-bold text-white mr-4">TRUST & PROTECTION</h4>
+                        <div className="flex-1 h-0.5 bg-gradient-to-r from-orange-500 to-transparent"></div>
+                      </div>
+                      <p className="text-gray-300 mt-2">Comprehensive security backed by professional expertise</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Content */}
+              <div className="relative">
+                {/* Background Decorative Elements */}
+                <div className="absolute top-0 right-0 opacity-10">
+                  <svg className="w-96 h-96 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                  </svg>
+                </div>
+                
+                {/* Dashed Circle */}
+                <div className="absolute bottom-10 right-32 w-32 h-32 border-2 border-dashed border-white/20 rounded-full"></div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Pricing Table Section */}
+        <div className="mb-20 max-w-7xl mx-auto">
+          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Left Side - Pricing Content */}
+              <div className="bg-gradient-to-br from-teal-600 via-teal-700 to-cyan-800 p-8 md:p-12 text-white relative overflow-hidden">
+                {/* Background Decorative Elements */}
+                <div className="absolute top-0 right-0 opacity-10">
+                  <svg className="w-48 h-48 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                  </svg>
+                </div>
+                <div className="absolute bottom-0 left-0 opacity-5">
+                  <div className="w-32 h-32 border-4 border-dashed border-white rounded-full"></div>
+                </div>
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="flex items-center mb-8">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold">PRICING TABLE</h3>
+                  </div>
+
+                  {/* Main Description */}
+                  <div className="mb-8">
+                    <p className="text-lg leading-relaxed mb-6">
+                      Our travel protection packed with exceptional benefits—all at an unbeatable price! For just ₱1,250, you can embark on your adventure with total peace of mind. Easily make your payment via your Inspire Wallet. But hold on, there's more!
+                    </p>
+                    
+                    {/* Special Offer Highlight */}
+                    <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                      <div className="flex items-center mb-4">
+                        <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                          </svg>
+                        </div>
+                        <h4 className="text-xl font-bold text-orange-300">Special Offer Alert!</h4>
+                      </div>
+                      <p className="text-white/90 leading-relaxed">
+                        If you're already an Inspire Wallet holder with a maintaining balance, you can grab this incredible travel protection for as low as <span className="font-bold text-orange-300">₱625!</span> Yes, you read that right—you save big while getting top-notch protection.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Call to Action Text */}
+                  <div className="border-t border-white/20 pt-6">
+                    <p className="text-white/90">
+                      And don't worry if you're not an Inspire Wallet user yet, you can still avail of our travel protection for only ₱1,250 by paying with your credit or debit card.
+                    </p>
+                    <p className="text-lg font-semibold mt-4 text-orange-300">
+                      Why wait? Download the app now and secure your journey. Get protected while you soak in all the wonders of Manila!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Pricing Cards & Mobile App */}
+              <div className="p-8 md:p-12 bg-gray-50">
+                {/* Pricing Cards */}
+                <div className="flex flex-col sm:flex-row gap-6 mb-8">
+                  {/* Inspire Clients Price */}
+                  <div className="flex-1 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl p-6 text-white shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <div className="text-center">
+                      <div className="text-3xl md:text-4xl font-bold mb-2">₱625</div>
+                      <div className="text-teal-100 font-medium">Inspire Clients</div>
+                      <div className="mt-4 text-sm text-teal-100">
+                        Special rate for existing Inspire Wallet holders
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* General Clients Price */}
+                  <div className="flex-1 bg-gradient-to-br from-teal-600 to-teal-700 rounded-2xl p-6 text-white shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <div className="text-center">
+                      <div className="text-3xl md:text-4xl font-bold mb-2">₱1,250</div>
+                      <div className="text-teal-100 font-medium">General Clients</div>
+                      <div className="mt-4 text-sm text-teal-100">
+                        Standard rate for new clients
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* App Setting Images */}
+                <div className="flex flex-col sm:flex-row gap-10 sm:gap-12 justify-center items-center mb-8">
+                  <div className="relative w-full aspect-[9/19.5] sm:w-64 sm:h-[34.7rem] sm:aspect-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-white mb-8 sm:mb-0">
+                    <Image
+                      src="/setting1.jpg"
+                      alt="Inspire Wallet App Setting 1"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 256px"
+                      priority={false}
+                    />
+                  </div>
+                  <div className="relative w-full aspect-[9/19.5] sm:w-64 sm:h-[34.7rem] sm:aspect-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
+                    <Image
+                      src="/setting2.jpg"
+                      alt="Inspire Wallet App Setting 2"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 256px"
+                      priority={false}
+                    />
+                  </div>
+                </div>
+
+                {/* Trust Indicators */}
+                <div className="mt-8 flex flex-wrap gap-4 justify-center">
+                  <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-md">
+                    <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span className="text-sm font-medium text-gray-700">Secure Payment</span>
+                  </div>
+                  <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-md">
+                    <svg className="w-4 h-4 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                    <span className="text-sm font-medium text-gray-700">Protected Data</span>
+                  </div>
+                  <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-md">
+                    <svg className="w-4 h-4 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <span className="text-sm font-medium text-gray-700">Instant Activation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Call to Action */}
         <div className="text-center max-w-5xl mx-auto">
           <div className="rounded-3xl shadow-2xl p-8 md:p-12 text-white" style={{ background: 'linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)' }}>
@@ -494,9 +721,57 @@ const TravelSecurity = () => {
             </div>
           </div>
         </div>
+
+        {/* Thank You Section */}
+        <div className="mt-24 bg-[#fdf6ed] py-16 px-4 md:px-0 relative overflow-hidden rounded-3xl max-w-5xl mx-auto shadow-xl border border-yellow-100">
+          {/* Logo */}
+          <div className="flex items-center mb-6">
+            <img src="/inspirealliancelogo.png" alt="Inspire Holdings Incorporated" className="h-12 w-auto mr-3" />
+            <span className="text-xl font-serif font-bold tracking-wide text-gray-800">INSPIRE</span>
+            <span className="ml-2 text-xs font-medium text-gray-600">HOLDINGS INCORPORATED</span>
+          </div>
+          {/* Thank You Heading */}
+          <h2 className="text-5xl font-extrabold text-center text-gray-900 mb-8 tracking-tight">THANK YOU</h2>
+          {/* Instructions */}
+          <div className="max-w-2xl mx-auto text-center text-gray-800 mb-8 text-base md:text-lg">
+            <p className="mb-2">Before traveling to the Philippines, please download and register the Inspire Wallet app from the Apple Store or other platforms.</p>
+            <p className="mb-2">Here's how:<br/>Navigate to MENU &gt; Travel Protection to apply for the service.</p>
+            <p>Submission of a declaration form (e.g., items you are bringing) is mandatory. Please ensure the form is submitted prior to your departure.</p>
+          </div>
+          {/* Contact Info */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+            <div className="space-y-4">
+              <div className="flex items-center text-gray-800 text-lg">
+                <svg className="w-6 h-6 text-teal-600 mr-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1l1.54 2.6a2 2 0 01-.17 2.18l-1.1 1.65a11.05 11.05 0 005.52 5.52l1.65-1.1a2 2 0 012.18-.17l2.6 1.54a2 2 0 011 1.7V19a2 2 0 01-2 2h-1C7.82 21 3 16.18 3 10V9a2 2 0 012-2z"/></svg>
+                <span>8596-3717 / 8596-3670</span>
+              </div>
+              <div className="flex items-center text-gray-800 text-lg">
+                <svg className="w-6 h-6 text-teal-600 mr-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12a4 4 0 01-8 0m8 0a4 4 0 00-8 0m8 0V8a4 4 0 00-8 0v4m8 0v4a4 4 0 01-8 0v-4"/></svg>
+                <span>info@inspireholdings.ph</span>
+              </div>
+              <div className="flex items-center text-gray-800 text-lg">
+                <svg className="w-6 h-6 text-teal-600 mr-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 8a6 6 0 01-12 0 6 6 0 0112 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M2 20h20M2 20a10 10 0 0020 0"/></svg>
+                <span>www.inspireholdings.ph</span>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-start text-gray-800 text-lg">
+                <svg className="w-6 h-6 text-teal-600 mr-3 mt-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 12.414a2 2 0 00-2.828 0l-4.243 4.243A8 8 0 1116.657 7.343z"/></svg>
+                <span>PSE Tower 5th Ave. cor 28th Ave.<br/>One Bonifacio High Street,<br/>Bonifacio Global City, Taguig</span>
+              </div>
+            </div>
+          </div>
+          {/* Decorative Plane SVG */}
+          <svg className="absolute right-0 top-0 w-40 h-24 md:w-64 md:h-32 opacity-80" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 80 Q150 10 300 80" stroke="#222" strokeWidth="3" strokeDasharray="10 10" fill="none"/>
+            <g transform="translate(270,70)">
+              <path d="M0 0 L20 5 L0 10 L5 5 Z" fill="#222"/>
+            </g>
+          </svg>
+        </div>
       </div>
     </section>
   );
-};
+}
 
 export default TravelSecurity;
