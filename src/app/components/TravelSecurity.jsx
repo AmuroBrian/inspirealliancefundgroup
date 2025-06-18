@@ -595,7 +595,7 @@ const TravelSecurity = () => {
                   {/* Main Description */}
                   <div className="mb-8">
                     <p className="text-lg leading-relaxed mb-6">
-                      Our travel protection packed with exceptional benefits—all at an unbeatable price! For just ₱1,250, you can embark on your adventure with total peace of mind. Easily make your payment via your Inspire Wallet. But hold on, there's more!
+                      Our travel protection packed with exceptional benefit all at an unbeatable price! For just ₱1,250, you can embark on your adventure with total peace of mind. Easily make your payment via your Inspire Wallet. But hold on, there's more!
                     </p>
                     
                     {/* Special Offer Highlight */}
@@ -609,7 +609,7 @@ const TravelSecurity = () => {
                         <h4 className="text-xl font-bold text-orange-300">Special Offer Alert!</h4>
                       </div>
                       <p className="text-white/90 leading-relaxed">
-                        If you're already an Inspire Wallet holder with a maintaining balance, you can grab this incredible travel protection for as low as <span className="font-bold text-orange-300">₱625!</span> Yes, you read that right—you save big while getting top-notch protection.
+                        If you're already an Inspire Wallet holder with a maintaining balance, you can grab this incredible travel protection for as low as <span className="font-bold text-orange-300">₱625!</span> Yes, you read that right, you save big while getting top-notch protection.
                       </p>
                     </div>
                   </div>
@@ -703,71 +703,80 @@ const TravelSecurity = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center max-w-5xl mx-auto">
-          <div className="rounded-3xl shadow-2xl p-8 md:p-12 text-white" style={{ background: 'linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)' }}>
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">Secure Your Business in Metro Manila</h3>
-            <p className="text-lg md:text-xl mb-8 opacity-90 leading-relaxed">
-              From Makati's financial district to BGC's modern towers, from Ortigas commercial hub to Alabang's business parks - 
-              trust Inspire Alliance Fund Group for comprehensive Metro Manila protection.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="px-8 py-4 bg-white text-blue-600 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                Get Metro Manila Protection
-              </button>
-              <button className="px-8 py-4 border-2 border-white text-white rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all duration-300">
-                Schedule Security Assessment
-              </button>
+        {/* Before You Travel Section */}
+        <div className="mt-24 max-w-3xl mx-auto bg-gradient-to-br from-blue-50 to-teal-100 border border-blue-200 rounded-3xl shadow-2xl p-8 md:p-14 relative overflow-visible">
+          {/* Logo/Icon - Use real logo if available */}
+          <div className="flex flex-col items-center -mt-20 mb-4">
+            <div className="w-20 h-20 rounded-full overflow-hidden flex items-center justify-center bg-white shadow-xl border-4 border-blue-200 mb-2">
+              <img src="/inspirewallet-logo.png" alt="Inspire Wallet Logo" className="w-full h-full object-cover" />
+            </div>
+            <span className="text-blue-900 font-bold text-lg tracking-wide">Inspire Wallet</span>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-extrabold text-center mb-4 text-blue-900">Before You Travel</h3>
+          <p className="text-center text-lg text-gray-700 mb-6">Prepare for your trip to the Philippines with Inspire Wallet.</p>
+          {/* Download Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-10">
+            {/* Google Play */}
+            <div className="flex flex-col items-center">
+              <span className="mb-2 text-sm font-semibold text-green-700">Google Play</span>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.inspire.inspirewallet&pcampaignid=web_share"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download Inspire Wallet on Google Play"
+                className="rounded-2xl bg-gradient-to-br from-green-100 to-green-200 shadow-lg p-2 transition-transform duration-200 hover:scale-105 hover:shadow-2xl border border-green-200"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Get it on Google Play"
+                  className="h-12 w-auto"
+                />
+              </a>
+            </div>
+            {/* App Store */}
+            <div className="flex flex-col items-center">
+              <span className="mb-2 text-sm font-semibold text-blue-700">App Store</span>
+              <a
+                href="https://apps.apple.com/ph/app/inspire-wallet/id6642689775"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download Inspire Wallet on the App Store"
+                className="rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 shadow-lg p-2 transition-transform duration-200 hover:scale-105 hover:shadow-2xl border border-blue-200"
+              >
+                <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="Download on the App Store"
+                  className="h-12 w-auto"
+                />
+              </a>
             </div>
           </div>
-        </div>
-
-        {/* Thank You Section */}
-        <div className="mt-24 bg-[#fdf6ed] py-16 px-4 md:px-0 relative overflow-hidden rounded-3xl max-w-5xl mx-auto shadow-xl border border-yellow-100">
-          {/* Logo */}
-          <div className="flex items-center mb-6">
-            <img src="/inspirealliancelogo.png" alt="Inspire Holdings Incorporated" className="h-12 w-auto mr-3" />
-            <span className="text-xl font-serif font-bold tracking-wide text-gray-800">INSPIRE</span>
-            <span className="ml-2 text-xs font-medium text-gray-600">HOLDINGS INCORPORATED</span>
-          </div>
-          {/* Thank You Heading */}
-          <h2 className="text-5xl font-extrabold text-center text-gray-900 mb-8 tracking-tight">THANK YOU</h2>
-          {/* Instructions */}
-          <div className="max-w-2xl mx-auto text-center text-gray-800 mb-8 text-base md:text-lg">
-            <p className="mb-2">Before traveling to the Philippines, please download and register the Inspire Wallet app from the Apple Store or other platforms.</p>
-            <p className="mb-2">Here's how:<br/>Navigate to MENU &gt; Travel Protection to apply for the service.</p>
-            <p>Submission of a declaration form (e.g., items you are bringing) is mandatory. Please ensure the form is submitted prior to your departure.</p>
-          </div>
-          {/* Contact Info */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
-            <div className="space-y-4">
-              <div className="flex items-center text-gray-800 text-lg">
-                <svg className="w-6 h-6 text-teal-600 mr-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1l1.54 2.6a2 2 0 01-.17 2.18l-1.1 1.65a11.05 11.05 0 005.52 5.52l1.65-1.1a2 2 0 012.18-.17l2.6 1.54a2 2 0 011 1.7V19a2 2 0 01-2 2h-1C7.82 21 3 16.18 3 10V9a2 2 0 012-2z"/></svg>
-                <span>8596-3717 / 8596-3670</span>
-              </div>
-              <div className="flex items-center text-gray-800 text-lg">
-                <svg className="w-6 h-6 text-teal-600 mr-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12a4 4 0 01-8 0m8 0a4 4 0 00-8 0m8 0V8a4 4 0 00-8 0v4m8 0v4a4 4 0 01-8 0v-4"/></svg>
-                <span>info@inspireholdings.ph</span>
-              </div>
-              <div className="flex items-center text-gray-800 text-lg">
-                <svg className="w-6 h-6 text-teal-600 mr-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 8a6 6 0 01-12 0 6 6 0 0112 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M2 20h20M2 20a10 10 0 0020 0"/></svg>
-                <span>www.inspireholdings.ph</span>
+          <div className="space-y-7">
+            {/* Step 1 */}
+            <div className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow-sm">
+              <div className="flex-shrink-0 w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md border-2 border-blue-200">1</div>
+              <div>
+                <span className="block font-semibold text-blue-800">Download & Register</span>
+                <span className="block text-gray-700">Download and register the Inspire Wallet app from the Apple Store or other platforms.</span>
               </div>
             </div>
-            <div className="space-y-4">
-              <div className="flex items-start text-gray-800 text-lg">
-                <svg className="w-6 h-6 text-teal-600 mr-3 mt-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 12.414a2 2 0 00-2.828 0l-4.243 4.243A8 8 0 1116.657 7.343z"/></svg>
-                <span>PSE Tower 5th Ave. cor 28th Ave.<br/>One Bonifacio High Street,<br/>Bonifacio Global City, Taguig</span>
+            {/* Step 2 */}
+            <div className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow-sm">
+              <div className="flex-shrink-0 w-10 h-10 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md border-2 border-teal-200">2</div>
+              <div>
+                <span className="block font-semibold text-teal-800">Apply for Travel Protection</span>
+                <span className="block text-gray-700">Navigate to <span className="font-bold">MENU &gt; Travel Protection</span> in the app to apply for the service.</span>
+              </div>
+            </div>
+            {/* Step 3 */}
+            <div className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow-sm">
+              <div className="flex-shrink-0 w-10 h-10 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md border-2 border-yellow-200">3</div>
+              <div>
+                <span className="block font-semibold text-yellow-800">Submit Declaration Form</span>
+                <span className="block text-gray-700">Submission of a declaration form (e.g., items you are bringing) is <span className="font-bold">mandatory</span>. Please ensure the form is submitted prior to your departure.</span>
               </div>
             </div>
           </div>
-          {/* Decorative Plane SVG */}
-          <svg className="absolute right-0 top-0 w-40 h-24 md:w-64 md:h-32 opacity-80" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 80 Q150 10 300 80" stroke="#222" strokeWidth="3" strokeDasharray="10 10" fill="none"/>
-            <g transform="translate(270,70)">
-              <path d="M0 0 L20 5 L0 10 L5 5 Z" fill="#222"/>
-            </g>
-          </svg>
         </div>
       </div>
     </section>
