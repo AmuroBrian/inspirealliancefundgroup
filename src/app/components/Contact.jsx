@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-// Minimal fade-in animation
+// Enhanced fade-in animation with better timing
 const FadeIn = ({ children, delay = 0 }) => (
   <div
     style={{
       opacity: 0,
-      animation: `fadeIn 0.7s ease forwards`,
+      animation: `fadeIn 0.8s ease forwards`,
       animationDelay: `${delay}ms`,
     }}
   >
@@ -13,7 +13,7 @@ const FadeIn = ({ children, delay = 0 }) => (
     <style>
       {`
         @keyframes fadeIn {
-          0% { opacity: 0; transform: translateY(20px);}
+          0% { opacity: 0; transform: translateY(30px);}
           100% { opacity: 1; transform: none;}
         }
       `}
@@ -40,133 +40,256 @@ const ContactForm = () => {
   };
 
   return (
-    <FadeIn delay={200}>
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-screen-xl mx-auto bg-white border border-gray-200 rounded-3xl p-16 shadow-none"
-      >
-        <div className="mb-10">
-          <label className="block text-2xl text-gray-700 mb-3">
-            Your Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="name"
-            className="w-full border border-gray-200 rounded-xl px-8 py-6 text-2xl focus:outline-none focus:ring-2 focus:ring-black bg-gray-50"
-            required
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Name"
-          />
-        </div>
-        <div className="mb-10">
-          <label className="block text-2xl text-gray-700 mb-3">
-            Company Name
-          </label>
-          <input
-            type="text"
-            name="company"
-            className="w-full border border-gray-200 rounded-xl px-8 py-6 text-2xl focus:outline-none focus:ring-2 focus:ring-black bg-gray-50"
-            value={form.company}
-            onChange={handleChange}
-            placeholder="Company"
-          />
-        </div>
-        <div className="mb-10">
-          <label className="block text-2xl text-gray-700 mb-3">
-            Email Address <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            className="w-full border border-gray-200 rounded-xl px-8 py-6 text-2xl focus:outline-none focus:ring-2 focus:ring-black bg-gray-50"
-            required
-            value={form.email}
-            onChange={handleChange}
-            placeholder="Email"
-          />
-        </div>
-        <div className="mb-14">
-          <label className="block text-2xl text-gray-700 mb-3">
-            Inquiry <span className="text-red-500">*</span>
-          </label>
-          <textarea
-            name="message"
-            className="w-full border border-gray-200 rounded-xl px-8 py-6 text-2xl h-52 focus:outline-none focus:ring-2 focus:ring-black bg-gray-50"
-            required
-            value={form.message}
-            onChange={handleChange}
-            placeholder="Type your inquiry here"
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-black text-white py-6 rounded-xl text-2xl hover:bg-gray-900 transition"
+    <FadeIn delay={300}>
+      <div className="w-full max-w-4xl bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+        {/* Header Section with Gradient */}
+        <div
+          className="px-8 py-6"
+          style={{
+            background:
+              "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
+          }}
         >
-          Send
-        </button>
-        {submitted && (
-          <p className="mt-10 text-green-700 text-center text-2xl">
-            Thank you! We received your inquiry.
+          <h2 className="text-3xl font-bold text-white text-center">
+            Get In Touch
+          </h2>
+          <p className="text-white/90 text-center mt-2">
+            We'd love to hear from you. Send us a message and we'll respond as
+            soon as possible.
           </p>
-        )}
-      </form>
+        </div>
+
+        {/* Form Section */}
+        <form onSubmit={handleSubmit} className="p-8">
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Your Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 bg-gray-50 transition-all duration-300 hover:border-gray-300"
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Company Name
+                </label>
+                <input
+                  type="text"
+                  name="company"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 bg-gray-50 transition-all duration-300 hover:border-gray-300"
+                  value={form.company}
+                  onChange={handleChange}
+                  placeholder="Your company (optional)"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Email Address <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 bg-gray-50 transition-all duration-300 hover:border-gray-300"
+                required
+                value={form.email}
+                onChange={handleChange}
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Your Message <span className="text-red-500">*</span>
+              </label>
+              <textarea
+                name="message"
+                className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 h-32 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 bg-gray-50 transition-all duration-300 hover:border-gray-300 resize-none"
+                required
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Tell us about your inquiry..."
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 rounded-xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
+              style={{
+                background:
+                  "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
+              }}
+            >
+              Send Message
+            </button>
+
+            {submitted && (
+              <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
+                <p className="text-green-700 text-center font-medium">
+                  ✓ Thank you! We've received your message and will get back to
+                  you soon.
+                </p>
+              </div>
+            )}
+          </div>
+        </form>
+      </div>
     </FadeIn>
   );
 };
 
 const CompanyAddress = () => (
-  <FadeIn delay={80}>
-    <div className="max-w-screen-xl w-full bg-white border border-gray-200 rounded-3xl p-16 mb-10 md:mb-0">
-      <div className="mb-8">
-        <h2 className="text-4xl font-semibold text-gray-800 mb-5">Our Offices</h2>
-        <div className="mb-5">
-          <div className="text-2xl font-medium text-gray-500 mb-2">MAIN OFFICE</div>
-          <div className="text-2xl text-gray-700">
-            6F Alliance Global Tower,<br />
-            11th Ave, corner 36th St,<br />
-            Taguig, Metro Manila
-          </div>
-        </div>
-        <div className="mb-5">
-          <div className="text-2xl font-medium text-gray-500 mb-2">SATELLITE (US)</div>
-          <div className="text-2xl text-gray-700">
-            1209 Mountain Road PL NE STE N<br />
-            Albuquerque, NM, 87110, USA
-          </div>
-        </div>
-        <div>
-          <div className="text-2xl font-medium text-gray-500 mb-2">SATELLITE (JP)</div>
-          <div className="text-2xl text-gray-700">
-            20F, Trust Tower Main Building,<br />
-            1-8-3 Marunouchi, Chiyoda-ku,<br />
-            Tokyo 100-8283
-          </div>
-        </div>
+  <FadeIn delay={100}>
+    <div className="w-full max-w-4xl bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+      {/* Header Section with Gradient */}
+      <div
+        className="px-8 py-6"
+        style={{
+          background:
+            "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
+        }}
+      >
+        <h2 className="text-3xl font-bold text-white text-center">
+          Our Offices
+        </h2>
+        <p className="text-white/90 text-center mt-2">
+          Visit us at any of our global locations
+        </p>
       </div>
-      <div className="w-full flex justify-center mt-8">
-        <img
-          src="image1"
-          alt="Inspire Alliance Logo"
-          className="rounded h-24 w-auto object-contain grayscale"
-          style={{
-            filter: "grayscale(1)",
-            opacity: 0.9,
-          }}
-        />
+
+      {/* Content Section */}
+      <div className="p-8">
+        <div className="space-y-6">
+          {/* Main Office */}
+          <div className="border-l-4 border-[#80c32a] pl-6 py-4 bg-gray-50 rounded-lg">
+            <div className="flex items-center mb-3">
+              <div className="w-3 h-3 bg-[#80c32a] rounded-full mr-3"></div>
+              <h3 className="text-lg font-bold text-gray-800">MAIN OFFICE</h3>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+              6F Alliance Global Tower,
+              <br />
+              11th Ave, corner 36th St,
+              <br />
+              Taguig, Metro Manila, Philippines
+            </p>
+          </div>
+
+          {/* US Office */}
+          <div className="border-l-4 border-[#4b888b] pl-6 py-4 bg-gray-50 rounded-lg">
+            <div className="flex items-center mb-3">
+              <div className="w-3 h-3 bg-[#4b888b] rounded-full mr-3"></div>
+              <h3 className="text-lg font-bold text-gray-800">
+                SATELLITE OFFICE (US)
+              </h3>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+              1209 Mountain Road PL NE STE N<br />
+              Albuquerque, NM, 87110
+              <br />
+              United States
+            </p>
+          </div>
+
+          {/* Japan Office */}
+          <div className="border-l-4 border-[#3873af] pl-6 py-4 bg-gray-50 rounded-lg">
+            <div className="flex items-center mb-3">
+              <div className="w-3 h-3 bg-[#3873af] rounded-full mr-3"></div>
+              <h3 className="text-lg font-bold text-gray-800">
+                SATELLITE OFFICE (JP)
+              </h3>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+              20F, Trust Tower Main Building,
+              <br />
+              1-8-3 Marunouchi, Chiyoda-ku,
+              <br />
+              Tokyo 100-8283, Japan
+            </p>
+          </div>
+
+          {/* Contact Information */}
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <div className="grid grid-cols-1 gap-4">
+              <div className="flex items-center text-gray-700">
+                <svg
+                  className="w-5 h-5 mr-3 text-[#4b888b]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                <span>info@inspirealliancefund.com</span>
+              </div>
+              <div className="flex items-center text-gray-700">
+                <svg
+                  className="w-5 h-5 mr-3 text-[#4b888b]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                <span>+63 (2) 8XXX-XXXX</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Logo */}
+          <div className="mt-8 pt-6 border-t border-gray-200 flex justify-center">
+            <img
+              src="/inspirealliancelogo.png"
+              alt="Inspire Alliance Logo"
+              className="h-16 w-auto object-contain opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </FadeIn>
 );
 
 const ContactPage = () => (
-  <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-    <div className="w-full max-w-screen-2xl flex flex-col md:flex-row gap-16 p-8 md:p-20 items-start justify-center">
-      <div className="flex-1 flex flex-col items-center">
-        <CompanyAddress />
-      </div>
-      <div className="flex-1 flex items-center">
-        <ContactForm />
+  <div className="min-h-screen w-full bg-[#f7f7f7] py-12">
+    {/* Hero Section */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <FadeIn>
+        <div className="text-center">
+          <span
+            className="inline-block px-6 py-3 text-2xl font-bold text-white rounded-xl shadow-lg"
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
+            }}
+          >
+            Contact Us
+          </span>
+          <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+            Ready to start your journey with Inspire Alliance Fund Group? We're
+            here to help you every step of the way.
+          </p>
+        </div>
+      </FadeIn>
+    </div>
+
+    {/* Main Content */}
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="space-y-12">
+        <div className="flex justify-center">
+          <ContactForm />
+        </div>
+        <div className="flex justify-center">
+          <CompanyAddress />
+        </div>
       </div>
     </div>
   </div>
