@@ -4,6 +4,7 @@ import BankingPartners from '../../components/BankingPartners';
 import SECPhilippines from '../../components/SECPhilippines';
 import RealEstate from '../../components/RealEstate';
 import TravelSecurity from '../../components/TravelSecurity';
+import JapaneseProducts from '../../components/JapaneseProducts';
 
 const servicesMetadata = {
     'international-banking-solutions': {
@@ -30,9 +31,9 @@ const servicesMetadata = {
         keywords: 'Philippines real estate, property investment Philippines, real estate developers Philippines, Ayala Land, SMDC, Megaworld, Century Properties, Filinvest, property consulting Philippines, condominium investment, house and lot Philippines'
     },
     'japanese-product-innovation': {
-        title: 'Japanese Product Innovation | Inspire Alliance Fund Group',
-        description: 'Bridge Japanese innovation with global markets. Expert marketing and promotion of authentic Japanese products with cultural integrity and international appeal.',
-        keywords: 'Japanese products, product innovation, Japanese marketing, product promotion, cultural authenticity, global markets, Japanese craftsmanship'
+        title: 'Japanese Product Innovation - Authentic Japanese Products in Philippines | Inspire Alliance Fund Group',
+        description: 'Discover authentic Japanese products now available in the Philippines. From health technology to lifestyle products, experience Japanese excellence with local accessibility and support.',
+        keywords: 'Japanese products Philippines, authentic Japanese products, Japanese innovation Philippines, Alpha HT, Denso, Pure Exom, Stems AI, Japanese technology Philippines, Japanese lifestyle products, inspirenextglobal'
     }
 };
 
@@ -172,19 +173,29 @@ const servicesData = {
     },
     'japanese-product-innovation': {
         title: 'Japanese Product Innovation',
-        description: `Japan stands at the forefront of global innovation, consistently producing products and technologies that define industry standards and consumer expectations worldwide. Our Japanese product innovation services bridge the gap between exceptional Japanese craftsmanship and global market opportunities, helping businesses access and promote authentic Japanese products.
+        description: `Japan stands at the forefront of global innovation, consistently producing products and technologies that define industry standards and consumer expectations worldwide. At Inspire Alliance Fund Group, we proudly bring authentic Japanese products to the Philippines, offering Filipino consumers access to the exceptional quality, innovation, and craftsmanship that Japan is renowned for.
 
-    Our comprehensive approach to product innovation encompasses market research, product sourcing, brand development, and global marketing strategies. We work directly with Japanese manufacturers and artisans to identify unique products with international appeal, ensuring authenticity while meeting global quality standards.
+    Our Japanese Product Innovation service represents a carefully curated collection of premium Japanese products, ranging from advanced health technology and automotive solutions to beauty products and artificial intelligence applications. Each product in our portfolio has been selected for its authenticity, quality, and potential to enhance the lives of Filipino consumers while maintaining the cultural integrity that makes Japanese products so distinctive.
 
-    Our team of marketing specialists understands the nuances of Japanese business culture and the importance of maintaining product integrity while adapting to international markets. We provide end-to-end support for product launches, including market positioning, pricing strategies, distribution channel development, and promotional campaigns.
+    We understand that Japanese products represent more than just merchandise—they embody a philosophy of continuous improvement, attention to detail, and commitment to excellence that has made Japan a global leader in innovation. Our marketing strategy focuses on educating Filipino consumers about these values while making these exceptional products accessible and affordable in the local market.
 
-    From traditional crafts and artisanal products to cutting-edge technology and consumer goods, we help businesses discover and promote products that represent the best of Japanese innovation. Our services include product evaluation, cultural consulting, brand storytelling, and market entry strategies.
+    Our product portfolio includes Alpha HT health technology solutions that bring advanced wellness applications to the Philippine healthcare market, Denso automotive technology that represents world-class precision engineering, Pure Exom beauty and wellness products crafted with traditional Japanese expertise, and Stems AI artificial intelligence solutions that showcase Japan's leadership in cutting-edge technology.
 
-    We believe that successful product marketing requires more than just promotion—it requires deep understanding of the product's heritage, craftsmanship, and unique value proposition. Our team provides this crucial knowledge, ensuring your products resonate with international audiences while maintaining their authentic Japanese character.
+    From Clinience clinical solutions that offer professional-grade healthcare innovations to DeskNet NEO business management systems that enhance enterprise efficiency, our products span multiple categories including health technology, automotive solutions, digital innovations, business applications, manufacturing solutions, beauty and wellness products, artificial intelligence, and lifestyle enhancements.
 
-    Whether you're looking to import Japanese products, develop co-branded offerings, or create marketing campaigns that celebrate Japanese innovation, our team provides the expertise and cultural insights necessary for success.
+    What sets our approach apart is our commitment to maintaining the authentic Japanese character of each product while ensuring they meet the specific needs and preferences of the Philippine market. We work closely with Japanese manufacturers and technology developers to ensure that every product maintains its original quality standards while being adapted for local market requirements and regulatory compliance.
 
-    Experience the power of Japanese product innovation, where exceptional quality meets global opportunity, and authentic craftsmanship drives business success.`
+    Our comprehensive marketing approach includes detailed product education, cultural context explanation, and demonstration of the unique value propositions that make Japanese products superior. We believe that Filipino consumers deserve access to the same high-quality products that have made Japan a global leader in innovation, and we're committed to making that access both convenient and affordable.
+
+    The Philippine market represents an excellent opportunity for Japanese product innovation, with a growing middle class that appreciates quality, a tech-savvy population that embraces innovation, and a cultural affinity for Japanese excellence that spans entertainment, technology, and lifestyle products. Our marketing strategy leverages these market dynamics to create authentic connections between Japanese innovation and Filipino consumer needs.
+
+    Whether you're interested in health technology that can improve your wellness routine, automotive solutions that enhance your vehicle's performance, beauty products that incorporate traditional Japanese ingredients and techniques, or business solutions that can streamline your operations, our Japanese product portfolio offers authentic options that deliver exceptional value.
+
+    For detailed information about our complete Japanese product collection, including specifications, pricing, availability, and exclusive offers, we invite you to visit our dedicated marketing platform at inspirenextglobal.com. This comprehensive resource provides direct access to our full product catalog, allowing you to explore the innovations that represent the best of Japanese craftsmanship and technology.
+
+    Our commitment extends beyond just product sales to include ongoing customer support, product education, and ensuring that every Filipino consumer who chooses Japanese products through our platform experiences the exceptional quality and service that defines Japanese business culture. We're not just importing products—we're building bridges between Japanese innovation and Filipino aspirations for quality and excellence.
+
+    Experience the power of authentic Japanese innovation, where traditional craftsmanship meets cutting-edge technology, and where every product represents a commitment to excellence that has made Japan a global leader in quality and innovation. Discover how Japanese products can enhance your life, business, and future through our carefully curated collection of authentic innovations now available in the Philippines.`
     }
 };
 
@@ -296,11 +307,11 @@ export default function ServicePage({ params }) {
             {/* Real Estate Section - Only for Premium Real Estate Solutions */}
             {slug === 'premium-real-estate-solutions' && <RealEstate />}
 
-            {/* Real Estate Section - Only for Premium Real Estate Solutions */}
-            {slug === 'premium-real-estate-solutions' && <RealEstate />}
-
             {/* SEC Philippines Section - Only for Strategic Business Advisory */}
             {slug === 'comprehensive-travel-security' && <TravelSecurity />}
+            
+            {/* Japanese Products Section - Only for Japanese Product Innovation */}
+            {slug === 'japanese-product-innovation' && <JapaneseProducts />}
 
             {/* Content Section Continued */}
             <div className="px-4 sm:px-6 lg:px-8 pb-20">
