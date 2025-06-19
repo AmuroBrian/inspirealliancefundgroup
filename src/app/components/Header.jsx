@@ -15,6 +15,20 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80; // Height of the fixed header (h-20 = 80px)
+      const elementPosition = element.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    }
+    setIsMenuOpen(false); // Close mobile menu after clicking
+  };
+
   if (!mounted) {
     return null;
   }
@@ -40,35 +54,35 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link
-              href="/news"
+              href="/about"
               className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
             >
-              News
+              About
             </Link>
-            <Link
-              href="/mission"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Mission
-            </Link>
-            <Link
-              href="/collaborations"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Collaborations
-            </Link>
-            <Link
-              href="/services"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
+            <button
+              onClick={() => handleScrollToSection("services")}
+              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide cursor-pointer"
             >
               Services
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
+            </button>
+            <button
+              onClick={() => handleScrollToSection("solutions")}
+              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide cursor-pointer"
             >
-              Contact Us
-            </Link>
+              Solutions
+            </button>
+            <button
+              onClick={() => handleScrollToSection("investment-insights")}
+              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide cursor-pointer"
+            >
+              Investment Insights
+            </button>
+            <button
+              onClick={() => handleScrollToSection("contact")}
+              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide cursor-pointer"
+            >
+              Contact
+            </button>
           </nav>
 
           {/* Right Section */}
@@ -121,35 +135,35 @@ const Header = () => {
         <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
             <Link
-              href="/news"
+              href="/about"
               className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
             >
-              News
+              About
             </Link>
-            <Link
-              href="/mission"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Mission
-            </Link>
-            <Link
-              href="/collaborations"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Collaborations
-            </Link>
-            <Link
-              href="/services"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
+            <button
+              onClick={() => handleScrollToSection("services")}
+              className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
             >
               Services
-            </Link>
-            <Link
-              href="/contact"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
+            </button>
+            <button
+              onClick={() => handleScrollToSection("solutions")}
+              className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
             >
-              Contact Us
-            </Link>
+              Solutions
+            </button>
+            <button
+              onClick={() => handleScrollToSection("investment-insights")}
+              className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
+            >
+              Investment Insights
+            </button>
+            <button
+              onClick={() => handleScrollToSection("contact")}
+              className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
+            >
+              Contact
+            </button>
             <button className="w-full mt-2 flex items-center justify-center space-x-2 bg-[#b8860b] text-white px-3 py-1.5 rounded text-sm hover:bg-[#96700a] transition-colors duration-300">
               <Image
                 src="/icon%20logo.png"
