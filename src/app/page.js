@@ -9,7 +9,7 @@ import SplashScreen from "./components/SplashScreen";
 import About from './components/About';
 import Subsidiaries from './components/Subsidiaries';
 import ServicesAndSolution from './components/ServicesAndSolution';
-import CryptoNews from './components/CryptoNews';
+import InvestmentInsights from './components/InvestmentInsights';
 import Organization from './components/Organization';
 
 
@@ -147,19 +147,19 @@ export default function Home() {
         <section className="relative bg-gray-100 w-full">
           <SuccessStories />
         </section>
-        <section className="relative bg-gray-100 w-full">
+        <section id="services" className="relative bg-gray-100 w-full">
           <ServicesAndSolution />
         </section>
-        <section className="relative bg-gray-100 w-full">
-          <CryptoNews />
+        <section id="investment-insights" className="relative bg-gray-100 w-full">
+          <InvestmentInsights />
         </section>
-        {/* Organization */}            
-        <section className="relative bg-white"> 
-        <Organization />
-        </section>       
+        {/* Organization */}
+        <section id="solutions" className="relative bg-white">
+          <Organization />
+        </section>
 
         {/* Contact Section */}
-        <section className="relative bg-gray-100 w-full">
+        <section id="contact" className="relative bg-gray-100 w-full">
           <Contact />
         </section>
         <section className="relative bg-gray-100 w-full">

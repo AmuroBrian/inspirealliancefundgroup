@@ -41,7 +41,7 @@ const ContactForm = () => {
 
   return (
     <FadeIn delay={300}>
-      <div className="w-full max-w-4xl bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
         {/* Header Section with Gradient */}
         <div
           className="px-8 py-6"
@@ -149,7 +149,7 @@ const ContactForm = () => {
 
 const CompanyAddress = () => (
   <FadeIn delay={100}>
-    <div className="w-full max-w-4xl bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+    <div className="w-full max-w-7xl mx-auto bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
       {/* Header Section with Gradient */}
       <div
         className="px-8 py-6"
@@ -282,14 +282,10 @@ const ContactPage = () => (
     </div>
 
     {/* Main Content */}
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="px-4 sm:px-6 lg:px-8">
       <div className="space-y-12">
-        <div className="flex justify-center">
-          <ContactForm />
-        </div>
-        <div className="flex justify-center">
-          <CompanyAddress />
-        </div>
+        <ContactForm />
+        <CompanyAddress />
       </div>
     </div>
   </div>
