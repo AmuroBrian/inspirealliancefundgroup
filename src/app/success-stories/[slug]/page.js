@@ -8,8 +8,126 @@ import { successStoriesData } from "../successStoriesData";
 
 export default function SuccessStoryPage({ params }) {
     const resolvedParams = use(params);
+
+    // All useState hooks first
     const [story, setStory] = useState(null);
     const [relatedStories, setRelatedStories] = useState([]);
+    const [mounted, setMounted] = useState(false);
+    const [currentLang, setCurrentLang] = useState("en");
+
+    // Static translations for success story detail page
+    const translations = {
+        en: {
+            detail: {
+                loading: "Loading success story...",
+                home: "Home",
+                breadcrumb: "Success Stories",
+                investment_analyst: "Investment Analyst",
+                executive_summary: "Executive Summary",
+                key_metrics: "Key Metrics",
+                impact_analysis: "Impact Analysis",
+                key_achievements: "Key Achievements",
+                challenges_overcome: "Challenges Overcome",
+                investment_outcomes: "Investment Outcomes",
+                investment_conclusion: "Investment Conclusion",
+                disclaimer: "Disclaimer:",
+                disclaimer_text: "This case study is for informational purposes only and should not be considered as investment advice. Past performance does not guarantee future results. Please consult with qualified financial advisors before making investment decisions.",
+                sec_registration: "Inspire Alliance Fund Group is registered with the Securities and Exchange Commission of the Philippines under Registration No. AS092-4578.",
+                investment_details: "Investment Details",
+                category: "Category:",
+                location: "Location:",
+                investment: "Investment:",
+                team_size: "Team Size:",
+                year: "Year:",
+                impact_metrics: "Impact Metrics",
+                investment_opportunities: "Investment Opportunities",
+                investment_opportunities_desc: "Discover similar high-impact investment opportunities through our strategic partnership program.",
+                learn_more: "Learn More",
+                related_stories: "Related Success Stories"
+            },
+            categories: {
+                Technology: "Technology",
+                Healthcare: "Healthcare",
+                Environment: "Environment",
+                Education: "Education",
+                Agriculture: "Agriculture"
+            }
+        },
+        ja: {
+            detail: {
+                loading: "成功事例を読み込み中...",
+                home: "ホーム",
+                breadcrumb: "成功事例",
+                investment_analyst: "投資アナリスト",
+                executive_summary: "エグゼクティブサマリー",
+                key_metrics: "主要指標",
+                impact_analysis: "インパクト分析",
+                key_achievements: "主要な成果",
+                challenges_overcome: "克服された課題",
+                investment_outcomes: "投資成果",
+                investment_conclusion: "投資結論",
+                disclaimer: "免責事項：",
+                disclaimer_text: "このケーススタディは情報提供のみを目的としており、投資アドバイスとして考慮されるべきではありません。過去の実績は将来の結果を保証するものではありません。投資判断を行う前に、資格のある金融アドバイザーにご相談ください。",
+                sec_registration: "インスパイア・アライアンス・ファンド・グループは、登録番号AS092-4578でフィリピン証券取引委員会に登録されています。",
+                investment_details: "投資詳細",
+                category: "カテゴリー：",
+                location: "所在地：",
+                investment: "投資額：",
+                team_size: "チーム規模：",
+                year: "年：",
+                impact_metrics: "インパクト指標",
+                investment_opportunities: "投資機会",
+                investment_opportunities_desc: "戦略的パートナーシッププログラムを通じて、類似の高インパクト投資機会を発見してください。",
+                learn_more: "詳細を見る",
+                related_stories: "関連する成功事例"
+            },
+            categories: {
+                Technology: "テクノロジー",
+                Healthcare: "ヘルスケア",
+                Environment: "環境",
+                Education: "教育",
+                Agriculture: "農業"
+            }
+        }
+    };
+
+    const t = (key) => {
+        const keys = key.replace('success_stories.', '').split('.');
+        let result = translations[currentLang];
+        for (const k of keys) {
+            result = result[k];
+            if (!result) break;
+        }
+        return result || key;
+    };
+
+    // Listen for language changes
+    useEffect(() => {
+        setMounted(true);
+
+        // Check for saved language on load
+        if (typeof window !== "undefined") {
+            const savedLang = localStorage.getItem("selectedLanguage");
+            if (savedLang && (savedLang === "en" || savedLang === "ja")) {
+                setCurrentLang(savedLang);
+            }
+        }
+
+        // Listen for language change events
+        const handleLanguageChange = (event) => {
+            setCurrentLang(event.detail.language);
+        };
+
+        if (typeof window !== "undefined") {
+            window.addEventListener("languageChanged", handleLanguageChange);
+        }
+
+        return () => {
+            if (typeof window !== "undefined") {
+                window.removeEventListener("languageChanged", handleLanguageChange);
+            }
+        };
+    }, []);
 
     useEffect(() => {
         const currentStory = successStoriesData[resolvedParams.slug];
@@ -22,12 +140,12 @@ export default function SuccessStoryPage({ params }) {
         }
     }, [resolvedParams.slug]);
 
-    if (!story) {
+    if (!mounted || !story) {
         return (
             <div className="min-h-screen bg-gray-50 flex items-center justify-center">
                 <div className="text-center">
                     <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-green-600 mx-auto mb-4"></div>
-                    <p className="text-gray-600">Loading success story...</p>
+                    <p className="text-gray-600">{mounted ? t("success_stories.detail.loading") : "Loading success story..."}</p>
                 </div>
             </div>
         );
@@ -39,9 +157,9 @@ export default function SuccessStoryPage({ params }) {
             <div className="bg-white border-b">
                 <div className="max-w-4xl mx-auto px-4 py-4">
                     <nav className="flex items-center space-x-2 text-sm">
-                        <Link href="/" className="text-green-600 hover:text-green-700">Home</Link>
+                        <Link href="/" className="text-green-600 hover:text-green-700">{t("success_stories.detail.home")}</Link>
                         <span className="text-gray-400">/</span>
-                        <Link href="/#success-stories" className="text-green-600 hover:text-green-700">Success Stories</Link>
+                        <Link href="/#success-stories" className="text-green-600 hover:text-green-700">{t("success_stories.detail.breadcrumb")}</Link>
                         <span className="text-gray-400">/</span>
                         <span className="text-gray-600">{story.title}</span>
                     </nav>
@@ -54,7 +172,7 @@ export default function SuccessStoryPage({ params }) {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                         <div>
                             <div className="flex items-center gap-4 mb-4">
-                                <span className="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">{story.category}</span>
+                                <span className="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">{t(`success_stories.categories.${story.category}`)}</span>
                                 <span className="text-sm text-gray-500">{story.date}</span>
                                 <span className="text-sm text-gray-500">{story.readTime}</span>
                             </div>
@@ -66,7 +184,7 @@ export default function SuccessStoryPage({ params }) {
                                 </div>
                                 <div>
                                     <p className="font-medium text-gray-900">{story.author}</p>
-                                    <p className="text-sm text-gray-500">Investment Analyst</p>
+                                    <p className="text-sm text-gray-500">{t("success_stories.detail.investment_analyst")}</p>
                                 </div>
                             </div>
                         </div>
@@ -84,12 +202,12 @@ export default function SuccessStoryPage({ params }) {
                     <div className="lg:col-span-2">
                         <motion.article className="bg-white rounded-xl shadow-lg p-8" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
                             <section className="mb-8">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-4">Executive Summary</h2>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-4">{t("success_stories.detail.executive_summary")}</h2>
                                 <p className="text-gray-700 leading-relaxed text-lg">{story.content.introduction}</p>
                             </section>
 
                             <section className="mb-8">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Success Metrics</h2>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t("success_stories.detail.key_metrics")}</h2>
                                 <div className="space-y-6">
                                     {story.content.keyPoints.map((point, index) => (
                                         <motion.div key={index} className="border-l-4 border-green-500 pl-6 py-4" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}>
@@ -104,11 +222,11 @@ export default function SuccessStoryPage({ params }) {
                             </section>
 
                             <section className="mb-8">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Impact Analysis</h2>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t("success_stories.detail.impact_analysis")}</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="bg-green-50 rounded-lg p-6">
                                         <h3 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
-                                            <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>Key Achievements
+                                            <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>{t("success_stories.detail.key_achievements")}
                                         </h3>
                                         <ul className="space-y-2">
                                             {story.content.analysis.achievements.map((achievement, index) => (
@@ -120,7 +238,7 @@ export default function SuccessStoryPage({ params }) {
                                     </div>
                                     <div className="bg-orange-50 rounded-lg p-6">
                                         <h3 className="text-lg font-semibold text-orange-800 mb-4 flex items-center">
-                                            <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>Challenges Overcome
+                                            <span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>{t("success_stories.detail.challenges_overcome")}
                                         </h3>
                                         <ul className="space-y-2">
                                             {story.content.analysis.challenges.map((challenge, index) => (
@@ -134,7 +252,7 @@ export default function SuccessStoryPage({ params }) {
                             </section>
 
                             <section className="mb-8">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Investment Outcomes</h2>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t("success_stories.detail.investment_outcomes")}</h2>
                                 <div className="bg-blue-50 rounded-lg p-6">
                                     <ul className="space-y-3">
                                         {story.content.outcomes.map((outcome, index) => (
@@ -148,7 +266,7 @@ export default function SuccessStoryPage({ params }) {
                             </section>
 
                             <section className="mb-8">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-4">Investment Conclusion</h2>
+                                <h2 className="text-2xl font-bold text-gray-900 mb-4">{t("success_stories.detail.investment_conclusion")}</h2>
                                 <div className="bg-gray-50 rounded-lg p-6">
                                     <p className="text-gray-700 leading-relaxed text-lg italic">{story.content.conclusion}</p>
                                 </div>
@@ -156,10 +274,8 @@ export default function SuccessStoryPage({ params }) {
 
                             <div className="border-t pt-6 mt-8">
                                 <p className="text-xs text-gray-500 leading-relaxed">
-                                    <strong>Disclaimer:</strong> This case study is for informational purposes only and represents historical performance.
-                                    Past investment results do not guarantee future returns. All investments carry risk of loss.
-                                    Please consult with qualified investment advisors before making investment decisions.
-                                    <strong> SEC Registration No: 2025050202717-12</strong>
+                                    <strong>{t("success_stories.detail.disclaimer")}</strong> {t("success_stories.detail.disclaimer_text")}
+                                    <strong> {t("success_stories.detail.sec_registration")}</strong>
                                 </p>
                             </div>
                         </motion.article>
@@ -168,18 +284,18 @@ export default function SuccessStoryPage({ params }) {
                     <div className="lg:col-span-1">
                         <div className="sticky top-8 space-y-6">
                             <motion.div className="bg-white rounded-xl shadow-lg p-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-4">Investment Details</h3>
+                                <h3 className="text-lg font-semibold text-gray-900 mb-4">{t("success_stories.detail.investment_details")}</h3>
                                 <div className="space-y-3">
-                                    <div className="flex justify-between"><span className="text-gray-600">Category:</span><span className="font-medium text-gray-900">{story.category}</span></div>
-                                    <div className="flex justify-between"><span className="text-gray-600">Location:</span><span className="font-medium text-gray-900">{story.location}</span></div>
-                                    <div className="flex justify-between"><span className="text-gray-600">Investment:</span><span className="font-medium text-gray-900">{story.funding}</span></div>
-                                    <div className="flex justify-between"><span className="text-gray-600">Team Size:</span><span className="font-medium text-gray-900">{story.teamSize}</span></div>
-                                    <div className="flex justify-between"><span className="text-gray-600">Year:</span><span className="font-medium text-gray-900">{story.year}</span></div>
+                                    <div className="flex justify-between"><span className="text-gray-600">{t("success_stories.detail.category")}</span><span className="font-medium text-gray-900">{t(`success_stories.categories.${story.category}`)}</span></div>
+                                    <div className="flex justify-between"><span className="text-gray-600">{t("success_stories.detail.location")}</span><span className="font-medium text-gray-900">{story.location}</span></div>
+                                    <div className="flex justify-between"><span className="text-gray-600">{t("success_stories.detail.investment")}</span><span className="font-medium text-gray-900">{story.funding}</span></div>
+                                    <div className="flex justify-between"><span className="text-gray-600">{t("success_stories.detail.team_size")}</span><span className="font-medium text-gray-900">{story.teamSize}</span></div>
+                                    <div className="flex justify-between"><span className="text-gray-600">{t("success_stories.detail.year")}</span><span className="font-medium text-gray-900">{story.year}</span></div>
                                 </div>
                             </motion.div>
 
                             <motion.div className="bg-white rounded-xl shadow-lg p-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-4">Impact Metrics</h3>
+                                <h3 className="text-lg font-semibold text-gray-900 mb-4">{t("success_stories.detail.impact_metrics")}</h3>
                                 <div className="text-center">
                                     <div className="text-3xl font-bold text-green-600 mb-2">{story.impact}</div>
                                     <div className="text-sm text-gray-600">{story.impactText}</div>
@@ -187,9 +303,9 @@ export default function SuccessStoryPage({ params }) {
                             </motion.div>
 
                             <motion.div className="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-xl shadow-lg p-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
-                                <h3 className="text-lg font-semibold mb-3">Investment Opportunities</h3>
-                                <p className="text-green-100 text-sm mb-4">Discover similar investment opportunities in our portfolio.</p>
-                                <button className="w-full bg-white text-green-600 py-2 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors">Learn More</button>
+                                <h3 className="text-lg font-semibold mb-3">{t("success_stories.detail.investment_opportunities")}</h3>
+                                <p className="text-green-100 text-sm mb-4">{t("success_stories.detail.investment_opportunities_desc")}</p>
+                                <button className="w-full bg-white text-green-600 py-2 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors">{t("success_stories.detail.learn_more")}</button>
                             </motion.div>
                         </div>
                     </div>
@@ -198,7 +314,7 @@ export default function SuccessStoryPage({ params }) {
                 {/* Related Stories */}
                 {relatedStories.length > 0 && (
                     <motion.section className="mt-16" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}>
-                        <h2 className="text-3xl font-bold text-gray-900 mb-8">Related Success Stories</h2>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-8">{t("success_stories.detail.related_stories")}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {relatedStories.map((relatedStory, index) => (
                                 <Link href={`/success-stories/${relatedStory.slug}`} key={index}>
@@ -206,7 +322,7 @@ export default function SuccessStoryPage({ params }) {
                                         <div className="relative h-48">
                                             <Image src={relatedStory.image} alt={relatedStory.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                                             <div className="absolute top-4 left-4">
-                                                <span className="text-xs bg-white/90 text-gray-800 px-2 py-1 rounded-full font-medium">{relatedStory.category}</span>
+                                                <span className="text-xs bg-white/90 text-gray-800 px-2 py-1 rounded-full font-medium">{t(`success_stories.categories.${relatedStory.category}`)}</span>
                                             </div>
                                         </div>
                                         <div className="p-6">

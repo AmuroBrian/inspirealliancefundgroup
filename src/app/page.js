@@ -18,6 +18,38 @@ export default function Home() {
   const sectionRef = useRef(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  const [currentLang, setCurrentLang] = useState("en");
+
+  // Static translations for hero section
+  const translations = {
+    en: {
+      welcome: "Welcome to Inspire Alliance Fund Group",
+      tagline1: "Empowering Global Financial Innovation",
+      tagline2: "Your Trusted Partner in Investment Excellence",
+      tagline3: "Building Tomorrow's Financial Solutions Today",
+      tagline4: "Where Vision Meets Financial Expertise",
+      tagline5: "Driving Sustainable Investment Growth",
+      tagline6: "Connecting Opportunities, Creating Value",
+      main_title: "Transforming Financial Futures",
+      description: "At Inspire Alliance Fund Group, we're dedicated to revolutionizing the financial landscape through innovative investment strategies and unwavering commitment to excellence. Our comprehensive suite of financial services, combined with cutting-edge technology and expert insights, empowers businesses and individuals to achieve their financial goals. Join us in shaping a future where financial success knows no bounds."
+    },
+    ja: {
+      welcome: "インスパイア・アライアンス・ファンド・グループへようこそ",
+      tagline1: "グローバル金融イノベーションの推進",
+      tagline2: "投資エクセレンスにおける信頼できるパートナー",
+      tagline3: "今日から明日の金融ソリューションを構築",
+      tagline4: "ビジョンと金融専門知識の融合",
+      tagline5: "持続可能な投資成長の推進",
+      tagline6: "機会を繋ぎ、価値を創造",
+      main_title: "金融の未来を変革",
+      description: "インスパイア・アライアンス・ファンド・グループでは、革新的な投資戦略と卓越性への揺るぎないコミットメントを通じて金融界の革命を目指しています。最先端技術と専門的洞察を組み合わせた包括的な金融サービスにより、企業と個人が財務目標を達成できるよう支援しています。金融成功に限界のない未来を共に創造しましょう。"
+    }
+  };
+
+  const t = (key) => {
+    const cleanKey = key.replace('hero.', '');
+    return translations[currentLang][cleanKey] || cleanKey;
+  };
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -26,6 +58,32 @@ export default function Home() {
       setShowContent(true);
     }, 500);
   };
+
+  // Listen for language changes from Header
+  useEffect(() => {
+    // Check for saved language on load
+    if (typeof window !== 'undefined') {
+      const savedLang = localStorage.getItem('selectedLanguage');
+      if (savedLang && (savedLang === 'en' || savedLang === 'ja')) {
+        setCurrentLang(savedLang);
+      }
+    }
+
+    // Listen for language change events
+    const handleLanguageChange = (event) => {
+      setCurrentLang(event.detail.language);
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('languageChanged', handleLanguageChange);
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('languageChanged', handleLanguageChange);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (!showContent) return;
@@ -89,13 +147,13 @@ export default function Home() {
               <h1 className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light">
                 <ReactTyped
                   strings={[
-                    'Welcome to Inspire Alliance Fund Group',
-                    'Empowering Global Financial Innovation',
-                    'Your Trusted Partner in Investment Excellence',
-                    'Building Tomorrow\'s Financial Solutions Today',
-                    'Where Vision Meets Financial Expertise',
-                    'Driving Sustainable Investment Growth',
-                    'Connecting Opportunities, Creating Value'
+                    t('hero.welcome'),
+                    t('hero.tagline1'),
+                    t('hero.tagline2'),
+                    t('hero.tagline3'),
+                    t('hero.tagline4'),
+                    t('hero.tagline5'),
+                    t('hero.tagline6')
                   ]}
                   typeSpeed={50}
                   backSpeed={30}
@@ -126,9 +184,9 @@ export default function Home() {
 
           {/* Bottom Black Info Bar with Blur */}
           <div className="relative bg-gradient-to-r from-black/95 via-black/85 to-black/70 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 backdrop-blur-md">
-            <p className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Transforming Financial Futures</p>
+            <p className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">{t('hero.main_title')}</p>
             <p className="text-white text-sm sm:text-base md:text-lg font-semibold leading-relaxed">
-              At Inspire Alliance Fund Group, we're dedicated to revolutionizing the financial landscape through innovative investment strategies and unwavering commitment to excellence. Our comprehensive suite of financial services, combined with cutting-edge technology and expert insights, empowers businesses and individuals to achieve their financial goals. Join us in shaping a future where financial success knows no bounds.
+              {t('hero.description')}
             </p>
           </div>
         </section>
