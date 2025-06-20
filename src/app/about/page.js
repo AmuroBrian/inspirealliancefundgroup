@@ -11,11 +11,11 @@ export const metadata = {
 
 const boardOfDirectors = [
     {
-        name: "Melody Santos",
+        name: "Brian Perez",
         position: "President",
-        since: "2019",
-        description: "Strategic leader with extensive experience in financial services and corporate governance, driving the company's vision and growth initiatives.",
-        slug: "melody-santos"
+        since: "2021",
+        description: "Technology leader with extensive experience in digital innovation and systems architecture, driving the company's vision for technological advancement and growth.",
+        slug: "brian-perez"
     },
     {
         name: "Rhia Alberto",
@@ -24,13 +24,7 @@ const boardOfDirectors = [
         description: "Experienced executive with deep expertise in business operations and strategic planning, supporting organizational development and expansion.",
         slug: "rhia-alberto"
     },
-    {
-        name: "Andrei Bergano",
-        position: "Executive Director",
-        since: "2021",
-        description: "Dynamic leader with proven track record in business development and strategic partnerships, overseeing key operational initiatives.",
-        slug: "andrei-bergano"
-    },
+
     {
         name: "Atty. Renato Pineda",
         position: "Non-Executive Director",
@@ -62,16 +56,10 @@ const corporateOfficers = [
         slug: "carlos-perez"
     },
     {
-        name: "Brian Perez",
+        name: "Jaime Flores",
         position: "Chief of Technology Officer",
         description: "Technology leadership, digital innovation strategies, and systems architecture to drive technological advancement and operational efficiency.",
-        slug: "brian-perez"
-    },
-    {
-        name: "Raphael Jeremy Reyes",
-        position: "Internal Audit",
-        description: "Audit planning and execution, financial review processes, and internal control evaluation for enhanced governance.",
-        slug: "raphael-jeremy-reyes"
+        slug: "jaime-flores"
     },
     {
         name: "Gerlie De Asis",
@@ -93,7 +81,7 @@ const corporateOfficers = [
     },
     {
         name: "Shelah Reynaldo",
-        position: "Secretary",
+        position: "Software Developer/Secretary",
         description: "Executive support, documentation management, and coordination of board and management communications.",
         slug: "shelah-reynaldo"
     },

@@ -5,19 +5,34 @@ import { notFound } from 'next/navigation';
 
 // Profile data for team members
 const profilesData = {
-    'melody-santos': {
-        name: 'Melody Santos',
+    'brian-perez': {
+        name: 'Brian Perez',
         position: 'President',
         category: 'Board of Directors',
-        since: '2019',
-        bio: `Melody Santos brings over 15 years of strategic leadership experience to Inspire Alliance Fund Group. As President, she drives the company's vision for empowering dreams and creating meaningful financial solutions.\n\nWhat inspired Melody to lead this organization is her passion for building meaningful relationships, creating strong connections, and gaining valuable leadership experience. She believes that leadership is not just about managing people—it's about inspiring others, learning together, and growing as a team. Leading this organization allows her to contribute to something greater while also developing both personally and professionally.\n\nHer long-term vision is for the company to grow into a successful, innovative, and impactful organization—one that is recognized not just for its achievements, but also for its values, commitment to excellence, and dedication to the people they serve. She wants to build a legacy that future generations can be proud of.\n\nFor Melody, success as a leader is measured not only by results, but by how you empower others. It's about guiding the team with integrity, earning trust, and creating a positive environment where everyone feels valued and motivated. A successful leader uplifts others, drives collective progress, and stays committed to the vision—especially in challenging times.`,
-        expertise: ['Strategic Leadership', 'Corporate Governance', 'Financial Services', 'International Business'],
-        education: 'MBA in Finance, University of the Philippines',
+        since: '2021',
+        bio: `Brian Perez drives our technology leadership and digital innovation strategies. His expertise in systems architecture and technological advancement ensures that our platform remains at the forefront of financial technology, providing our clients with secure and efficient digital solutions.\n\nAs President, his primary responsibility within the operations team is to oversee IT operations across the company. He manages and coordinates various IT-related projects and ensures that all technological platforms used within the office are running efficiently. This includes supervising system infrastructure, troubleshooting issues, and ensuring our IT services align with the organization's goals.\n\nTo ensure smooth daily operations, Brian actively monitors IT systems, tracks the progress of ongoing projects, and maintains regular communication with the team. He provides timely reports and updates to executive management, practices preventive maintenance, delegates tasks appropriately, and responds quickly to technical concerns to avoid disruptions.\n\nOne major challenge Brian faced was managing multiple IT projects simultaneously while leading a diverse team. Each project had different technical requirements and timelines, which required careful prioritization and communication. Through this experience, he learned that strong leadership, clear delegation of tasks, and understanding each team member's strengths are crucial to successfully handling complex operations. He also gained a deeper appreciation for proactive planning and protecting the company's IT infrastructure from potential risks.`,
+        expertise: ['Technology Leadership', 'Systems Architecture', 'Digital Innovation', 'Cybersecurity'],
+        education: 'BS Computer Science, Masters in Information Technology',
         achievements: [
-            'Led company expansion into 5 new international markets',
-            'Established partnerships with 14+ major real estate developers',
-            'Implemented innovative digital banking solutions',
-            'Recipient of Outstanding Business Leader Award 2023'
+            'Implemented state-of-the-art security protocols',
+            'Led development of mobile banking applications',
+            'Achieved 99.9% system uptime reliability',
+            'Pioneered blockchain integration for transactions'
+        ]
+    },
+    'jaime-flores': {
+        name: 'Jaime Flores',
+        position: 'Chief of Technology Officer',
+        category: 'Corporate Officers',
+        since: '2024',
+        bio: `Jaime Flores leads our technology initiatives with extensive experience in digital transformation and systems management. His expertise ensures that our technological infrastructure supports our business objectives while maintaining the highest standards of security and efficiency.`,
+        expertise: ['Technology Management', 'Digital Transformation', 'Systems Integration', 'IT Strategy'],
+        education: 'Bachelor of Science in Information Technology',
+        achievements: [
+            'Led successful digital transformation initiatives',
+            'Implemented robust IT security frameworks',
+            'Optimized system performance and reliability',
+            'Established comprehensive technology governance'
         ]
     },
     'carlos-perez': {
@@ -35,24 +50,9 @@ const profilesData = {
             'Reduced employee turnover by 30%'
         ]
     },
-    'brian-perez': {
-        name: 'Brian Perez',
-        position: 'Chief of Technology Officer',
-        category: 'Corporate Officers',
-        since: '2021',
-        bio: `Brian Perez drives our technology leadership and digital innovation strategies. His expertise in systems architecture and technological advancement ensures that our platform remains at the forefront of financial technology, providing our clients with secure and efficient digital solutions.\n\nAs Chief of Technology Officer, his primary responsibility within the operations team is to oversee IT operations across the company. He manages and coordinates various IT-related projects and ensures that all technological platforms used within the office are running efficiently. This includes supervising system infrastructure, troubleshooting issues, and ensuring our IT services align with the organization's goals.\n\nTo ensure smooth daily operations, Brian actively monitors IT systems, tracks the progress of ongoing projects, and maintains regular communication with the team. He provides timely reports and updates to executive management, practices preventive maintenance, delegates tasks appropriately, and responds quickly to technical concerns to avoid disruptions.\n\nOne major challenge Brian faced was managing multiple IT projects simultaneously while leading a diverse team. Each project had different technical requirements and timelines, which required careful prioritization and communication. Through this experience, he learned that strong leadership, clear delegation of tasks, and understanding each team member's strengths are crucial to successfully handling complex operations. He also gained a deeper appreciation for proactive planning and protecting the company's IT infrastructure from potential risks.`,
-        expertise: ['Technology Leadership', 'Systems Architecture', 'Digital Innovation', 'Cybersecurity'],
-        education: 'BS Computer Science, Masters in Information Technology',
-        achievements: [
-            'Implemented state-of-the-art security protocols',
-            'Led development of mobile banking applications',
-            'Achieved 99.9% system uptime reliability',
-            'Pioneered blockchain integration for transactions'
-        ]
-    },
     'rhia-alberto': {
         name: 'Rhia Alberto',
-        position: 'Marketing President',
+        position: 'Vice President',
         category: 'Board of Directors',
         since: '2020',
         bio: `In my role as Marketing President, I work closely with the President by collaborating and creating plans that our broader vision aligns with marketing strategies. I make sure to create clear, actionable, and successive business plans. I provide insight into what resonates with our audiences, how we're being perceived in the market, and where we have room to grow. I also make sure that our daily operation aligns with the vision and mission of the company and the vision of our President. I offer all the support I can give to our President. I make sure that all the campaigns we have don't just look good, they move the right message to the right people, with purpose. I see my role as helping connect business goals with creative execution so that our strategies actually land and lead.\n\nI'm motivated by the impact of intentional messaging—when you know exactly what you want to say and it lands well, that's powerful. I enjoy turning ideas into leadership. I see the joy to myself when I see the team progresses, when I gain people trust, relate to, or act on with the team works. It matters to me that what we put out there is not just visually strong, but also rooted in honesty and substance. I also really enjoy helping people on the team grow—seeing someone take ownership of a project and gain confidence is one of the best parts of leadership for me.\n\nThere was a time when one of our presenters couldn't make it to a scheduled client meeting. I immediately reached out to the client to inform them of the change and reassure them that a different presenter, equally capable and knowledgeable would step in. I emphasized that while the person was different, the level of professionalism and accuracy would be the same. We were able to proceed with the meeting on time, and it went smoothly. What stood out to me in that moment was how much presence of mind and a positive mindset matter in situations like these. Things don't always go as planned, but leadership is about adapting and ensuring the team and client experience remains strong.`,
@@ -65,21 +65,7 @@ const profilesData = {
             'Developed marketing automation tools'
         ]
     },
-    'andrei-bergano': {
-        name: 'Andrei Bergano',
-        position: 'Executive Director',
-        category: 'Board of Directors',
-        since: '2021',
-        bio: `Andrei Bergano is a dynamic leader with a proven track record in business development and strategic partnerships. His role involves overseeing key operational initiatives and ensuring that our services meet the highest standards of excellence while expanding our reach in both local and international markets.\n\nAs Executive Director, his daily responsibilities involve overseeing the organization's operations, ensuring that strategic initiatives are effectively implemented, and providing leadership to all departments. He works closely with the board and executive team to translate goals into actionable plans, monitor progress, and make data-driven decisions. Staying engaged with both internal teams and external stakeholders is also key to maintaining alignment and accountability.\n\nThis year, Andrei's top priorities include enhancing operational efficiency, driving innovation across departments, and strengthening organizational culture. He is also focused on expanding strategic partnerships and implementing systems that support long-term sustainability and growth. Most importantly, he aims to ensure that all projects and initiatives are aligned with the core mission and values.\n\nTo keep the team aligned with the company's mission, Andrei emphasizes clear communication, regular goal-setting, and continuous feedback. He believes in leading by example—demonstrating commitment to values in every decision and interaction. Regular team briefings, performance reviews, and collaborative planning sessions ensure everyone understands their role in achieving collective goals. Empowering people with purpose is the key to keeping the mission alive in everything they do.`,
-        expertise: ['Business Development', 'Strategic Partnerships', 'Operations Management', 'Client Relations'],
-        education: 'Bachelor of Science in Business Management, De La Salle University',
-        achievements: [
-            'Secured partnerships with major banking institutions',
-            'Increased client satisfaction rates to 98%',
-            'Launched innovative service delivery models',
-            'Established regional offices in key cities'
-        ]
-    },
+
     'atty-renato-pineda': {
         name: 'Atty. Renato Pineda',
         position: 'Non-Executive Director',
@@ -123,21 +109,6 @@ const profilesData = {
             'Established business relationships in 12 countries',
             'Led market entry strategies for Asian markets',
             'Expert in Japan-Philippines business relations'
-        ]
-    },
-    'raphael-jeremy-reyes': {
-        name: 'Raphael Jeremy Reyes',
-        position: 'Internal Audit',
-        category: 'Corporate Officers',
-        since: '2022',
-        bio: `Raphael Jeremy Reyes leads our internal audit functions with meticulous attention to detail and comprehensive understanding of financial controls. His expertise ensures that our operations maintain the highest standards of accuracy, compliance, and transparency in all business processes.\n\nThe primary goals of the internal audit department are to provide independent and objective assurance that the organization's risk management, governance, and internal control processes are operating effectively. We aim to identify areas of improvement, support operational efficiency, and help safeguard the company's assets. Ultimately, our role is to ensure that the organization is compliant, accountable, and prepared for future challenges.\n\nMaintaining objectivity and integrity starts with adhering to professional auditing standards and ethical principles. I ensure that my evaluations are based purely on facts, evidence, and documented processes free from personal bias or external influence. Open communication, confidentiality, and a strong sense of responsibility guide my work, and I maintain an independent mindset regardless of the audit subject.\n\nA strong control environment is one where leadership sets a clear tone at the top prioritizing ethics, compliance, and transparency. It includes well-documented policies, clearly defined responsibilities, and consistent enforcement of controls. More importantly, it's a culture where employees at all levels understand the importance of doing the right thing and feel empowered to raise concerns without fear.`,
-        expertise: ['Internal Auditing', 'Financial Controls', 'Risk Assessment', 'Compliance Management'],
-        education: 'CPA, Bachelor of Science in Accountancy, University of the Philippines',
-        achievements: [
-            'Implemented comprehensive audit frameworks',
-            'Identified cost savings opportunities worth ₱5M annually',
-            'Achieved 100% compliance rate in regulatory audits',
-            'Developed automated audit monitoring systems'
         ]
     },
     'gerlie-de-asis': {
@@ -312,7 +283,7 @@ export default function ProfilePage({ params }) {
                                                 <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg>
                                                 Main Responsibilities
                                             </h4>
-                                            <p className="text-gray-700 leading-relaxed">As Chief of Technology Officer, his primary responsibility within the operations team is to oversee IT operations across the company. He manages and coordinates various IT-related projects and ensures that all technological platforms used within the office are running efficiently. This includes supervising system infrastructure, troubleshooting issues, and ensuring our IT services align with the organization's goals.</p>
+                                            <p className="text-gray-700 leading-relaxed">As President, his primary responsibility within the operations team is to oversee IT operations across the company. He manages and coordinates various IT-related projects and ensures that all technological platforms used within the office are running efficiently. This includes supervising system infrastructure, troubleshooting issues, and ensuring our IT services align with the organization's goals.</p>
                                         </div>
                                         <div>
                                             <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
@@ -333,6 +304,30 @@ export default function ProfilePage({ params }) {
                                                 Challenges & Lessons
                                             </h4>
                                             <p className="text-gray-700 leading-relaxed">One major challenge Brian faced was managing multiple IT projects simultaneously while leading a diverse team. Each project had different technical requirements and timelines, which required careful prioritization and communication. Through this experience, he learned that strong leadership, clear delegation of tasks, and understanding each team member's strengths are crucial to successfully handling complex operations. He also gained a deeper appreciation for proactive planning and protecting the company's IT infrastructure from potential risks.</p>
+                                        </div>
+                                    </div>
+                                ) : profile.name === 'Jaime Flores' ? (
+                                    <div className="space-y-8">
+                                        <div>
+                                            <h4 className="flex items-center text-lg font-semibold text-blue-800 mb-2">
+                                                <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
+                                                Introduction
+                                            </h4>
+                                            <p className="text-gray-700 leading-relaxed">Jaime Flores leads our technology initiatives with extensive experience in digital transformation and systems management. His expertise ensures that our technological infrastructure supports our business objectives while maintaining the highest standards of security and efficiency.</p>
+                                        </div>
+                                        <div>
+                                            <h4 className="flex items-center text-lg font-semibold text-green-800 mb-2">
+                                                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg>
+                                                Technology Leadership
+                                            </h4>
+                                            <p className="text-gray-700 leading-relaxed">As Chief Technology Officer, Jaime oversees all technological aspects of the organization, ensuring that our systems remain cutting-edge, secure, and aligned with business objectives. He leads digital transformation initiatives and manages our technology infrastructure to support organizational growth.</p>
+                                        </div>
+                                        <div>
+                                            <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
+                                                <svg className="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                                Innovation & Strategy
+                                            </h4>
+                                            <p className="text-gray-700 leading-relaxed">Jaime focuses on implementing innovative solutions that enhance operational efficiency and drive digital transformation across all departments. His strategic approach to technology ensures sustainable growth and competitive advantage.</p>
                                         </div>
                                     </div>
                                 ) : profile.name === 'Carlos Perez' ? (
@@ -410,37 +405,6 @@ export default function ProfilePage({ params }) {
                                             <p className="text-gray-700 leading-relaxed">One significant challenge the team faced was adapting to rapid organizational changes during restructuring. It required clear communication, quick decision-making, and strong coordination across departments. From that experience, Gerlie learned the importance of flexibility, transparency, and the value of a united team when navigating through transitions.</p>
                                         </div>
                                     </div>
-                                ) : profile.name === 'Melody Santos' ? (
-                                    <div className="space-y-8">
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-blue-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
-                                                Introduction
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">Melody Santos brings over 15 years of strategic leadership experience to Inspire Alliance Fund Group. As President, she drives the company's vision for empowering dreams and creating meaningful financial solutions.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-green-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg>
-                                                Inspiration to Lead
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">What inspired Melody to lead this organization is her passion for building meaningful relationships, creating strong connections, and gaining valuable leadership experience. She believes that leadership is not just about managing people it's about inspiring others, learning together, and growing as a team. Leading this organization allows her to contribute to something greater while also developing both personally and professionally.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                                Long-term Vision
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">Her long-term vision is for the company to grow into a successful, innovative, and impactful organization one that is recognized not just for its achievements, but also for its values, commitment to excellence, and dedication to the people they serve. She wants to build a legacy that future generations can be proud of.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-purple-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01" /></svg>
-                                                Defining Success as a Leader
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">For Melody, success as a leader is measured not only by results, but by how you empower others. It's about guiding the team with integrity, earning trust, and creating a positive environment where everyone feels valued and motivated. A successful leader uplifts others, drives collective progress, and stays committed to the vision—especially in challenging times.</p>
-                                        </div>
-                                    </div>
                                 ) : profile.name === 'Rhia Alberto' ? (
                                     <div className="space-y-8">
                                         <div>
@@ -448,7 +412,7 @@ export default function ProfilePage({ params }) {
                                                 <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
                                                 Supporting the President
                                             </h4>
-                                            <p className="text-gray-700 leading-relaxed">In my role as Marketing President, I work closely with the President by collaborating and creating plans that our broader vision aligns with marketing strategies. I make sure to create clear, actionable, and successive business plans. I provide insight into what resonates with our audiences, how we're being perceived in the market, and where we have room to grow. I also make sure that our daily operation aligns with the vision and mission of the company and the vision of our President. I offer all the support I can give to our President. I make sure that all the campaigns we have don't just look good, they move the right message to the right people, with purpose. I see my role as helping connect business goals with creative execution so that our strategies actually land and lead.</p>
+                                            <p className="text-gray-700 leading-relaxed">In my role as Vice President, I work closely with the President by collaborating and creating plans that our broader vision aligns with marketing strategies. I make sure to create clear, actionable, and successive business plans. I provide insight into what resonates with our audiences, how we're being perceived in the market, and where we have room to grow. I also make sure that our daily operation aligns with the vision and mission of the company and the vision of our President. I offer all the support I can give to our President. I make sure that all the campaigns we have don't just look good, they move the right message to the right people, with purpose. I see my role as helping connect business goals with creative execution so that our strategies actually land and lead.</p>
                                         </div>
                                         <div>
                                             <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
@@ -463,37 +427,6 @@ export default function ProfilePage({ params }) {
                                                 Proud Leadership Moment
                                             </h4>
                                             <p className="text-gray-700 leading-relaxed">There was a time when one of our presenters couldn't make it to a scheduled client meeting. I immediately reached out to the client to inform them of the change and reassure them that a different presenter, equally capable and knowledgeable would step in. I emphasized that while the person was different, the level of professionalism and accuracy would be the same. We were able to proceed with the meeting on time, and it went smoothly. What stood out to me in that moment was how much presence of mind and a positive mindset matter in situations like these. Things don't always go as planned, but leadership is about adapting and ensuring the team and client experience remains strong.</p>
-                                        </div>
-                                    </div>
-                                ) : profile.name === 'Andrei Bergano' ? (
-                                    <div className="space-y-8">
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-blue-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
-                                                Introduction
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">Andrei Bergano is a dynamic leader with a proven track record in business development and strategic partnerships. His role involves overseeing key operational initiatives and ensuring that our services meet the highest standards of excellence while expanding our reach in both local and international markets.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-green-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg>
-                                                Daily Responsibilities
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">As Executive Director, his daily responsibilities involve overseeing the organization's operations, ensuring that strategic initiatives are effectively implemented, and providing leadership to all departments. He works closely with the board and executive team to translate goals into actionable plans, monitor progress, and make data-driven decisions. Staying engaged with both internal teams and external stakeholders is also key to maintaining alignment and accountability.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                                Top Priorities
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">This year, Andrei's top priorities include enhancing operational efficiency, driving innovation across departments, and strengthening organizational culture. He is also focused on expanding strategic partnerships and implementing systems that support long-term sustainability and growth. Most importantly, he aims to ensure that all projects and initiatives are aligned with the core mission and values.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-purple-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01" /></svg>
-                                                Team Alignment
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">To keep the team aligned with the company's mission, Andrei emphasizes clear communication, regular goal-setting, and continuous feedback. He believes in leading by example—demonstrating commitment to values in every decision and interaction. Regular team briefings, performance reviews, and collaborative planning sessions ensure everyone understands their role in achieving collective goals. Empowering people with purpose is the key to keeping the mission alive in everything they do.</p>
                                         </div>
                                     </div>
                                 ) : profile.name === 'Atty. Renato Pineda' ? (
@@ -558,66 +491,41 @@ export default function ProfilePage({ params }) {
                                             <p className="text-gray-700 leading-relaxed">As companies grow, complexity increases and so do risks. Independent oversight adds an essential layer of objectivity and governance, making sure growth decisions are well-informed and aligned with the mission. It helps maintain the integrity of the organization as it scales.</p>
                                         </div>
                                     </div>
-                                ) : profile.name === 'Raphael Jeremy Reyes' ? (
+                                ) : profile.name === 'Gerlie De Asis' ? (
                                     <div className="space-y-8">
                                         <div>
                                             <h4 className="flex items-center text-lg font-semibold text-blue-800 mb-2">
                                                 <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
                                                 Introduction
                                             </h4>
-                                            <p className="text-gray-700 leading-relaxed">Raphael Jeremy Reyes leads our internal audit functions with meticulous attention to detail and comprehensive understanding of financial controls. His expertise ensures that our operations maintain the highest standards of accuracy, compliance, and transparency in all business processes.</p>
+                                            <p className="text-gray-700 leading-relaxed">Gerlie De Asis oversees our human resources and administrative operations with a focus on creating a positive work environment and supporting employee development. Her leadership ensures that our team has the resources and support needed to deliver exceptional service to our clients.</p>
                                         </div>
                                         <div>
                                             <h4 className="flex items-center text-lg font-semibold text-green-800 mb-2">
                                                 <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg>
-                                                Main Goals
+                                                Main Responsibilities
                                             </h4>
-                                            <p className="text-gray-700 leading-relaxed">The primary goals of the internal audit department are to provide independent and objective assurance that the organization's risk management, governance, and internal control processes are operating effectively. We aim to identify areas of improvement, support operational efficiency, and help safeguard the company's assets. Ultimately, our role is to ensure that the organization is compliant, accountable, and prepared for future challenges.</p>
+                                            <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                                                <li>Oversee recruitment and onboarding</li>
+                                                <li>Manage employee relations</li>
+                                                <li>Implement HR policies</li>
+                                                <li>Ensure compliance with labor regulations</li>
+                                                <li>Support administrative needs by coordinating with various departments</li>
+                                            </ul>
                                         </div>
                                         <div>
                                             <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
                                                 <svg className="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                                Objectivity & Integrity
+                                                Operational Approach
                                             </h4>
-                                            <p className="text-gray-700 leading-relaxed">Maintaining objectivity and integrity starts with adhering to professional auditing standards and ethical principles. I ensure that my evaluations are based purely on facts, evidence, and documented processes free from personal bias or external influence. Open communication, confidentiality, and a strong sense of responsibility guide my work, and I maintain an independent mindset regardless of the audit subject.</p>
+                                            <p className="text-gray-700 leading-relaxed">Gerlie prioritizes clear communication, efficient processes, and team coordination. By fostering an environment of accountability and mutual support, she ensures tasks are executed on time and issues are addressed proactively. Regular check-ins, proper documentation, and staff engagement initiatives also play a key role in maintaining daily operational efficiency.</p>
                                         </div>
                                         <div>
                                             <h4 className="flex items-center text-lg font-semibold text-purple-800 mb-2">
                                                 <svg className="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01" /></svg>
-                                                Strong Control Environment
+                                                Challenges & Lessons
                                             </h4>
-                                            <p className="text-gray-700 leading-relaxed">A strong control environment is one where leadership sets a clear tone at the top prioritizing ethics, compliance, and transparency. It includes well-documented policies, clearly defined responsibilities, and consistent enforcement of controls. More importantly, it's a culture where employees at all levels understand the importance of doing the right thing and feel empowered to raise concerns without fear.</p>
-                                        </div>
-                                    </div>
-                                ) : profile.name === 'Neil Brion' ? (
-                                    <div className="space-y-8">
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-blue-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
-                                                Introduction
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">Neil Brion is responsible for comprehensive security management across all our operations, ensuring the protection of company assets, client information, and personnel. His proactive approach to security and risk mitigation helps maintain our reputation for trustworthiness and reliability.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-green-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg>
-                                                Security Measures
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">To ensure the safety of both the company and its personnel, we have implemented a combination of physical, digital, and procedural security measures. These include controlled access to facilities, CCTV surveillance, identity verification protocols, data protection policies, and emergency response plans. Regular security drills, risk assessments, and staff awareness programs are also part of our proactive safety strategy.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                                Threat Management & Response
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">We follow a structured risk management process that includes early detection, threat assessment, and rapid response. When a potential threat is identified, we immediately conduct an investigation, activate our incident response protocols, and coordinate with relevant departments to contain and resolve the issue. Continuous monitoring and post-incident analysis ensure we learn and improve from every situation.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-purple-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01" /></svg>
-                                                Proactive Security Approach
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">In today's dynamic and unpredictable environment, a proactive security approach is essential. Threats can emerge from both physical and digital sources, and waiting to react is no longer enough. Being proactive means anticipating risks, staying updated with trends, and implementing preventative measures before incidents occur. It not only protects assets and people—it builds trust, resilience, and long-term organizational stability.</p>
+                                            <p className="text-gray-700 leading-relaxed">One significant challenge the team faced was adapting to rapid organizational changes during restructuring. It required clear communication, quick decision-making, and strong coordination across departments. From that experience, Gerlie learned the importance of flexibility, transparency, and the value of a united team when navigating through transitions.</p>
                                         </div>
                                     </div>
                                 ) : profile.name === 'Shelah Reynaldo' ? (

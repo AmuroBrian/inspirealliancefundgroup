@@ -1,12 +1,6 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import BankingPartners from '../../components/BankingPartners';
-import SECPhilippines from '../../components/SECPhilippines';
-import RealEstate from '../../components/RealEstate';
-import TravelSecurity from '../../components/TravelSecurity';
-import JapaneseProducts from '../../components/JapaneseProducts';
-import InspireWallet from '../../components/InspireWallet';
+import ServicePageContent from '../../components/ServicePageContent';
 
 const servicesMetadata = {
     'inspire-wallet-fintech-mobile-application': {
@@ -70,308 +64,37 @@ export function generateMetadata({ params }) {
     };
 }
 
-const servicesData = {
-    'inspire-wallet-fintech-mobile-application': {
-        title: 'Inspire Wallet - FinTech Mobile Application',
-        description: `Inspire Wallet is your comprehensive financial companion designed to revolutionize how you manage your investments, track your portfolio, and handle financial transactions in the digital age. As a cutting-edge FinTech mobile application developed by Inspire Holdings Incorporated, we combine advanced financial technology with user-friendly design to create the ultimate investment management experience.
-
-Our mobile application serves as your personal investment command center, providing real-time portfolio monitoring, advanced analytics, and comprehensive financial management tools all in one secure platform. Whether you're a seasoned investor managing a diverse portfolio or someone just beginning their investment journey, Inspire Wallet provides the sophisticated tools and insights you need to make informed financial decisions.
-
-At the core of Inspire Wallet is our advanced investment tracking system that monitors your portfolio performance in real-time. Our platform aggregates data from multiple sources to provide you with comprehensive insights into your asset performance, market trends, and investment opportunities. You can track stocks, bonds, mutual funds, and other investment vehicles with precision, receiving detailed analytics that help you understand not just where your money is, but how it's performing relative to market benchmarks and your personal financial goals.
-
-Our stock management features provide professional-grade tools for monitoring your equity holdings with real-time market data, price alerts, and comprehensive market analysis. Whether you're trading local stocks or international equities, our platform keeps you informed with up-to-the-minute information about market movements, news that could impact your holdings, and analytical tools that help you time your trades effectively.
-
-Withdrawal management is simplified through our intuitive interface that tracks all your financial outflows while providing strategic planning tools to help you optimize your cash flow. Our system maintains detailed records of all withdrawals, categorizes them for tax purposes, and provides projections to help you plan future financial moves with confidence and strategic foresight.
-
-Transaction history management has never been more comprehensive. Our platform maintains detailed records of all your financial activities, including investments, trades, withdrawals, and transfers, all organized in an easily searchable and exportable format. This comprehensive transaction tracking not only helps you monitor your financial activity but also simplifies tax preparation and financial planning by providing complete documentation of your investment journey.
-
-Our advanced trading platform provides comprehensive support for both cryptocurrency and forex markets, essential for modern investors seeking diverse trading opportunities. With real-time market data, professional charting tools, and support for major crypto assets and global currencies, our trading platform helps you make informed trading decisions while accessing multiple markets from a single, secure interface.
-
-Security is paramount in everything we do. Inspire Wallet employs bank-level encryption, multi-factor authentication, and advanced cybersecurity protocols to ensure your sensitive financial information remains completely secure. Our security infrastructure meets international standards for financial data protection, giving you peace of mind that your investment information and personal data are protected by the same security measures used by major financial institutions.
-
-The user experience is designed around simplicity without sacrificing functionality. Our intuitive interface makes complex financial operations accessible to users of all experience levels, while our advanced features satisfy the needs of sophisticated investors. The app's clean design and logical navigation ensure you can access the information and tools you need quickly and efficiently.
-
-Our mobile-first approach means you have access to your complete financial dashboard wherever you are. Whether you're checking portfolio performance during your commute, executing trades while traveling, or reviewing transaction history during a meeting, Inspire Wallet keeps your financial information accessible and actionable through your mobile device.
-
-Regular updates ensure that Inspire Wallet continues to evolve with changing market conditions and user needs. Our development team continuously adds new features, improves existing functionality, and ensures compatibility with the latest mobile operating systems and security standards. Version 2.0.3, our latest release, includes important bug fixes and performance improvements that enhance your overall user experience.
-
-The app has earned a perfect 5.0-star rating from users who appreciate its comprehensive functionality, robust security, and user-friendly design. This rating reflects our commitment to providing exceptional service and continuously improving our platform based on user feedback and evolving financial market needs.
-
-Inspire Wallet is available free of charge on both iOS and Android platforms, making sophisticated investment management tools accessible to everyone regardless of their mobile device preference. There are no subscription fees or hidden costs – our goal is to democratize access to professional-grade financial management tools.
-
-Our customer support team is committed to helping you maximize the value you receive from Inspire Wallet. Whether you need help setting up your account, understanding specific features, or troubleshooting technical issues, our support team is available to ensure you have a seamless experience with our platform.
-
-Download Inspire Wallet today from the Apple App Store or Google Play Store and experience the future of mobile financial management. Join thousands of satisfied users who have already discovered how Inspire Wallet can transform their approach to investment management and financial planning.
-
-Take control of your financial future with Inspire Wallet – where advanced technology meets simplified financial management, and where your investment success becomes our shared mission.`
-    },
-    'international-banking-solutions': {
-        title: 'International Banking Solutions',
-        description: `Navigating the Philippine banking system as a foreigner can be challenging and overwhelming. At Inspire Alliance Fund Group, we specialize in providing comprehensive banking solutions specifically designed to help international clients successfully establish their financial presence in the Philippines. Our expert team understands the unique challenges foreigners face when trying to open bank accounts in the Philippines, and we're here to make the process seamless and stress-free.
-
-    Our specialized consultancy services guide foreign nationals through every step of the bank account opening process in the Philippines. We work closely with our partner banks including BDO (Banco de Oro), BPI (Bank of the Philippine Islands), CTBC Bank, UnionBank, and Security Bank to ensure you have access to the best banking options that suit your specific needs and circumstances. Whether you're an expatriate working in the Philippines, a foreign investor, an overseas Filipino worker (OFW) family member, or an international business owner, we provide tailored solutions to meet your banking requirements.
-
-    The Philippine banking landscape has specific requirements and documentation standards that can be complex for foreigners to navigate independently. Our experienced consultants provide detailed guidance on all necessary documentation, including valid visa requirements, proof of income, employment certificates, tax identification numbers (TIN), and other essential documents required by Philippine banks. We help you understand the various account types available, from basic savings accounts to premium banking packages, ensuring you choose the option that best aligns with your financial goals.
-
-    Beyond account opening, our comprehensive advisory services extend to payment solutions and financial growth strategies specifically tailored for the Philippine market. We provide expert guidance on how to efficiently handle various payment methods, including online banking, mobile banking applications, remittance services, and international wire transfers. Our team helps you understand the local payment ecosystem, including popular digital payment platforms like GCash, PayMaya, and other fintech solutions that are widely used in the Philippines.
-
-    Our financial growth advisory services focus on helping foreign clients maximize their financial opportunities within the Philippine market. We provide insights into local investment opportunities, time deposit products, foreign currency savings accounts, and other wealth-building instruments available through Philippine banks. Our consultants offer personalized advice on currency exchange strategies, helping you minimize costs when converting foreign currencies and timing your transactions for optimal rates.
-
-    We also provide ongoing support for managing your Philippine banking relationships, including assistance with account maintenance, understanding local banking fees and charges, setting up automatic payments for utilities and other services, and navigating any issues that may arise with your banking relationships. Our team stays updated with the latest banking regulations and policy changes that may affect foreign account holders, ensuring you remain compliant with all local requirements.
-
-    For business clients, we offer specialized services including corporate account setup, merchant account facilitation, and business banking optimization strategies. We help foreign entrepreneurs and investors understand the Philippine business banking landscape, including requirements for different business structures, foreign investment guidelines, and regulatory compliance for international businesses operating in the Philippines.
-
-    Our commitment extends beyond just opening accounts – we build long-term relationships with our clients, providing ongoing financial consulting to help you grow and manage your wealth effectively in the Philippines. We understand that successful financial management in a foreign country requires local expertise combined with international perspective, and that's exactly what we provide.
-
-    Trust Inspire Alliance Fund Group to be your reliable partner in establishing and growing your financial presence in the Philippines, where local expertise meets international standards, and your financial success becomes our shared achievement.`
-    },
-    'strategic-business-advisory': {
-        title: 'Strategic Business Advisory',
-        description: `Starting a business in the Philippines as a foreigner can be complex and overwhelming, with numerous legal requirements, registration processes, and regulatory compliance measures to navigate. At Inspire Alliance Fund Group, we specialize in providing comprehensive business advisory services specifically designed to help international entrepreneurs successfully establish and operate their businesses in the Philippines.
-
-    Our expert team understands the unique challenges foreign investors face when entering the Philippine business landscape. We provide end-to-end consulting services that guide you through every step of the business establishment process, from initial planning and market research to full operational setup and ongoing compliance management.
-
-    Our comprehensive business registration services begin with helping you choose the most appropriate business structure for your specific needs and circumstances. Whether you're looking to establish a corporation, partnership, sole proprietorship, or foreign branch office, we provide detailed guidance on the advantages and requirements of each business type. We assist with all necessary documentation and ensure compliance with Philippine corporate law and foreign investment regulations.
-
-    One of our core specialties is Securities and Exchange Commission (SEC) registration, a critical requirement for establishing any business entity in the Philippines. Our experienced consultants handle the entire SEC registration process, including preparation of all required documents such as Articles of Incorporation, By-Laws, corporate resolutions, and other essential paperwork. We ensure all submissions meet SEC requirements and standards, minimizing delays and avoiding common pitfalls that often plague foreign investors navigating this process independently.
-
-    Beyond SEC registration, we provide comprehensive support for all other regulatory requirements including Bureau of Internal Revenue (BIR) registration for tax identification numbers and permits, Department of Trade and Industry (DTI) registration for business names, local government unit permits and licenses, and specialized industry permits depending on your business activities. Our team stays current with all regulatory changes and requirements, ensuring your business remains compliant throughout the registration process.
-
-    Our business banking services complement our registration expertise by helping you establish corporate bank accounts with leading Philippine financial institutions. We understand the specific documentation and requirements that foreign-owned businesses must meet to open business accounts, and we work closely with our banking partners to streamline this process. Our team assists with preparation of all necessary banking documents, coordinates with bank representatives, and ensures you have access to the financial services your business needs to operate effectively.
-
-    Company protection services form another crucial component of our advisory offerings. We provide guidance on intellectual property protection, trademark registration, copyright protection, and other measures to safeguard your business interests in the Philippines. Our team helps you understand local laws regarding business protection and implements appropriate safeguards to protect your investments, trade secrets, and competitive advantages.
-
-    Our strategic planning services extend beyond initial setup to include ongoing business development support. We provide market analysis and competitive intelligence to help you understand the Philippine business environment, identify opportunities for growth, and develop effective strategies for market penetration. Our consultants offer insights into local consumer behavior, cultural considerations that impact business operations, and strategies for building relationships with local partners and stakeholders.
-
-    We also provide ongoing compliance monitoring and support to ensure your business continues to meet all regulatory requirements after establishment. This includes assistance with annual compliance requirements, tax filing support, regulatory reporting, and updates on changing laws and regulations that may impact your business operations.
-
-    For businesses requiring specialized permits or operating in regulated industries, we provide expert guidance on sector-specific requirements. Whether you're establishing a business in food service, retail, manufacturing, technology, or professional services, our team has the expertise to navigate industry-specific regulations and ensure proper compliance.
-
-    Our commitment to your success extends beyond the initial setup phase. We build long-term relationships with our clients, providing ongoing strategic advice, business development support, and expansion planning as your business grows and evolves in the Philippine market. We understand that successful business operations require continuous adaptation to local market conditions, and we're here to support you throughout your business journey.
-
-    Trust Inspire Alliance Fund Group to be your comprehensive partner in establishing and growing your business presence in the Philippines, where expert guidance meets practical execution, and your entrepreneurial vision becomes a thriving Philippine business reality.`
-    },
-    'comprehensive-travel-security': {
-        title: 'Comprehensive Travel Security',
-        description: `In an interconnected world where business and leisure travel are essential, comprehensive travel security has become paramount. Our travel protection services offer peace of mind through extensive coverage and proactive support, ensuring you can focus on your journey while we handle your security and safety concerns.
-
-    Our comprehensive approach to travel security encompasses multiple layers of protection, from pre-travel risk assessment to 24/7 emergency support during your journey. We understand that each traveler has unique needs and risk profiles, which is why we offer customized protection plans tailored to your specific travel patterns and destinations.
-
-    Our services include detailed destination briefings, real-time security monitoring, emergency medical coverage, evacuation services, and comprehensive travel insurance. We maintain a global network of security professionals and medical facilities, ensuring rapid response capabilities regardless of your location.
-
-    Whether you're traveling for business expansion, investment opportunities, or leisure, our team provides continuous monitoring of global security conditions, weather patterns, and political developments that could impact your travel plans. We offer proactive alerts and alternative routing suggestions to help you avoid potential disruptions.
-
-    Our travel security specialists work closely with corporate clients to develop comprehensive travel policies, conduct security training for frequent travelers, and establish emergency protocols. For individual travelers, we provide personalized security briefings and 24/7 concierge support.
-
-    Experience the confidence that comes with comprehensive travel protection, where your safety is our priority, and your journey is our responsibility.`
-    },
-    'premium-real-estate-solutions': {
-        title: 'Premium Real Estate Solutions',
-        description: `The Philippine real estate market offers exceptional opportunities for both local and international investors, with a rapidly growing economy, expanding urban centers, and increasing demand for quality housing and commercial spaces. At Inspire Alliance Fund Group, we connect you with the Philippines' most reputable real estate developers through our extensive network of trusted partners, ensuring you have access to the best properties that match your lifestyle and investment goals.
-
-    Our comprehensive real estate solutions are designed to help you find suitable and affordable properties across the Philippines, whether you're looking for your dream home, a smart investment opportunity, or commercial real estate for your business needs. We work with over 14 affiliated developers, including industry leaders like Ayala Land, SMDC, Megaworld, Century Properties, Filinvest, Federal Land, and many others, giving you access to a diverse portfolio of properties from luxury condominiums to affordable housing solutions.
-        
-    Our expert team understands that choosing the right property is one of the most important decisions you'll make, which is why we provide personalized consultation services to help you navigate the Philippine real estate landscape. We take the time to understand your specific requirements, budget constraints, and long-term goals, then match you with properties that align with your needs from our extensive network of developer partners.
-
-    From luxury high-rise condominiums in Metro Manila's central business districts to affordable house and lot packages in master-planned communities, our affiliated developers offer a comprehensive range of property types to suit different lifestyles and budgets. Whether you're interested in modern urban living with world-class amenities, family-friendly suburban communities, or investment-grade properties with strong rental potential, we have options that meet your criteria.
-
-    Our services extend beyond simple property matching to include comprehensive support throughout your property acquisition journey. We provide detailed information about each development, including location advantages, amenities, payment schemes, and investment potential. Our team assists with site visits, developer meetings, and negotiations to ensure you get the best possible terms for your property purchase.
-
-    We understand that financing is often a crucial consideration in property acquisition, which is why we work closely with our developer partners to provide information about available payment schemes, in-house financing options, and bank financing partnerships. Many of our affiliated developers offer flexible payment terms, including low down payment options, extended payment periods, and competitive interest rates to make property ownership more accessible.
-
-    For investors, we provide detailed market analysis and investment projections to help you make informed decisions about property purchases. Our team offers insights into rental yields, capital appreciation potential, and market trends that could impact your investment returns. We also provide guidance on property management services and rental strategies to help you maximize your investment returns.
-
-    Our commitment to your success extends beyond the initial property purchase. We maintain ongoing relationships with our clients, providing updates on new developments, market opportunities, and investment strategies. We also facilitate connections with property management companies, legal services, and other professionals you may need throughout your property ownership journey.
-
-    The Philippine real estate market offers unique advantages including affordable property prices compared to other major Asian markets, strong economic growth driving demand, government infrastructure investments improving connectivity, and a growing middle class increasing housing demand. Our affiliated developers are at the forefront of these market trends, developing properties in strategic locations with excellent growth potential.
-
-    Whether you're a first-time homebuyer, an experienced investor, or someone looking to relocate to the Philippines, our premium real estate solutions provide the expertise, connections, and support you need to make successful property decisions. We believe that everyone deserves access to quality housing and smart investment opportunities, and we're committed to making that vision a reality through our comprehensive real estate services.
-
-    To explore our complete portfolio of available properties and get detailed information about units, floor plans, pricing, and amenities from all our affiliated developers, we invite you to visit our dedicated Inspire Real Estate platform. This comprehensive online resource provides you with direct access to the latest listings, virtual tours, and detailed property information, making it easier than ever to find your perfect property match.
-
-    Trust Inspire Alliance Fund Group to be your reliable partner in Philippine real estate, where expert guidance meets exceptional opportunities, and your property dreams become reality through our network of trusted developer partnerships.`
-    },
-    'japanese-product-innovation': {
-        title: 'Japanese Product Innovation',
-        description: `Japan stands at the forefront of global innovation, consistently producing products and technologies that define industry standards and consumer expectations worldwide. At Inspire Alliance Fund Group, we proudly bring authentic Japanese products to the Philippines, offering Filipino consumers access to the exceptional quality, innovation, and craftsmanship that Japan is renowned for.
-
-    Our Japanese Product Innovation service represents a carefully curated collection of premium Japanese products, ranging from advanced health technology and automotive solutions to beauty products and artificial intelligence applications. Each product in our portfolio has been selected for its authenticity, quality, and potential to enhance the lives of Filipino consumers while maintaining the cultural integrity that makes Japanese products so distinctive.
-
-    We understand that Japanese products represent more than just merchandise—they embody a philosophy of continuous improvement, attention to detail, and commitment to excellence that has made Japan a global leader in innovation. Our marketing strategy focuses on educating Filipino consumers about these values while making these exceptional products accessible and affordable in the local market.
-
-    Our product portfolio includes Alpha HT health technology solutions that bring advanced wellness applications to the Philippine healthcare market, Denso automotive technology that represents world-class precision engineering, Pure Exom beauty and wellness products crafted with traditional Japanese expertise, and Stems AI artificial intelligence solutions that showcase Japan's leadership in cutting-edge technology.
-
-    From Clinience clinical solutions that offer professional-grade healthcare innovations to DeskNet NEO business management systems that enhance enterprise efficiency, our products span multiple categories including health technology, automotive solutions, digital innovations, business applications, manufacturing solutions, beauty and wellness products, artificial intelligence, and lifestyle enhancements.
-
-    What sets our approach apart is our commitment to maintaining the authentic Japanese character of each product while ensuring they meet the specific needs and preferences of the Philippine market. We work closely with Japanese manufacturers and technology developers to ensure that every product maintains its original quality standards while being adapted for local market requirements and regulatory compliance.
-
-    Our comprehensive marketing approach includes detailed product education, cultural context explanation, and demonstration of the unique value propositions that make Japanese products superior. We believe that Filipino consumers deserve access to the same high-quality products that have made Japan a global leader in innovation, and we're committed to making that access both convenient and affordable.
-
-    The Philippine market represents an excellent opportunity for Japanese product innovation, with a growing middle class that appreciates quality, a tech-savvy population that embraces innovation, and a cultural affinity for Japanese excellence that spans entertainment, technology, and lifestyle products. Our marketing strategy leverages these market dynamics to create authentic connections between Japanese innovation and Filipino consumer needs.
-
-    Whether you're interested in health technology that can improve your wellness routine, automotive solutions that enhance your vehicle's performance, beauty products that incorporate traditional Japanese ingredients and techniques, or business solutions that can streamline your operations, our Japanese product portfolio offers authentic options that deliver exceptional value.
-
-    For detailed information about our complete Japanese product collection, including specifications, pricing, availability, and exclusive offers, we invite you to visit our dedicated marketing platform at inspirenextglobal.com. This comprehensive resource provides direct access to our full product catalog, allowing you to explore the innovations that represent the best of Japanese craftsmanship and technology.
-
-    Our commitment extends beyond just product sales to include ongoing customer support, product education, and ensuring that every Filipino consumer who chooses Japanese products through our platform experiences the exceptional quality and service that defines Japanese business culture. We're not just importing products—we're building bridges between Japanese innovation and Filipino aspirations for quality and excellence.
-
-    Experience the power of authentic Japanese innovation, where traditional craftsmanship meets cutting-edge technology, and where every product represents a commitment to excellence that has made Japan a global leader in quality and innovation. Discover how Japanese products can enhance your life, business, and future through our carefully curated collection of authentic innovations now available in the Philippines.`
-    }
-};
-
 export async function generateStaticParams() {
-    return Object.keys(servicesData).map((slug) => ({
+    const validSlugs = [
+        'inspire-wallet-fintech-mobile-application',
+        'international-banking-solutions',
+        'strategic-business-advisory',
+        'comprehensive-travel-security',
+        'premium-real-estate-solutions',
+        'japanese-product-innovation'
+    ];
+
+    return validSlugs.map((slug) => ({
         slug: slug,
     }));
 }
 
 export default function ServicePage({ params }) {
     const { slug } = params;
-    const service = servicesData[slug];
 
-    if (!service) {
+    // Check if the slug exists in our services
+    const validSlugs = [
+        'inspire-wallet-fintech-mobile-application',
+        'international-banking-solutions',
+        'strategic-business-advisory',
+        'comprehensive-travel-security',
+        'premium-real-estate-solutions',
+        'japanese-product-innovation'
+    ];
+
+    if (!validSlugs.includes(slug)) {
         notFound();
     }
 
-    return (
-        <div className="min-h-screen bg-gray-50">
-            {/* Hero Section with Geometric Background */}
-            <div className="relative overflow-hidden">
-                {/* Geometric Background Elements */}
-                <div
-                    className="absolute inset-0 opacity-90"
-                    style={{
-                        background: 'linear-gradient(135deg, rgba(128, 195, 42, 0.9) 0%, rgba(75, 136, 139, 0.9) 50%, rgba(56, 115, 175, 0.9) 100%)'
-                    }}
-                >
-                    {/* Geometric Shapes */}
-                    <div className="absolute top-0 left-0 w-full h-full">
-                        {/* Large Circle */}
-                        <div
-                            className="absolute -top-32 -right-32 w-64 h-64 rounded-full opacity-20"
-                            style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
-                        ></div>
-
-                        {/* Hexagon */}
-                        <div className="absolute top-20 left-10 w-24 h-24 opacity-15 transform rotate-45">
-                            <div
-                                className="w-full h-full"
-                                style={{
-                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                    clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
-                                }}
-                            ></div>
-                        </div>
-
-                        {/* Triangle */}
-                        <div
-                            className="absolute bottom-20 right-20 w-32 h-32 opacity-10"
-                            style={{
-                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
-                            }}
-                        ></div>
-
-                        {/* Diamond */}
-                        <div
-                            className="absolute top-1/3 left-1/4 w-16 h-16 opacity-20 transform rotate-45"
-                            style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
-                        ></div>
-
-                        {/* Lines */}
-                        <div className="absolute inset-0">
-                            <div
-                                className="absolute top-1/4 left-0 w-full h-0.5 opacity-10 transform -rotate-12"
-                                style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
-                            ></div>
-                            <div
-                                className="absolute bottom-1/3 left-0 w-full h-0.5 opacity-10 transform rotate-6"
-                                style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
-                            ></div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Title Section */}
-                <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-32">
-                    <div className="max-w-7xl mx-auto text-center">
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                            {service.title}
-                        </h1>
-                        <div className="w-32 h-1 bg-white/30 mx-auto"></div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Content Section */}
-            <div className="py-16 px-4 sm:px-6 lg:px-8">
-                <div className="max-w-4xl mx-auto">
-                    <div className="prose prose-lg max-w-none">
-                        <div className="text-gray-700 leading-relaxed space-y-6">
-                            {service.description.split('\n\n').map((paragraph, index) => (
-                                <p key={index} className="text-lg leading-8">
-                                    {paragraph.trim()}
-                                </p>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Inspire Wallet Section - Only for Inspire Wallet FinTech Mobile Application */}
-            {slug === 'inspire-wallet-fintech-mobile-application' && <InspireWallet />}
-
-            {/* Banking Partners Section - Only for International Banking Solutions */}
-            {slug === 'international-banking-solutions' && <BankingPartners />}
-
-            {/* SEC Philippines Section - Only for Strategic Business Advisory */}
-            {slug === 'strategic-business-advisory' && <SECPhilippines />}
-
-            {/* Real Estate Section - Only for Premium Real Estate Solutions */}
-            {slug === 'premium-real-estate-solutions' && <RealEstate />}
-
-            {/* SEC Philippines Section - Only for Strategic Business Advisory */}
-            {slug === 'comprehensive-travel-security' && <TravelSecurity />}
-
-            {/* Japanese Products Section - Only for Japanese Product Innovation */}
-            {slug === 'japanese-product-innovation' && <JapaneseProducts />}
-
-            {/* Content Section Continued */}
-            <div className="px-4 sm:px-6 lg:px-8 pb-20">
-                <div className="max-w-4xl mx-auto">
-                    {/* Call to Action */}
-                    <div className="mt-16 mb-16 text-center">
-                        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                            <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                                Ready to Get Started?
-                            </h3>
-                            <p className="text-gray-600 mb-8">
-                                Contact our experts today to learn more about how we can help you achieve your goals.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Link
-                                    href="/#contact"
-                                    className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                                    style={{
-                                        background: 'linear-gradient(135deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)'
-                                    }}
-                                >
-                                    Contact Us
-                                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                    </svg>
-                                </Link>
-                                <a
-                                    href="/"
-                                    className="inline-flex items-center justify-center px-8 py-3 border-2 border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-all duration-300"
-                                >
-                                    Back to Home
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+    return <ServicePageContent slug={slug} />;
 } 
