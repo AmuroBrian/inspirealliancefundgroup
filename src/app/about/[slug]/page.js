@@ -5,19 +5,23 @@ import { notFound } from 'next/navigation';
 
 // Profile data for team members
 const profilesData = {
-    'melody-santos': {
-        name: 'Melody Santos',
+    'brian-perez': {
+        name: 'Brian Perez',
         position: 'President',
         category: 'Board of Directors',
         since: '2019',
-        bio: `Melody Santos brings over 15 years of strategic leadership experience to Inspire Alliance Fund Group. As President, she drives the company's vision for empowering dreams and creating meaningful financial solutions.\n\nWhat inspired Melody to lead this organization is her passion for building meaningful relationships, creating strong connections, and gaining valuable leadership experience. She believes that leadership is not just about managing people—it's about inspiring others, learning together, and growing as a team. Leading this organization allows her to contribute to something greater while also developing both personally and professionally.\n\nHer long-term vision is for the company to grow into a successful, innovative, and impactful organization—one that is recognized not just for its achievements, but also for its values, commitment to excellence, and dedication to the people they serve. She wants to build a legacy that future generations can be proud of.\n\nFor Melody, success as a leader is measured not only by results, but by how you empower others. It's about guiding the team with integrity, earning trust, and creating a positive environment where everyone feels valued and motivated. A successful leader uplifts others, drives collective progress, and stays committed to the vision—especially in challenging times.`,
-        expertise: ['Strategic Leadership', 'Corporate Governance', 'Financial Services', 'International Business'],
-        education: 'MBA in Finance, University of the Philippines',
+        bio: `Brian Perez is a dynamic and forward-thinking leader who serves as President of Inspire Alliance Fund Group. Appointed to the role at just 23 years old, Brian brings a modern perspective and bold leadership to the organization, quickly earning the respect of peers and mentors alike for his clear vision, results-driven mindset, and purposeful approach to management.\n\nBrian's journey to the presidency is marked by persistence, innovation, and a genuine desire to make a difference. He began as a student leader during his college years, founding a start-up with limited resources but a big vision. His entrepreneurial spirit and ability to scale ideas into successful business models soon caught the attention of senior executives and investors.\n\nA defining moment in Brian's early career came during a major pitch competition, where—despite being the youngest participant—he impressed seasoned professionals with his innovative ideas and confident delivery, ultimately winning first place. This experience reinforced his belief that ambition and vision are not limited by age.\n\nAs President, Brian is committed to building a purpose-driven company that thrives on innovation, inclusivity, and long-term impact. He leads with humility and courage, believing that true leadership is about serving others, staying grounded, and inspiring teams to dream big and act boldly.\n\nBrian often reminds his team: "It's not about how old you are, but how boldly you move forward with vision, integrity, and action."`,
+        expertise: ['Strategic Leadership', 'Corporate Governance', 'Financial Services', 'International Business', 'Technology Leadership', 'Systems Architecture', 'Digital Innovation', 'Cybersecurity'],
+        education: 'MBA in Finance, University of the Philippines; BS Computer Science, Masters in Information Technology',
         achievements: [
             'Led company expansion into 5 new international markets',
             'Established partnerships with 14+ major real estate developers',
             'Implemented innovative digital banking solutions',
-            'Recipient of Outstanding Business Leader Award 2023'
+            'Recipient of Outstanding Business Leader Award 2023',
+            'Implemented state-of-the-art security protocols',
+            'Led development of mobile banking applications',
+            'Achieved 99.9% system uptime reliability',
+            'Pioneered blockchain integration for transactions'
         ]
     },
     'carlos-perez': {
@@ -35,21 +39,6 @@ const profilesData = {
             'Reduced employee turnover by 30%'
         ]
     },
-    'brian-perez': {
-        name: 'Brian Perez',
-        position: 'Chief of Technology Officer',
-        category: 'Corporate Officers',
-        since: '2021',
-        bio: `Brian Perez drives our technology leadership and digital innovation strategies. His expertise in systems architecture and technological advancement ensures that our platform remains at the forefront of financial technology, providing our clients with secure and efficient digital solutions.\n\nAs Chief of Technology Officer, his primary responsibility within the operations team is to oversee IT operations across the company. He manages and coordinates various IT-related projects and ensures that all technological platforms used within the office are running efficiently. This includes supervising system infrastructure, troubleshooting issues, and ensuring our IT services align with the organization's goals.\n\nTo ensure smooth daily operations, Brian actively monitors IT systems, tracks the progress of ongoing projects, and maintains regular communication with the team. He provides timely reports and updates to executive management, practices preventive maintenance, delegates tasks appropriately, and responds quickly to technical concerns to avoid disruptions.\n\nOne major challenge Brian faced was managing multiple IT projects simultaneously while leading a diverse team. Each project had different technical requirements and timelines, which required careful prioritization and communication. Through this experience, he learned that strong leadership, clear delegation of tasks, and understanding each team member's strengths are crucial to successfully handling complex operations. He also gained a deeper appreciation for proactive planning and protecting the company's IT infrastructure from potential risks.`,
-        expertise: ['Technology Leadership', 'Systems Architecture', 'Digital Innovation', 'Cybersecurity'],
-        education: 'BS Computer Science, Masters in Information Technology',
-        achievements: [
-            'Implemented state-of-the-art security protocols',
-            'Led development of mobile banking applications',
-            'Achieved 99.9% system uptime reliability',
-            'Pioneered blockchain integration for transactions'
-        ]
-    },
     'rhia-alberto': {
         name: 'Rhia Alberto',
         position: 'Marketing President',
@@ -63,21 +52,6 @@ const profilesData = {
             'Increased brand awareness by 30%',
             'Achieved 15% ROI on marketing investments',
             'Developed marketing automation tools'
-        ]
-    },
-    'andrei-bergano': {
-        name: 'Andrei Bergano',
-        position: 'Executive Director',
-        category: 'Board of Directors',
-        since: '2021',
-        bio: `Andrei Bergano is a dynamic leader with a proven track record in business development and strategic partnerships. His role involves overseeing key operational initiatives and ensuring that our services meet the highest standards of excellence while expanding our reach in both local and international markets.\n\nAs Executive Director, his daily responsibilities involve overseeing the organization's operations, ensuring that strategic initiatives are effectively implemented, and providing leadership to all departments. He works closely with the board and executive team to translate goals into actionable plans, monitor progress, and make data-driven decisions. Staying engaged with both internal teams and external stakeholders is also key to maintaining alignment and accountability.\n\nThis year, Andrei's top priorities include enhancing operational efficiency, driving innovation across departments, and strengthening organizational culture. He is also focused on expanding strategic partnerships and implementing systems that support long-term sustainability and growth. Most importantly, he aims to ensure that all projects and initiatives are aligned with the core mission and values.\n\nTo keep the team aligned with the company's mission, Andrei emphasizes clear communication, regular goal-setting, and continuous feedback. He believes in leading by example—demonstrating commitment to values in every decision and interaction. Regular team briefings, performance reviews, and collaborative planning sessions ensure everyone understands their role in achieving collective goals. Empowering people with purpose is the key to keeping the mission alive in everything they do.`,
-        expertise: ['Business Development', 'Strategic Partnerships', 'Operations Management', 'Client Relations'],
-        education: 'Bachelor of Science in Business Management, De La Salle University',
-        achievements: [
-            'Secured partnerships with major banking institutions',
-            'Increased client satisfaction rates to 98%',
-            'Launched innovative service delivery models',
-            'Established regional offices in key cities'
         ]
     },
     'atty-renato-pineda': {
@@ -214,6 +188,21 @@ const profilesData = {
             'Maintained perfect attendance at board meetings',
             'Established efficient filing and tracking systems'
         ]
+    },
+    'jaime-flores': {
+        name: 'Jaime Flores',
+        position: 'Chief of Technology Officer',
+        category: 'Corporate Officers',
+        since: '2021',
+        bio: `Jaime Flores drives our technology leadership and digital innovation strategies. His expertise in systems architecture and technological advancement ensures that our platform remains at the forefront of financial technology, providing our clients with secure and efficient digital solutions.\n\nAs Chief of Technology Officer, his primary responsibility within the operations team is to oversee IT operations across the company. He manages and coordinates various IT-related projects and ensures that all technological platforms used within the office are running efficiently. This includes supervising system infrastructure, troubleshooting issues, and ensuring our IT services align with the organization's goals.\n\nTo ensure smooth daily operations, Jaime actively monitors IT systems, tracks the progress of ongoing projects, and maintains regular communication with the team. He provides timely reports and updates to executive management, practices preventive maintenance, delegates tasks appropriately, and responds quickly to technical concerns to avoid disruptions.\n\nOne major challenge Jaime faced was managing multiple IT projects simultaneously while leading a diverse team. Each project had different technical requirements and timelines, which required careful prioritization and communication. Through this experience, he learned that strong leadership, clear delegation of tasks, and understanding each team member's strengths are crucial to successfully handling complex operations. He also gained a deeper appreciation for proactive planning and protecting the company's IT infrastructure from potential risks.`,
+        expertise: ['Technology Leadership', 'Systems Architecture', 'Digital Innovation', 'Cybersecurity'],
+        education: 'BS Computer Science, Masters in Information Technology',
+        achievements: [
+            'Implemented state-of-the-art security protocols',
+            'Led development of mobile banking applications',
+            'Achieved 99.9% system uptime reliability',
+            'Pioneered blockchain integration for transactions'
+        ]
     }
 };
 
@@ -268,7 +257,13 @@ export default function ProfilePage({ params }) {
                     <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
                         <div className="flex-shrink-0">
                             <div className="w-48 h-48 rounded-2xl overflow-hidden bg-white border-4 border-white shadow-2xl flex items-center justify-center">
-                                <Avatar name={profile.name} size={192} />
+                                {params.slug === 'jaime-flores' ? (
+                                    <img src="/officers/jaime.png" alt="Jaime Flores" className="object-cover w-full h-full" />
+                                ) : profile.name === 'Shelah Reynaldo' ? (
+                                    <img src="/officers/shelah.png" alt="Shelah Reynaldo" className="object-cover w-full h-full" />
+                                ) : (
+                                    <Avatar name={profile.name} size={192} />
+                                )}
                             </div>
                         </div>
 
@@ -305,34 +300,29 @@ export default function ProfilePage({ params }) {
                                                 <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
                                                 Introduction
                                             </h4>
-                                            <p className="text-gray-700 leading-relaxed">Brian Perez drives our technology leadership and digital innovation strategies. His expertise in systems architecture and technological advancement ensures that our platform remains at the forefront of financial technology, providing our clients with secure and efficient digital solutions.</p>
+                                            <p className="text-gray-700 leading-relaxed">Brian Perez is a dynamic and forward-thinking leader who serves as President of Inspire Alliance Fund Group. Appointed to the role at just 23 years old, Brian brings a modern perspective and bold leadership to the organization, quickly earning the respect of peers and mentors alike for his clear vision, results-driven mindset, and purposeful approach to management.</p>
                                         </div>
                                         <div>
                                             <h4 className="flex items-center text-lg font-semibold text-green-800 mb-2">
                                                 <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg>
-                                                Main Responsibilities
+                                                Journey to Leadership
                                             </h4>
-                                            <p className="text-gray-700 leading-relaxed">As Chief of Technology Officer, his primary responsibility within the operations team is to oversee IT operations across the company. He manages and coordinates various IT-related projects and ensures that all technological platforms used within the office are running efficiently. This includes supervising system infrastructure, troubleshooting issues, and ensuring our IT services align with the organization's goals.</p>
+                                            <p className="text-gray-700 leading-relaxed">Brian's journey to the presidency is marked by persistence, innovation, and a genuine desire to make a difference. He began as a student leader during his college years, founding a start-up with limited resources but a big vision. His entrepreneurial spirit and ability to scale ideas into successful business models soon caught the attention of senior executives and investors.</p>
                                         </div>
                                         <div>
                                             <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
                                                 <svg className="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                                Operational Approach
+                                                Defining Moment
                                             </h4>
-                                            <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                                                <li>Actively monitors IT systems and tracks ongoing projects.</li>
-                                                <li>Maintains regular communication with the team and executive management.</li>
-                                                <li>Provides timely reports and updates to leadership.</li>
-                                                <li>Practices preventive maintenance and quick response to technical concerns.</li>
-                                                <li>Delegates tasks appropriately to avoid disruptions.</li>
-                                            </ul>
+                                            <p className="text-gray-700 leading-relaxed">A defining moment in Brian's early career came during a major pitch competition, where—despite being the youngest participant—he impressed seasoned professionals with his innovative ideas and confident delivery, ultimately winning first place. This experience reinforced his belief that ambition and vision are not limited by age.</p>
                                         </div>
                                         <div>
                                             <h4 className="flex items-center text-lg font-semibold text-purple-800 mb-2">
                                                 <svg className="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01" /></svg>
-                                                Challenges & Lessons
+                                                Leadership Philosophy
                                             </h4>
-                                            <p className="text-gray-700 leading-relaxed">One major challenge Brian faced was managing multiple IT projects simultaneously while leading a diverse team. Each project had different technical requirements and timelines, which required careful prioritization and communication. Through this experience, he learned that strong leadership, clear delegation of tasks, and understanding each team member's strengths are crucial to successfully handling complex operations. He also gained a deeper appreciation for proactive planning and protecting the company's IT infrastructure from potential risks.</p>
+                                            <p className="text-gray-700 leading-relaxed">As President, Brian is committed to building a purpose-driven company that thrives on innovation, inclusivity, and long-term impact. He leads with humility and courage, believing that true leadership is about serving others, staying grounded, and inspiring teams to dream big and act boldly.</p>
+                                            <p className="text-gray-700 italic mt-4">Brian often reminds his team: "It's not about how old you are, but how boldly you move forward with vision, integrity, and action."</p>
                                         </div>
                                     </div>
                                 ) : profile.name === 'Carlos Perez' ? (
@@ -463,37 +453,6 @@ export default function ProfilePage({ params }) {
                                                 Proud Leadership Moment
                                             </h4>
                                             <p className="text-gray-700 leading-relaxed">There was a time when one of our presenters couldn't make it to a scheduled client meeting. I immediately reached out to the client to inform them of the change and reassure them that a different presenter, equally capable and knowledgeable would step in. I emphasized that while the person was different, the level of professionalism and accuracy would be the same. We were able to proceed with the meeting on time, and it went smoothly. What stood out to me in that moment was how much presence of mind and a positive mindset matter in situations like these. Things don't always go as planned, but leadership is about adapting and ensuring the team and client experience remains strong.</p>
-                                        </div>
-                                    </div>
-                                ) : profile.name === 'Andrei Bergano' ? (
-                                    <div className="space-y-8">
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-blue-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
-                                                Introduction
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">Andrei Bergano is a dynamic leader with a proven track record in business development and strategic partnerships. His role involves overseeing key operational initiatives and ensuring that our services meet the highest standards of excellence while expanding our reach in both local and international markets.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-green-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg>
-                                                Daily Responsibilities
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">As Executive Director, his daily responsibilities involve overseeing the organization's operations, ensuring that strategic initiatives are effectively implemented, and providing leadership to all departments. He works closely with the board and executive team to translate goals into actionable plans, monitor progress, and make data-driven decisions. Staying engaged with both internal teams and external stakeholders is also key to maintaining alignment and accountability.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                                Top Priorities
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">This year, Andrei's top priorities include enhancing operational efficiency, driving innovation across departments, and strengthening organizational culture. He is also focused on expanding strategic partnerships and implementing systems that support long-term sustainability and growth. Most importantly, he aims to ensure that all projects and initiatives are aligned with the core mission and values.</p>
-                                        </div>
-                                        <div>
-                                            <h4 className="flex items-center text-lg font-semibold text-purple-800 mb-2">
-                                                <svg className="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01" /></svg>
-                                                Team Alignment
-                                            </h4>
-                                            <p className="text-gray-700 leading-relaxed">To keep the team aligned with the company's mission, Andrei emphasizes clear communication, regular goal-setting, and continuous feedback. He believes in leading by example—demonstrating commitment to values in every decision and interaction. Regular team briefings, performance reviews, and collaborative planning sessions ensure everyone understands their role in achieving collective goals. Empowering people with purpose is the key to keeping the mission alive in everything they do.</p>
                                         </div>
                                     </div>
                                 ) : profile.name === 'Atty. Renato Pineda' ? (
@@ -642,6 +601,33 @@ export default function ProfilePage({ params }) {
                                                 Principles in Governance
                                             </h4>
                                             <p className="text-gray-700 leading-relaxed">Confidentiality and professionalism are cornerstones of her role. She treats all sensitive information with the utmost discretion, ensures that documents are securely stored, and always maintains a respectful and neutral position. Whether handling internal memos or board discussions, she operates with integrity, knowing that trust is essential to the effectiveness of her position.</p>
+                                        </div>
+                                    </div>
+                                ) : profile.name === 'Jaime Flores' ? (
+                                    <div className="space-y-8">
+                                        <div>
+                                            <h4 className="flex items-center text-lg font-semibold text-blue-800 mb-2">
+                                                <svg className="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
+                                                Main Responsibilities
+                                            </h4>
+                                            <p className="text-gray-700 leading-relaxed">Jaime leads a cross-functional team of developers by assigning tasks, setting priorities, and mentoring junior engineers to ensure alignment with both technical and business goals.</p>
+                                        </div>
+                                        <div>
+                                            <h4 className="flex items-center text-lg font-semibold text-green-800 mb-2">
+                                                <svg className="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6" /></svg>
+                                                Ensuring Smooth Operations
+                                            </h4>
+                                            <p className="text-gray-700 leading-relaxed">He runs daily stand-ups, sprint planning, and retrospectives to maintain transparency, track progress, and keep the team aligned on objectives.</p>
+                                        </div>
+                                        <div>
+                                            <h4 className="flex items-center text-lg font-semibold text-teal-800 mb-2">
+                                                <svg className="w-5 h-5 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                                Challenges & Lessons
+                                            </h4>
+                                            <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                                                <li>Built robust test coverage and staging environments to simulate real-world conditions.</li>
+                                                <li>Empowering team members with ownership and clear communication dramatically increases resilience and adaptability.</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 ) : (

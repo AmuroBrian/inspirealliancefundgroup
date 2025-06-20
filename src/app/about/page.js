@@ -11,11 +11,11 @@ export const metadata = {
 
 const boardOfDirectors = [
     {
-        name: "Melody Santos",
+        name: "Brian Perez",
         position: "President",
         since: "2019",
-        description: "Strategic leader with extensive experience in financial services and corporate governance, driving the company's vision and growth initiatives.",
-        slug: "melody-santos"
+        description: "Strategic leader with extensive experience in financial services, technology, and corporate governance, driving the company's vision and growth initiatives through innovation and digital transformation.",
+        slug: "brian-perez"
     },
     {
         name: "Rhia Alberto",
@@ -23,13 +23,6 @@ const boardOfDirectors = [
         since: "2020",
         description: "Experienced executive with deep expertise in business operations and strategic planning, supporting organizational development and expansion.",
         slug: "rhia-alberto"
-    },
-    {
-        name: "Andrei Bergano",
-        position: "Executive Director",
-        since: "2021",
-        description: "Dynamic leader with proven track record in business development and strategic partnerships, overseeing key operational initiatives.",
-        slug: "andrei-bergano"
     },
     {
         name: "Atty. Renato Pineda",
@@ -62,10 +55,10 @@ const corporateOfficers = [
         slug: "carlos-perez"
     },
     {
-        name: "Brian Perez",
+        name: "Jaime Flores",
         position: "Chief of Technology Officer",
         description: "Technology leadership, digital innovation strategies, and systems architecture to drive technological advancement and operational efficiency.",
-        slug: "brian-perez"
+        slug: "jaime-flores"
     },
     {
         name: "Raphael Jeremy Reyes",
@@ -227,11 +220,16 @@ export default function AboutPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {corporateOfficers.map((officer, index) => (
                                 <div key={index} className="bg-white rounded-lg shadow-lg p-5 hover:shadow-xl transition-all duration-300 group cursor-pointer">
-                                    <Avatar
-                                        name={officer.name}
-                                        size={56}
-                                        bgGradient="from-orange-500 to-red-500"
-                                    />
+                                    {officer.name === 'Jaime Flores' ? (
+                                        <img src="/officers/jaime.png" alt="Jaime Flores" className="object-cover w-14 h-14 rounded-full mb-2" />
+                                    ) : (
+                                        <Avatar
+                                            name={officer.name}
+                                            size={56}
+                                            bgGradient="from-orange-500 to-red-500"
+                                            className="mb-2"
+                                        />
+                                    )}
                                     <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300">{officer.name}</h4>
                                     <p className="text-orange-600 font-semibold mb-3 text-sm">{officer.position}</p>
                                     <p className="text-gray-700 text-sm leading-relaxed mb-4">{officer.description}</p>
