@@ -11,6 +11,7 @@ export default function InsightPage({ params }) {
     const resolvedParams = use(params);
     const [insight, setInsight] = useState(null);
     const [relatedInsights, setRelatedInsights] = useState([]);
+    const [copied, setCopied] = useState(false);
 
     useEffect(() => {
         const currentInsight = insightsData[resolvedParams.slug];
@@ -24,6 +25,25 @@ export default function InsightPage({ params }) {
             setRelatedInsights(related);
         }
     }, [resolvedParams.slug]);
+
+    const copyToClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText(window.location.href);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = window.location.href;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        }
+    };
 
     if (!insight) {
         return (
@@ -270,32 +290,32 @@ export default function InsightPage({ params }) {
                             >
                                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Share This Analysis</h3>
                                 <div className="space-y-3">
-                                    <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                                        Share on LinkedIn
-                                    </button>
-                                    <button className="w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-900 transition-colors">
-                                        Share via Email
-                                    </button>
-                                    <button className="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
-                                        Copy Link
-                                    </button>
+                                    <motion.button
+                                        onClick={copyToClipboard}
+                                        className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${copied
+                                            ? 'bg-green-500 text-white'
+                                            : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                                            }`}
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                    >
+                                        {copied ? (
+                                            <>
+                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                Copied!
+                                            </>
+                                        ) : (
+                                            <>
+                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                                </svg>
+                                                Copy Link
+                                            </>
+                                        )}
+                                    </motion.button>
                                 </div>
-                            </motion.div>
-
-                            {/* Contact CTA */}
-                            <motion.div
-                                className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl shadow-lg p-6"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.6 }}
-                            >
-                                <h3 className="text-lg font-semibold mb-3">Investment Consultation</h3>
-                                <p className="text-blue-100 text-sm mb-4">
-                                    Discuss this analysis with our investment team and explore opportunities.
-                                </p>
-                                <button className="w-full bg-white text-blue-600 py-2 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-                                    Schedule Meeting
-                                </button>
                             </motion.div>
                         </div>
                     </div>

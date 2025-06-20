@@ -1,9 +1,95 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const SECPhilippines = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [form, setForm] = useState({
+    fullName: "",
+    businessName: "",
+    email: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      // Check if EmailJS environment variables are configured
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_COMPANY_REGISTER_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        setError(
+          "Email service is not configured. Please contact the administrator."
+        );
+        setLoading(false);
+        return;
+      }
+
+      // Dynamically import EmailJS to prevent SSR issues
+      const emailjs = (await import("@emailjs/browser")).default;
+
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          full_name: form.fullName,
+          business_name: form.businessName,
+          email_address: form.email,
+          sent_at: new Date().toLocaleString(),
+          to_email: "info@inspirealliancefund.com",
+        },
+        publicKey
+      );
+
+      if (result.text === "OK") {
+        setSubmitted(true);
+        setTimeout(() => {
+          setIsModalOpen(false);
+          setSubmitted(false);
+          setForm({
+            fullName: "",
+            businessName: "",
+            email: "",
+          });
+        }, 3000);
+      }
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setError("Failed to send registration request. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    setError("");
+    setSubmitted(false);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setForm({
+      fullName: "",
+      businessName: "",
+      email: "",
+    });
+    setError("");
+    setSubmitted(false);
+  };
+
   const secServices = [
     {
       icon: "📋",
@@ -286,8 +372,9 @@ const SECPhilippines = () => {
               finish. We ensure all documentation is properly prepared and
               submitted for fast, compliant registration.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <button
+                onClick={openModal}
                 className="px-8 py-3 rounded-lg text-white font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 style={{
                   background:
@@ -296,13 +383,153 @@ const SECPhilippines = () => {
               >
                 Start SEC Registration
               </button>
-              <button className="px-8 py-3 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition-all duration-300">
-                Learn More About Our Process
-              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Registration Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div
+              className="px-6 py-4 border-b border-gray-200 relative"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
+              }}
+            >
+              <h3 className="text-xl font-bold text-white text-center">
+                SEC Registration Request
+              </h3>
+              <button
+                onClick={closeModal}
+                className="absolute right-4 top-4 text-white hover:text-gray-200 transition-colors duration-200"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-6">
+              {!submitted ? (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Full Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="fullName"
+                      value={form.fullName}
+                      onChange={handleChange}
+                      required
+                      className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 transition-all duration-300"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Business Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="businessName"
+                      value={form.businessName}
+                      onChange={handleChange}
+                      required
+                      className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 transition-all duration-300"
+                      placeholder="Enter desired business name"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Email Address <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 transition-all duration-300"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+
+                  <div className="pt-4">
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full py-3 rounded-lg text-white font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
+                      }}
+                    >
+                      {loading
+                        ? "Submitting..."
+                        : "Submit Registration Request"}
+                    </button>
+                  </div>
+
+                  {error && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-700 text-sm text-center font-medium">
+                        ✗ {error}
+                      </p>
+                    </div>
+                  )}
+                </form>
+              ) : (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg
+                      className="w-8 h-8 text-green-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-800 mb-2">
+                    Request Submitted!
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Thank you for your SEC registration request. Our team will
+                    contact you shortly to assist with your business
+                    registration process.
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    This window will close automatically...
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

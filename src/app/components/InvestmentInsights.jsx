@@ -37,6 +37,27 @@ const InvestmentInsights = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
 
+  // Handle PDF download
+  const handleDownloadPDF = () => {
+    const link = document.createElement("a");
+    link.href = "/pdf/IHICompanyOverview.pdf";
+    link.download = "Inspire_Alliance_Company_Overview.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Handle scroll to contact form
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   // Investment Philosophy principles
   const investmentPhilosophy = [
     {
@@ -652,10 +673,16 @@ const InvestmentInsights = () => {
               investment experience can benefit your financial goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-300">
+              <button
+                onClick={handleScrollToContact}
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-300"
+              >
                 Schedule Consultation
               </button>
-              <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-300">
+              <button
+                onClick={handleDownloadPDF}
+                className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-300"
+              >
                 Download Company Profile
               </button>
             </div>

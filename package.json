@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@syncfusion/ej2-data": "^29.2.4",
     "@syncfusion/ej2-react-diagrams": "^29.2.8",
     "chart.js": "^4.4.9",

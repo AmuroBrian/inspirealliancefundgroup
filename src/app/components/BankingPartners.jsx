@@ -453,83 +453,343 @@ const BankingPartners = () => {
           })}
         </div>
 
-        {/* Bottom CTA Section */}
+        {/* Bottom CTA Section - Download Inspire Wallet */}
         <div
           ref={ctaRef}
           data-animate-id="cta"
           className="text-center mt-20 opacity-0 transform translate-y-12 scale-95 transition-all duration-1000 ease-out"
         >
-          <div className="relative">
-            {/* Decorative Background */}
-            <div
-              className="absolute -inset-8 rounded-3xl opacity-10"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(128, 195, 42, 0.3) 0%, rgba(75, 136, 139, 0.3) 50%, rgba(56, 115, 175, 0.3) 100%)",
-              }}
-            ></div>
+          {/* Main CTA Section */}
+          <div className="max-w-7xl mx-auto mb-20">
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Left Side - Content */}
+                <div className="bg-gradient-to-br from-green-600 via-green-700 to-emerald-800 p-8 md:p-12 text-white relative overflow-hidden">
+                  {/* Background Decorative Elements */}
+                  <div className="absolute top-0 right-0 opacity-10">
+                    <svg
+                      className="w-48 h-48 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <div className="absolute bottom-0 left-0 opacity-5">
+                    <div className="w-32 h-32 border-4 border-dashed border-white rounded-full"></div>
+                  </div>
 
-            <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 lg:p-12 max-w-4xl mx-auto border border-white/20">
-              <div className="mb-8">
-                <div
-                  className="inline-flex items-center justify-center p-3 rounded-full mb-6"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
-                  }}
-                >
-                  <svg
-                    className="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
+                  <div className="relative z-10">
+                    {/* Header */}
+                    <div className="flex items-center mb-8">
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                          />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold">
+                        DOWNLOAD INSPIRE WALLET
+                      </h3>
+                    </div>
+
+                    {/* Main Description */}
+                    <div className="mb-8">
+                      <h4 className="text-2xl md:text-3xl font-bold mb-4">
+                        To Open Bank Account
+                      </h4>
+                      <p className="text-lg leading-relaxed mb-6">
+                        Start your Philippine banking journey with ease!
+                        Download the Inspire Wallet app and get connected to our
+                        trusted banking partners. Open your account seamlessly
+                        with digital convenience and professional guidance.
+                      </p>
+
+                      {/* Special Offer Highlight */}
+                      <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                        <div className="flex items-center mb-4">
+                          <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                            <svg
+                              className="w-4 h-4 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                          </div>
+                          <h4 className="text-xl font-bold text-orange-300">
+                            Why Choose Inspire Wallet?
+                          </h4>
+                        </div>
+                        <p className="text-white/90 leading-relaxed">
+                          Connect to multiple bank partners, get expert
+                          guidance, track your applications, and enjoy secure
+                          digital banking - all in one convenient app.{" "}
+                          <span className="font-bold text-orange-300">
+                            Download now and start your Philippine banking
+                            journey!
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Call to Action Text */}
+                    <div className="border-t border-white/20 pt-6">
+                      <p className="text-white/90">
+                        Whether you're a foreign investor, OFW, or newcomer to
+                        the Philippines, Inspire Wallet simplifies your banking
+                        experience.
+                      </p>
+                      <p className="text-lg font-semibold mt-4 text-orange-300">
+                        Download the app now and take your first step towards
+                        financial freedom in the Philippines!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Side - App Screenshots & Download */}
+                <div className="p-8 md:p-12 bg-gray-50">
+                  {/* Banking Features */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-4 text-white shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                      <div className="text-center">
+                        <div className="text-xl font-bold mb-2">
+                          Multiple Banks
+                        </div>
+                        <div className="text-green-100 text-sm">
+                          Access to all partner banks
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-2xl p-4 text-white shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                      <div className="text-center">
+                        <div className="text-xl font-bold mb-2">
+                          Expert Guidance
+                        </div>
+                        <div className="text-green-100 text-sm">
+                          Professional support throughout
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* App Screenshots */}
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+                    <div className="relative w-full aspect-[9/19.5] sm:w-48 sm:h-[26rem] sm:aspect-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
+                      <Image
+                        src="/inspirewallet/login.png"
+                        alt="Inspire Wallet Banking Login"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, 192px"
+                        priority={false}
+                      />
+                    </div>
+                    <div className="relative w-full aspect-[9/19.5] sm:w-48 sm:h-[26rem] sm:aspect-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
+                      <Image
+                        src="/inspirewallet/dashboard.png"
+                        alt="Inspire Wallet Banking Dashboard"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, 192px"
+                        priority={false}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Trust Indicators */}
+                  <div className="flex flex-wrap gap-3 justify-center">
+                    <div className="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
+                      <svg
+                        className="w-4 h-4 text-green-500 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700">
+                        Secure Banking
+                      </span>
+                    </div>
+                    <div className="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
+                      <svg
+                        className="w-4 h-4 text-blue-500 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                        />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700">
+                        Protected Data
+                      </span>
+                    </div>
+                    <div className="flex items-center bg-white rounded-full px-3 py-2 shadow-md">
+                      <svg
+                        className="w-4 h-4 text-purple-500 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M13 10V3L4 14h7v7l9-11h-7z"
+                        />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700">
+                        Quick Setup
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <h3
-                className="text-3xl lg:text-4xl font-bold mb-4"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Ready to Open Your Philippine Bank Account?
-              </h3>
-              <p className="text-gray-700 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-                Our expert consultants will help you choose the perfect bank for
-                your needs and guide you through the entire account opening
-                process with personalized support.
-              </p>
+          {/* Download App Section */}
+          <div className="max-w-3xl mx-auto bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200 rounded-3xl shadow-2xl p-8 md:p-14 relative overflow-visible">
+            {/* Logo/Icon */}
+            <div className="flex flex-col items-center -mt-20 mb-4">
+              <div className="w-20 h-20 rounded-full overflow-hidden flex items-center justify-center bg-white shadow-xl border-4 border-green-200 mb-2">
+                <Image
+                  src="/inspirewallet-logo.png"
+                  alt="Inspire Wallet Logo"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="text-green-900 font-bold text-lg tracking-wide">
+                Inspire Wallet
+              </span>
+            </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  className="px-10 py-4 rounded-xl text-white font-semibold text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl transform"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
-                  }}
+            <h3 className="text-2xl md:text-3xl font-extrabold text-center mb-4 text-green-900">
+              Ready to Open Your Bank Account?
+            </h3>
+            <p className="text-center text-lg text-gray-700 mb-6">
+              Download Inspire Wallet and connect with our banking partners
+              today.
+            </p>
+
+            {/* Download Buttons */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-10">
+              {/* Google Play */}
+              <div className="flex flex-col items-center">
+                <span className="mb-2 text-sm font-semibold text-green-700">
+                  Google Play
+                </span>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.inspire.inspirewallet&pcampaignid=web_share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download Inspire Wallet on Google Play"
+                  className="rounded-2xl bg-gradient-to-br from-green-100 to-green-200 shadow-lg p-2 transition-transform duration-200 hover:scale-105 hover:shadow-2xl border border-green-200"
                 >
-                  Start Your Application
-                </button>
-                <button
-                  className="px-10 py-4 rounded-xl border-2 text-gray-700 font-semibold text-lg hover:bg-gray-50 transition-all duration-300 hover:-translate-y-1"
-                  style={{
-                    borderColor: "rgba(128, 195, 42, 0.3)",
-                  }}
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Get it on Google Play"
+                    className="h-12 w-auto"
+                  />
+                </a>
+              </div>
+              {/* App Store */}
+              <div className="flex flex-col items-center">
+                <span className="mb-2 text-sm font-semibold text-blue-700">
+                  App Store
+                </span>
+                <a
+                  href="https://apps.apple.com/ph/app/inspire-wallet/id6642689775"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download Inspire Wallet on the App Store"
+                  className="rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 shadow-lg p-2 transition-transform duration-200 hover:scale-105 hover:shadow-2xl border border-blue-200"
                 >
-                  Schedule Consultation
-                </button>
+                  <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                    className="h-12 w-auto"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div className="space-y-7">
+              {/* Step 1 */}
+              <div className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow-sm">
+                <div className="flex-shrink-0 w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md border-2 border-green-200">
+                  1
+                </div>
+                <div>
+                  <span className="block font-semibold text-green-800">
+                    Download & Register
+                  </span>
+                  <span className="block text-gray-700">
+                    Download and register the Inspire Wallet app from the App
+                    Store or Google Play.
+                  </span>
+                </div>
+              </div>
+              {/* Step 2 */}
+              <div className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow-sm">
+                <div className="flex-shrink-0 w-10 h-10 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md border-2 border-emerald-200">
+                  2
+                </div>
+                <div>
+                  <span className="block font-semibold text-emerald-800">
+                    Choose Your Bank
+                  </span>
+                  <span className="block text-gray-700">
+                    Navigate to{" "}
+                    <span className="font-bold">Banking Services</span> and
+                    select from our partner banks (BDO, BPI, UnionBank, etc.).
+                  </span>
+                </div>
+              </div>
+              {/* Step 3 */}
+              <div className="flex items-start gap-4 bg-white/80 rounded-xl p-4 shadow-sm">
+                <div className="flex-shrink-0 w-10 h-10 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md border-2 border-teal-200">
+                  3
+                </div>
+                <div>
+                  <span className="block font-semibold text-teal-800">
+                    Complete Application
+                  </span>
+                  <span className="block text-gray-700">
+                    Fill out your bank application with our guided process and
+                    get expert assistance throughout.
+                  </span>
+                </div>
               </div>
             </div>
           </div>

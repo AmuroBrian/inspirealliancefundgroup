@@ -189,7 +189,7 @@ export default function SuccessStoryPage({ params }) {
                             <motion.div className="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-xl shadow-lg p-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
                                 <h3 className="text-lg font-semibold mb-3">Investment Opportunities</h3>
                                 <p className="text-green-100 text-sm mb-4">Discover similar investment opportunities in our portfolio.</p>
-                                <button className="w-full bg-white text-green-600 py-2 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors">Contact Our Team</button>
+                                <button className="w-full bg-white text-green-600 py-2 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors">Learn More</button>
                             </motion.div>
                         </div>
                     </div>
