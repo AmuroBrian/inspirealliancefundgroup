@@ -61,12 +61,6 @@ const corporateOfficers = [
         slug: "jaime-flores"
     },
     {
-        name: "Raphael Jeremy Reyes",
-        position: "Internal Audit",
-        description: "Audit planning and execution, financial review processes, and internal control evaluation for enhanced governance.",
-        slug: "raphael-jeremy-reyes"
-    },
-    {
         name: "Gerlie De Asis",
         position: "HR/Administrative Officer",
         description: "Human resources management, administrative operations, and organizational development initiatives.",
@@ -222,6 +216,10 @@ export default function AboutPage() {
                                 <div key={index} className="bg-white rounded-lg shadow-lg p-5 hover:shadow-xl transition-all duration-300 group cursor-pointer">
                                     {officer.name === 'Jaime Flores' ? (
                                         <img src="/officers/jaime.png" alt="Jaime Flores" className="object-cover w-14 h-14 rounded-full mb-2" />
+                                    ) : officer.name === 'Carlos Perez' ? (
+                                        <img src="/officers/carlos.png" alt="Carlos Perez" className="object-cover w-14 h-14 rounded-full mb-2" />
+                                    ) : officer.name === 'Shelah Reynaldo' ? (
+                                        <img src="/officers/shelah.png" alt="Shelah Reynaldo" className="object-cover w-14 h-14 rounded-full mb-2" />
                                     ) : (
                                         <Avatar
                                             name={officer.name}
