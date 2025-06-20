@@ -2,10 +2,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -53,40 +55,57 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link
-              href="/about"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              About
-            </Link>
-            <button
-              onClick={() => handleScrollToSection("services")}
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide cursor-pointer"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => handleScrollToSection("solutions")}
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide cursor-pointer"
-            >
-              Solutions
-            </button>
-            <button
-              onClick={() => handleScrollToSection("investment-insights")}
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide cursor-pointer"
-            >
-              Investment Insights
-            </button>
-            <button
-              onClick={() => handleScrollToSection("contact")}
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide cursor-pointer"
-            >
-              Contact
-            </button>
+            {pathname === "/" && (
+              // Main page - show all menu items
+              <>
+                <Link
+                  href="/about"
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  About
+                </Link>
+                <button
+                  onClick={() => handleScrollToSection("services")}
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
+                >
+                  Services & Solutions
+                </button>
+                <button
+                  onClick={() => handleScrollToSection("investment-insights")}
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
+                >
+                  Investment Insights
+                </button>
+                <button
+                  onClick={() => handleScrollToSection("contact")}
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
+                >
+                  Contact
+                </button>
+              </>
+            )}
           </nav>
 
           {/* Right Section */}
           <div className="flex items-center space-x-4">
+            {/* Home and About for non-main pages */}
+            {pathname !== "/" && (
+              <div className="hidden md:flex items-center space-x-6 mr-6">
+                <Link
+                  href="/"
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  About
+                </Link>
+              </div>
+            )}
+
             {/* Language Selector */}
             <button
               className="hidden md:flex items-center space-x-2 bg-[#b8860b] text-white px-6 py-1.5 rounded text-sm hover:bg-[#96700a] transition-colors duration-300 min-w-[120px] justify-center"
@@ -134,37 +153,58 @@ const Header = () => {
         {/* Mobile Menu */}
         <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-            <Link
-              href="/about"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              About
-            </Link>
+            {pathname === "/" ? (
+              // Main page - show all menu items
+              <>
+                <Link
+                  href="/about"
+                  className="block px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  About
+                </Link>
+                <button
+                  onClick={() => handleScrollToSection("services")}
+                  className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  Services & Solutions
+                </button>
+                <button
+                  onClick={() => handleScrollToSection("investment-insights")}
+                  className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  Investment Insights
+                </button>
+                <button
+                  onClick={() => handleScrollToSection("contact")}
+                  className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  Contact
+                </button>
+              </>
+            ) : (
+              // Other pages - show only Home and About
+              <>
+                <Link
+                  href="/"
+                  className="block px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  className="block px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  About
+                </Link>
+              </>
+            )}
             <button
-              onClick={() => handleScrollToSection("services")}
-              className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
+              className="w-full mt-2 flex items-center justify-center space-x-2 text-white px-3 py-1.5 rounded text-sm transition-colors duration-300"
+              style={{
+                background:
+                  "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
+              }}
             >
-              Services
-            </button>
-            <button
-              onClick={() => handleScrollToSection("solutions")}
-              className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Solutions
-            </button>
-            <button
-              onClick={() => handleScrollToSection("investment-insights")}
-              className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Investment Insights
-            </button>
-            <button
-              onClick={() => handleScrollToSection("contact")}
-              className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Contact
-            </button>
-            <button className="w-full mt-2 flex items-center justify-center space-x-2 bg-[#b8860b] text-white px-3 py-1.5 rounded text-sm hover:bg-[#96700a] transition-colors duration-300">
               <Image
                 src="/icon%20logo.png"
                 alt="Language"

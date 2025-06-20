@@ -133,37 +133,44 @@ export default function Home() {
           </div>
         </section>
 
+        {/* About Section - Company Introduction */}
         <section className="relative bg-gray-100 w-full">
           <About />
         </section>
-        {/* News Section */}
-        <section className="relative bg-black w-full">
-          <News />
-        </section>
-        {/* Mission Section */}
+
+        {/* Mission Section - Company Purpose & Values */}
         <section className="relative bg-white w-full">
           <Mission />
         </section>
-        <section className="relative bg-gray-100 w-full">
-          <SuccessStories />
-        </section>
+
+        {/* Services Section - What We Offer */}
         <section id="services" className="relative bg-gray-100 w-full">
           <ServicesAndSolution />
         </section>
-        <section id="investment-insights" className="relative bg-gray-100 w-full">
+
+        {/* Investment Insights Section - Our Expertise */}
+        <section id="investment-insights" className="relative bg-white w-full">
           <InvestmentInsights />
         </section>
-        {/* Organization */}
-        <section id="solutions" className="relative bg-white">
-          <Organization />
+
+        {/* Subsidiaries Section - Our Network */}
+        <section className="relative bg-white w-full">
+          <Subsidiaries />
         </section>
 
-        {/* Contact Section */}
+        {/* Success Stories Section - Social Proof */}
+        <section className="relative bg-gray-100 w-full">
+          <SuccessStories />
+        </section>
+
+        {/* News Section - Latest Updates */}
+        <section className="relative bg-black w-full">
+          <News />
+        </section>
+
+        {/* Contact Section - Call to Action */}
         <section id="contact" className="relative bg-gray-100 w-full">
           <Contact />
-        </section>
-        <section className="relative bg-gray-100 w-full">
-          <Subsidiaries />
         </section>
       </div>
     </div>

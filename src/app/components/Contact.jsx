@@ -29,6 +29,8 @@ const ContactForm = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,7 +38,55 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      // Check if EmailJS environment variables are configured
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_CONTACT_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        setError(
+          "Email service is not configured. Please contact the administrator."
+        );
+        setLoading(false);
+        return;
+      }
+
+      // Dynamically import EmailJS to prevent SSR issues
+      const emailjs = (await import("@emailjs/browser")).default;
+
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          company: form.company || "Not specified",
+          message: form.message,
+          sent_at: new Date().toLocaleString(),
+          to_email: "info@inspirealliancefund.com",
+        },
+        publicKey
+      );
+
+      if (result.text === "OK") {
+        setSubmitted(true);
+        setForm({
+          name: "",
+          company: "",
+          email: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setError("Failed to send message. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -123,16 +173,25 @@ const ContactForm = () => {
 
             <button
               type="submit"
-              className="w-full py-4 rounded-xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
+              disabled={loading}
+              className="w-full py-4 rounded-xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
               style={{
                 background:
                   "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
               }}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
 
-            {submitted && (
+            {error && (
+              <div className="p-4 bg-red-50 border border-red-200 rounded-xl">
+                <p className="text-red-700 text-center font-medium">
+                  ✗ {error}
+                </p>
+              </div>
+            )}
+
+            {submitted && !error && (
               <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
                 <p className="text-green-700 text-center font-medium">
                   ✓ Thank you! We've received your message and will get back to

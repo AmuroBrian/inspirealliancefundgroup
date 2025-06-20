@@ -1,12 +1,19 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import BankingPartners from '../../components/BankingPartners';
 import SECPhilippines from '../../components/SECPhilippines';
 import RealEstate from '../../components/RealEstate';
 import TravelSecurity from '../../components/TravelSecurity';
 import JapaneseProducts from '../../components/JapaneseProducts';
+import InspireWallet from '../../components/InspireWallet';
 
 const servicesMetadata = {
+    'inspire-wallet-fintech-mobile-application': {
+        title: 'Inspire Wallet - FinTech Mobile Application | Investment Tracking & Portfolio Management',
+        description: 'Your all-in-one financial companion for investment tracking, stock management, and portfolio monitoring. Real-time analytics, crypto & forex trading platform, transaction history, and bank-level security for investors.',
+        keywords: 'Inspire Wallet, fintech app, investment tracking, portfolio management, stock management, crypto trading, forex trading, trading platform, mobile banking, financial app Philippines, investor wallet, real-time trading, withdrawal management, transaction history'
+    },
     'international-banking-solutions': {
         title: 'International Banking Solutions - Philippines Bank Account Opening | Inspire Alliance Fund Group',
         description: 'Expert consultancy services for foreigners opening bank accounts in the Philippines. Comprehensive guidance on Philippine banking, payment solutions, and financial growth strategies for international clients.',
@@ -64,6 +71,40 @@ export function generateMetadata({ params }) {
 }
 
 const servicesData = {
+    'inspire-wallet-fintech-mobile-application': {
+        title: 'Inspire Wallet - FinTech Mobile Application',
+        description: `Inspire Wallet is your comprehensive financial companion designed to revolutionize how you manage your investments, track your portfolio, and handle financial transactions in the digital age. As a cutting-edge FinTech mobile application developed by Inspire Holdings Incorporated, we combine advanced financial technology with user-friendly design to create the ultimate investment management experience.
+
+Our mobile application serves as your personal investment command center, providing real-time portfolio monitoring, advanced analytics, and comprehensive financial management tools all in one secure platform. Whether you're a seasoned investor managing a diverse portfolio or someone just beginning their investment journey, Inspire Wallet provides the sophisticated tools and insights you need to make informed financial decisions.
+
+At the core of Inspire Wallet is our advanced investment tracking system that monitors your portfolio performance in real-time. Our platform aggregates data from multiple sources to provide you with comprehensive insights into your asset performance, market trends, and investment opportunities. You can track stocks, bonds, mutual funds, and other investment vehicles with precision, receiving detailed analytics that help you understand not just where your money is, but how it's performing relative to market benchmarks and your personal financial goals.
+
+Our stock management features provide professional-grade tools for monitoring your equity holdings with real-time market data, price alerts, and comprehensive market analysis. Whether you're trading local stocks or international equities, our platform keeps you informed with up-to-the-minute information about market movements, news that could impact your holdings, and analytical tools that help you time your trades effectively.
+
+Withdrawal management is simplified through our intuitive interface that tracks all your financial outflows while providing strategic planning tools to help you optimize your cash flow. Our system maintains detailed records of all withdrawals, categorizes them for tax purposes, and provides projections to help you plan future financial moves with confidence and strategic foresight.
+
+Transaction history management has never been more comprehensive. Our platform maintains detailed records of all your financial activities, including investments, trades, withdrawals, and transfers, all organized in an easily searchable and exportable format. This comprehensive transaction tracking not only helps you monitor your financial activity but also simplifies tax preparation and financial planning by providing complete documentation of your investment journey.
+
+Our advanced trading platform provides comprehensive support for both cryptocurrency and forex markets, essential for modern investors seeking diverse trading opportunities. With real-time market data, professional charting tools, and support for major crypto assets and global currencies, our trading platform helps you make informed trading decisions while accessing multiple markets from a single, secure interface.
+
+Security is paramount in everything we do. Inspire Wallet employs bank-level encryption, multi-factor authentication, and advanced cybersecurity protocols to ensure your sensitive financial information remains completely secure. Our security infrastructure meets international standards for financial data protection, giving you peace of mind that your investment information and personal data are protected by the same security measures used by major financial institutions.
+
+The user experience is designed around simplicity without sacrificing functionality. Our intuitive interface makes complex financial operations accessible to users of all experience levels, while our advanced features satisfy the needs of sophisticated investors. The app's clean design and logical navigation ensure you can access the information and tools you need quickly and efficiently.
+
+Our mobile-first approach means you have access to your complete financial dashboard wherever you are. Whether you're checking portfolio performance during your commute, executing trades while traveling, or reviewing transaction history during a meeting, Inspire Wallet keeps your financial information accessible and actionable through your mobile device.
+
+Regular updates ensure that Inspire Wallet continues to evolve with changing market conditions and user needs. Our development team continuously adds new features, improves existing functionality, and ensures compatibility with the latest mobile operating systems and security standards. Version 2.0.3, our latest release, includes important bug fixes and performance improvements that enhance your overall user experience.
+
+The app has earned a perfect 5.0-star rating from users who appreciate its comprehensive functionality, robust security, and user-friendly design. This rating reflects our commitment to providing exceptional service and continuously improving our platform based on user feedback and evolving financial market needs.
+
+Inspire Wallet is available free of charge on both iOS and Android platforms, making sophisticated investment management tools accessible to everyone regardless of their mobile device preference. There are no subscription fees or hidden costs – our goal is to democratize access to professional-grade financial management tools.
+
+Our customer support team is committed to helping you maximize the value you receive from Inspire Wallet. Whether you need help setting up your account, understanding specific features, or troubleshooting technical issues, our support team is available to ensure you have a seamless experience with our platform.
+
+Download Inspire Wallet today from the Apple App Store or Google Play Store and experience the future of mobile financial management. Join thousands of satisfied users who have already discovered how Inspire Wallet can transform their approach to investment management and financial planning.
+
+Take control of your financial future with Inspire Wallet – where advanced technology meets simplified financial management, and where your investment success becomes our shared mission.`
+    },
     'international-banking-solutions': {
         title: 'International Banking Solutions',
         description: `Navigating the Philippine banking system as a foreigner can be challenging and overwhelming. At Inspire Alliance Fund Group, we specialize in providing comprehensive banking solutions specifically designed to help international clients successfully establish their financial presence in the Philippines. Our expert team understands the unique challenges foreigners face when trying to open bank accounts in the Philippines, and we're here to make the process seamless and stress-free.
@@ -277,6 +318,9 @@ export default function ServicePage({ params }) {
                 </div>
             </div>
 
+            {/* Inspire Wallet Section - Only for Inspire Wallet FinTech Mobile Application */}
+            {slug === 'inspire-wallet-fintech-mobile-application' && <InspireWallet />}
+
             {/* Banking Partners Section - Only for International Banking Solutions */}
             {slug === 'international-banking-solutions' && <BankingPartners />}
 
@@ -305,8 +349,8 @@ export default function ServicePage({ params }) {
                                 Contact our experts today to learn more about how we can help you achieve your goals.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a
-                                    href="/contact"
+                                <Link
+                                    href="/#contact"
                                     className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                                     style={{
                                         background: 'linear-gradient(135deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)'
@@ -316,7 +360,7 @@ export default function ServicePage({ params }) {
                                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
-                                </a>
+                                </Link>
                                 <a
                                     href="/"
                                     className="inline-flex items-center justify-center px-8 py-3 border-2 border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-all duration-300"

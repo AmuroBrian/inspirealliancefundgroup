@@ -51,8 +51,8 @@ export default function SuccessStoriesPage() {
                     <div className="flex gap-2 overflow-x-auto pb-2">
                         <button
                             className={`px-6 py-3 rounded-full whitespace-nowrap font-medium transition-colors ${selectedCategory === "All"
-                                    ? "bg-green-600 text-white"
-                                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                                ? "bg-green-600 text-white"
+                                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                                 }`}
                             onClick={() => setSelectedCategory("All")}
                         >
@@ -62,8 +62,8 @@ export default function SuccessStoriesPage() {
                             <button
                                 key={category}
                                 className={`px-6 py-3 rounded-full whitespace-nowrap font-medium transition-colors ${selectedCategory === category
-                                        ? "bg-green-600 text-white"
-                                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                                    ? "bg-green-600 text-white"
+                                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                                     }`}
                                 onClick={() => setSelectedCategory(category)}
                             >
@@ -153,7 +153,7 @@ export default function SuccessStoriesPage() {
                         Join the ranks of innovative companies that have transformed their vision into reality with our strategic investment and comprehensive support.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/contact" className="inline-flex items-center px-8 py-3 bg-white text-green-600 rounded-lg hover:bg-gray-50 transition-colors duration-300 font-semibold">
+                        <Link href="/#contact" className="inline-flex items-center px-8 py-3 bg-white text-green-600 rounded-lg hover:bg-gray-50 transition-colors duration-300 font-semibold">
                             Contact Our Investment Team
                         </Link>
                         <Link href="/services" className="inline-flex items-center px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-green-600 transition-colors duration-300 font-semibold">
