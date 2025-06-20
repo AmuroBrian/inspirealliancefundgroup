@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const SECPhilippines = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState("en");
   const [form, setForm] = useState({
     fullName: "",
     businessName: "",
@@ -13,6 +14,217 @@ const SECPhilippines = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+
+  // Static translations for SEC Philippines
+  const translations = {
+    en: {
+      secPhilippines: {
+        title: "SEC Philippines Registration",
+        description:
+          "Navigate Philippine business regulations with expert guidance on SEC registration, corporate compliance, and regulatory requirements for establishing your business presence in the Philippines.",
+        content: {
+          whatIs: {
+            title: "What is SEC Philippines?",
+            paragraph1:
+              "The Securities and Exchange Commission (SEC) Philippines is the government agency responsible for regulating the country's capital markets and corporations. It ensures the protection of investors and the development of fair, efficient, and transparent capital markets.",
+            paragraph2:
+              "SEC registration is mandatory for all corporations, partnerships, and other business entities operating in the Philippines. This regulatory framework provides legal protection, credibility, and access to various business opportunities.",
+          },
+          whyEssential: {
+            title: "Why SEC Registration is Essential",
+            points: {
+              legalRecognition:
+                "Legal recognition and legitimacy for business operations",
+              businessOperations:
+                "Ability to enter contracts, open bank accounts, and conduct business",
+              investorProtection:
+                "Investor protection and access to capital markets",
+              complianceFramework:
+                "Structured compliance framework for corporate governance",
+            },
+          },
+        },
+        servicesTitle: "SEC Philippines Services",
+        services: {
+          corporateRegistration: {
+            title: "Corporate Registration",
+            description:
+              "Complete assistance with company incorporation and registration processes",
+          },
+          businessLicensing: {
+            title: "Business Licensing",
+            description:
+              "Guidance through licensing requirements and regulatory compliance",
+          },
+          regulatoryCompliance: {
+            title: "Regulatory Compliance",
+            description:
+              "Ongoing compliance monitoring and regulatory reporting assistance",
+          },
+          financialOversight: {
+            title: "Financial Oversight",
+            description:
+              "Financial reporting standards and corporate governance compliance",
+          },
+          investorProtection: {
+            title: "Investor Protection",
+            description:
+              "Safeguarding investor interests and ensuring market transparency",
+          },
+          marketDevelopment: {
+            title: "Market Development",
+            description:
+              "Supporting capital market growth and development initiatives",
+          },
+        },
+        cta: {
+          title: "Ready to Register Your Business?",
+          description:
+            "Get expert assistance with SEC Philippines registration and ensure your business meets all regulatory requirements.",
+          button: "Start Registration Process",
+        },
+        modal: {
+          title: "SEC Registration Inquiry",
+          configurationError:
+            "Email service configuration error. Please contact us directly.",
+          errorMessage:
+            "Failed to submit inquiry. Please try again or contact us directly.",
+          form: {
+            fullName: "Full Name",
+            fullNamePlaceholder: "Enter your full name",
+            businessName: "Business Name",
+            businessNamePlaceholder: "Enter your business name",
+            email: "Email Address",
+            emailPlaceholder: "Enter your email address",
+            submitting: "Submitting...",
+            submit: "Submit Inquiry",
+          },
+          success: {
+            title: "Inquiry Submitted Successfully!",
+            message:
+              "Thank you for your inquiry. Our SEC specialists will contact you within 24 hours to discuss your registration requirements.",
+          },
+        },
+      },
+    },
+    ja: {
+      secPhilippines: {
+        title: "SEC フィリピン登録",
+        description:
+          "SEC登録、法人コンプライアンス、フィリピンでのビジネス展開に向けた規制要件の専門ガイダンスで、フィリピンのビジネス規制をナビゲートしてください。",
+        content: {
+          whatIs: {
+            title: "SEC フィリピンとは？",
+            paragraph1:
+              "フィリピン証券取引委員会（SEC）は、国の資本市場と企業を規制する政府機関です。投資家の保護と公正で効率的、透明な資本市場の発展を確保しています。",
+            paragraph2:
+              "SEC登録は、フィリピンで事業を行うすべての企業、パートナーシップ、その他の事業体に義務付けられています。この規制フレームワークは法的保護、信頼性、様々なビジネス機会へのアクセスを提供します。",
+          },
+          whyEssential: {
+            title: "SEC登録が不可欠な理由",
+            points: {
+              legalRecognition: "事業運営の法的認識と正当性",
+              businessOperations: "契約締結、銀行口座開設、事業実施の能力",
+              investorProtection: "投資家保護と資本市場へのアクセス",
+              complianceFramework:
+                "企業ガバナンスの構造化されたコンプライアンス・フレームワーク",
+            },
+          },
+        },
+        servicesTitle: "SEC フィリピン・サービス",
+        services: {
+          corporateRegistration: {
+            title: "法人登録",
+            description: "会社設立と登録プロセスの完全なサポート",
+          },
+          businessLicensing: {
+            title: "事業ライセンス",
+            description: "ライセンス要件と規制コンプライアンスのガイダンス",
+          },
+          regulatoryCompliance: {
+            title: "規制コンプライアンス",
+            description: "継続的なコンプライアンス監視と規制報告サポート",
+          },
+          financialOversight: {
+            title: "財務監視",
+            description: "財務報告基準と企業ガバナンス・コンプライアンス",
+          },
+          investorProtection: {
+            title: "投資家保護",
+            description: "投資家利益の保護と市場透明性の確保",
+          },
+          marketDevelopment: {
+            title: "市場開発",
+            description: "資本市場の成長と開発イニシアチブの支援",
+          },
+        },
+        cta: {
+          title: "ビジネス登録の準備はできていますか？",
+          description:
+            "SEC フィリピン登録の専門サポートを受けて、お客様のビジネスがすべての規制要件を満たすことを確保してください。",
+          button: "登録プロセスを開始",
+        },
+        modal: {
+          title: "SEC 登録お問い合わせ",
+          configurationError:
+            "メールサービス設定エラー。直接お問い合わせください。",
+          errorMessage:
+            "お問い合わせの送信に失敗しました。再度お試しいただくか、直接お問い合わせください。",
+          form: {
+            fullName: "氏名",
+            fullNamePlaceholder: "お名前をご入力ください",
+            businessName: "事業名",
+            businessNamePlaceholder: "事業名をご入力ください",
+            email: "メールアドレス",
+            emailPlaceholder: "メールアドレスをご入力ください",
+            submitting: "送信中...",
+            submit: "お問い合わせを送信",
+          },
+          success: {
+            title: "お問い合わせが正常に送信されました！",
+            message:
+              "お問い合わせありがとうございます。当社のSECスペシャリストが24時間以内にお客様の登録要件について連絡いたします。",
+          },
+        },
+      },
+    },
+  };
+
+  const t = (key) => {
+    const keys = key.split(".");
+    let result = translations[currentLang];
+    for (const k of keys) {
+      result = result[k];
+      if (!result) break;
+    }
+    return result || key;
+  };
+
+  // Listen for language changes
+  useEffect(() => {
+    // Check for saved language on load
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("selectedLanguage");
+      if (savedLang && (savedLang === "en" || savedLang === "ja")) {
+        setCurrentLang(savedLang);
+      }
+    }
+
+    // Listen for language change events
+    const handleLanguageChange = (event) => {
+      setCurrentLang(event.detail.language);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("languageChanged", handleLanguageChange);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("languageChanged", handleLanguageChange);
+      }
+    };
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -30,9 +242,7 @@ const SECPhilippines = () => {
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
       if (!serviceId || !templateId || !publicKey) {
-        setError(
-          "Email service is not configured. Please contact the administrator."
-        );
+        setError(t("secPhilippines.modal.configurationError"));
         setLoading(false);
         return;
       }
@@ -67,7 +277,7 @@ const SECPhilippines = () => {
       }
     } catch (error) {
       console.error("EmailJS error:", error);
-      setError("Failed to send registration request. Please try again later.");
+      setError(t("secPhilippines.modal.errorMessage"));
     } finally {
       setLoading(false);
     }
@@ -93,39 +303,37 @@ const SECPhilippines = () => {
   const secServices = [
     {
       icon: "📋",
-      title: "Corporate Registration",
-      description:
-        "Complete registration of corporations, partnerships, and other business entities",
+      title: t("secPhilippines.services.corporateRegistration.title"),
+      description: t(
+        "secPhilippines.services.corporateRegistration.description"
+      ),
     },
     {
       icon: "🏢",
-      title: "Business Licensing",
-      description:
-        "Issuance of licenses for various business activities and commercial operations",
+      title: t("secPhilippines.services.businessLicensing.title"),
+      description: t("secPhilippines.services.businessLicensing.description"),
     },
     {
       icon: "⚖️",
-      title: "Regulatory Compliance",
-      description:
-        "Monitoring and enforcement of corporate governance and securities regulations",
+      title: t("secPhilippines.services.regulatoryCompliance.title"),
+      description: t(
+        "secPhilippines.services.regulatoryCompliance.description"
+      ),
     },
     {
       icon: "📊",
-      title: "Financial Oversight",
-      description:
-        "Supervision of public companies and financial market participants",
+      title: t("secPhilippines.services.financialOversight.title"),
+      description: t("secPhilippines.services.financialOversight.description"),
     },
     {
       icon: "🛡️",
-      title: "Investor Protection",
-      description:
-        "Safeguarding investor interests and ensuring market transparency",
+      title: t("secPhilippines.services.investorProtection.title"),
+      description: t("secPhilippines.services.investorProtection.description"),
     },
     {
       icon: "📈",
-      title: "Market Development",
-      description:
-        "Promoting capital market growth and development in the Philippines",
+      title: t("secPhilippines.services.marketDevelopment.title"),
+      description: t("secPhilippines.services.marketDevelopment.description"),
     },
   ];
 
@@ -199,12 +407,10 @@ const SECPhilippines = () => {
               backgroundClip: "text",
             }}
           >
-            Securities and Exchange Commission (SEC) Philippines
+            {t("secPhilippines.title")}
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            The government agency responsible for regulating the securities
-            market and registering corporations and partnerships in the
-            Philippines
+            {t("secPhilippines.description")}
           </p>
         </div>
 
@@ -247,25 +453,19 @@ const SECPhilippines = () => {
             <div className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-3xl font-bold text-gray-800 mb-4">
-                  What is SEC Philippines?
+                  {t("secPhilippines.content.whatIs.title")}
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  The Securities and Exchange Commission (SEC) is the primary
-                  government agency responsible for regulating the securities
-                  market and overseeing the registration of corporations,
-                  partnerships, and other business entities in the Philippines.
+                  {t("secPhilippines.content.whatIs.paragraph1")}
                 </p>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  Established to protect investors and maintain fair, orderly,
-                  and efficient markets, the SEC plays a crucial role in the
-                  Philippine business landscape by ensuring corporate compliance
-                  and promoting transparency in business operations.
+                  {t("secPhilippines.content.whatIs.paragraph2")}
                 </p>
               </div>
 
               <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
                 <h4 className="text-xl font-semibold text-gray-800 mb-4">
-                  Why SEC Registration is Essential:
+                  {t("secPhilippines.content.whyEssential.title")}
                 </h4>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
@@ -277,9 +477,9 @@ const SECPhilippines = () => {
                       }}
                     ></div>
                     <span>
-                      <strong>Legal Recognition:</strong> Provides your business
-                      with legal personality and recognition under Philippine
-                      law
+                      {t(
+                        "secPhilippines.content.whyEssential.points.legalRecognition"
+                      )}
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -291,9 +491,9 @@ const SECPhilippines = () => {
                       }}
                     ></div>
                     <span>
-                      <strong>Business Operations:</strong> Required before you
-                      can legally operate, open bank accounts, or enter
-                      contracts
+                      {t(
+                        "secPhilippines.content.whyEssential.points.businessOperations"
+                      )}
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -305,8 +505,9 @@ const SECPhilippines = () => {
                       }}
                     ></div>
                     <span>
-                      <strong>Investor Protection:</strong> Ensures transparency
-                      and builds trust with potential investors and partners
+                      {t(
+                        "secPhilippines.content.whyEssential.points.investorProtection"
+                      )}
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -318,8 +519,9 @@ const SECPhilippines = () => {
                       }}
                     ></div>
                     <span>
-                      <strong>Compliance Framework:</strong> Establishes proper
-                      corporate governance and regulatory compliance structure
+                      {t(
+                        "secPhilippines.content.whyEssential.points.complianceFramework"
+                      )}
                     </span>
                   </li>
                 </ul>
@@ -340,7 +542,7 @@ const SECPhilippines = () => {
               backgroundClip: "text",
             }}
           >
-            Key SEC Functions & Services
+            {t("secPhilippines.servicesTitle")}
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -365,12 +567,10 @@ const SECPhilippines = () => {
         <div className="text-center">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              Ready to Register Your Business with SEC Philippines?
+              {t("secPhilippines.cta.title")}
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Let our experts handle your SEC registration process from start to
-              finish. We ensure all documentation is properly prepared and
-              submitted for fast, compliant registration.
+              {t("secPhilippines.cta.description")}
             </p>
             <div className="flex justify-center">
               <button
@@ -381,7 +581,7 @@ const SECPhilippines = () => {
                     "linear-gradient(135deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
                 }}
               >
-                Start SEC Registration
+                {t("secPhilippines.cta.button")}
               </button>
             </div>
           </div>
@@ -401,7 +601,7 @@ const SECPhilippines = () => {
               }}
             >
               <h3 className="text-xl font-bold text-white text-center">
-                SEC Registration Request
+                {t("secPhilippines.modal.title")}
               </h3>
               <button
                 onClick={closeModal}
@@ -429,7 +629,8 @@ const SECPhilippines = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Full Name <span className="text-red-500">*</span>
+                      {t("secPhilippines.modal.form.fullName")}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -438,13 +639,16 @@ const SECPhilippines = () => {
                       onChange={handleChange}
                       required
                       className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 transition-all duration-300"
-                      placeholder="Enter your full name"
+                      placeholder={t(
+                        "secPhilippines.modal.form.fullNamePlaceholder"
+                      )}
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Business Name <span className="text-red-500">*</span>
+                      {t("secPhilippines.modal.form.businessName")}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -453,13 +657,16 @@ const SECPhilippines = () => {
                       onChange={handleChange}
                       required
                       className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 transition-all duration-300"
-                      placeholder="Enter desired business name"
+                      placeholder={t(
+                        "secPhilippines.modal.form.businessNamePlaceholder"
+                      )}
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address <span className="text-red-500">*</span>
+                      {t("secPhilippines.modal.form.email")}{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -468,7 +675,9 @@ const SECPhilippines = () => {
                       onChange={handleChange}
                       required
                       className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:border-[#4b888b] focus:ring-2 focus:ring-[#4b888b]/20 transition-all duration-300"
-                      placeholder="your@email.com"
+                      placeholder={t(
+                        "secPhilippines.modal.form.emailPlaceholder"
+                      )}
                     />
                   </div>
 
@@ -483,8 +692,8 @@ const SECPhilippines = () => {
                       }}
                     >
                       {loading
-                        ? "Submitting..."
-                        : "Submit Registration Request"}
+                        ? t("secPhilippines.modal.form.submitting")
+                        : t("secPhilippines.modal.form.submit")}
                     </button>
                   </div>
 
@@ -514,15 +723,13 @@ const SECPhilippines = () => {
                     </svg>
                   </div>
                   <h4 className="text-xl font-bold text-gray-800 mb-2">
-                    Request Submitted!
+                    {t("secPhilippines.modal.success.title")}
                   </h4>
                   <p className="text-gray-600 mb-4">
-                    Thank you for your SEC registration request. Our team will
-                    contact you shortly to assist with your business
-                    registration process.
+                    {t("secPhilippines.modal.success.message")}
                   </p>
                   <p className="text-sm text-gray-500">
-                    This window will close automatically...
+                    {t("secPhilippines.modal.success.autoClose")}
                   </p>
                 </div>
               )}

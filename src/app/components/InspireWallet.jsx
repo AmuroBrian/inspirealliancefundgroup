@@ -4,7 +4,169 @@ import Image from "next/image";
 
 const InspireWallet = () => {
   const [isAnimating, setIsAnimating] = useState(false);
+  const [currentLang, setCurrentLang] = useState("en");
   const sectionRef = useRef(null);
+
+  // Static translations for InspireWallet
+  const translations = {
+    en: {
+      inspireWallet: {
+        title: "Inspire Wallet",
+        subtitle: "Your Gateway to Smart Financial Management",
+        description:
+          "Experience the future of digital finance with Inspire Wallet, our comprehensive fintech mobile application. Designed to revolutionize how you manage investments, track performance, and execute transactions with cutting-edge technology and intuitive design.",
+        features: {
+          tracking: {
+            title: "Investment Tracking",
+            description:
+              "Monitor your portfolio performance in real-time with advanced analytics and detailed reporting tools.",
+          },
+          stocks: {
+            title: "Stock Management",
+            description:
+              "Manage your stock portfolio with intelligent insights and automated trading recommendations.",
+          },
+          withdrawal: {
+            title: "Withdrawal Management",
+            description:
+              "Secure and instant withdrawal processes with multi-layer authentication and fraud protection.",
+          },
+          history: {
+            title: "Transaction History",
+            description:
+              "Complete transaction records with detailed analytics and exportable reports for tax purposes.",
+          },
+          trading: {
+            title: "Trading Platform",
+            description:
+              "Advanced trading tools with real-time market data and professional-grade charting capabilities.",
+          },
+          security: {
+            title: "Robust Security",
+            description:
+              "Bank-level security with biometric authentication, encryption, and fraud monitoring systems.",
+          },
+        },
+        download: {
+          title: "Download Inspire Wallet Today",
+          description:
+            "Join thousands of investors who trust Inspire Wallet for their financial management needs. Available on iOS and Android.",
+        },
+        rating: "5.0 Stars • 6 Reviews",
+        info: {
+          free: {
+            title: "Free to Download",
+            description: "No hidden fees or subscription costs",
+          },
+          security: {
+            title: "Bank-Level Security",
+            description:
+              "Your data is protected with industry-leading encryption",
+          },
+          realtime: {
+            title: "Real-Time Updates",
+            description: "Live market data and instant notifications",
+          },
+        },
+      },
+    },
+    ja: {
+      inspireWallet: {
+        title: "インスパイア・ウォレット",
+        subtitle: "スマート金融管理へのゲートウェイ",
+        description:
+          "包括的なフィンテック・モバイル・アプリケーション「インスパイア・ウォレット」でデジタル金融の未来を体験してください。最先端技術と直感的なデザインで投資管理、パフォーマンス追跡、取引実行の方法を革命化するよう設計されています。",
+        features: {
+          tracking: {
+            title: "投資追跡",
+            description:
+              "高度な分析と詳細なレポートツールでポートフォリオのパフォーマンスをリアルタイムで監視します。",
+          },
+          stocks: {
+            title: "株式管理",
+            description:
+              "インテリジェントな洞察と自動取引推奨で株式ポートフォリオを管理します。",
+          },
+          withdrawal: {
+            title: "出金管理",
+            description: "多層認証と詐欺防止による安全で即座の出金プロセス。",
+          },
+          history: {
+            title: "取引履歴",
+            description:
+              "詳細な分析と税務目的でエクスポート可能なレポートを含む完全な取引記録。",
+          },
+          trading: {
+            title: "取引プラットフォーム",
+            description:
+              "リアルタイム市場データとプロフェッショナルグレードのチャート機能を備えた高度な取引ツール。",
+          },
+          security: {
+            title: "堅牢なセキュリティ",
+            description:
+              "生体認証、暗号化、不正監視システムを備えた銀行レベルのセキュリティ。",
+          },
+        },
+        download: {
+          title: "今すぐインスパイア・ウォレットをダウンロード",
+          description:
+            "金融管理ニーズでインスパイア・ウォレットを信頼する何千人もの投資家に参加してください。iOSとAndroidで利用可能。",
+        },
+        rating: "5.0つ星 • 6件のレビュー",
+        info: {
+          free: {
+            title: "無料ダウンロード",
+            description: "隠れた料金や購読料金はありません",
+          },
+          security: {
+            title: "銀行レベルのセキュリティ",
+            description:
+              "お客様のデータは業界最高レベルの暗号化で保護されています",
+          },
+          realtime: {
+            title: "リアルタイム更新",
+            description: "ライブ市場データと即座の通知",
+          },
+        },
+      },
+    },
+  };
+
+  const t = (key) => {
+    const keys = key.split(".");
+    let result = translations[currentLang];
+    for (const k of keys) {
+      result = result[k];
+      if (!result) break;
+    }
+    return result || key;
+  };
+
+  // Listen for language changes
+  useEffect(() => {
+    // Check for saved language on load
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("selectedLanguage");
+      if (savedLang && (savedLang === "en" || savedLang === "ja")) {
+        setCurrentLang(savedLang);
+      }
+    }
+
+    // Listen for language change events
+    const handleLanguageChange = (event) => {
+      setCurrentLang(event.detail.language);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("languageChanged", handleLanguageChange);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("languageChanged", handleLanguageChange);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,9 +212,8 @@ const InspireWallet = () => {
           />
         </svg>
       ),
-      title: "Investment Tracking",
-      description:
-        "Monitor your investment portfolio and see how your assets perform in real time with comprehensive analytics and insights.",
+      title: t("inspireWallet.features.tracking.title"),
+      description: t("inspireWallet.features.tracking.description"),
     },
     {
       icon: (
@@ -70,9 +231,8 @@ const InspireWallet = () => {
           />
         </svg>
       ),
-      title: "Stock Management",
-      description:
-        "Stay updated on your stock holdings and market movements with real-time data and professional-grade market analysis.",
+      title: t("inspireWallet.features.stocks.title"),
+      description: t("inspireWallet.features.stocks.description"),
     },
     {
       icon: (
@@ -90,9 +250,8 @@ const InspireWallet = () => {
           />
         </svg>
       ),
-      title: "Withdrawal Management",
-      description:
-        "Track the amounts you've withdrawn and plan your future financial moves with confidence and strategic insights.",
+      title: t("inspireWallet.features.withdrawal.title"),
+      description: t("inspireWallet.features.withdrawal.description"),
     },
     {
       icon: (
@@ -110,9 +269,8 @@ const InspireWallet = () => {
           />
         </svg>
       ),
-      title: "Transaction History",
-      description:
-        "View a detailed history of all your transactions, including investments, stocks, and withdrawals, all in one secure place.",
+      title: t("inspireWallet.features.history.title"),
+      description: t("inspireWallet.features.history.description"),
     },
     {
       icon: (
@@ -130,9 +288,8 @@ const InspireWallet = () => {
           />
         </svg>
       ),
-      title: "Trading Platform",
-      description:
-        "Advanced trading platform supporting both cryptocurrency and forex markets with real-time data, charts, and professional trading tools.",
+      title: t("inspireWallet.features.trading.title"),
+      description: t("inspireWallet.features.trading.description"),
     },
     {
       icon: (
@@ -150,9 +307,8 @@ const InspireWallet = () => {
           />
         </svg>
       ),
-      title: "Robust Security",
-      description:
-        "Your sensitive financial information remains safe and secure with bank-level encryption and advanced security protocols.",
+      title: t("inspireWallet.features.security.title"),
+      description: t("inspireWallet.features.security.description"),
     },
   ];
 
@@ -185,13 +341,13 @@ const InspireWallet = () => {
             </div>
           </div>
           <h2 className="text-5xl font-bold text-gray-800 mb-4">
-            Inspire Wallet
+            {t("inspireWallet.title")}
           </h2>
           <p
             className="text-xl font-semibold mb-4"
             style={{ color: "rgba(75, 136, 139, 1)" }}
           >
-            FinTech Mobile Application
+            {t("inspireWallet.subtitle")}
           </p>
           <div
             className="w-24 h-1 mx-auto mb-6"
@@ -201,10 +357,7 @@ const InspireWallet = () => {
             }}
           ></div>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-            Your all-in-one financial companion designed to keep you on top of
-            your investments, stocks, and financial transactions. Whether you're
-            an experienced investor or just getting started, our app provides
-            you with the tools to manage your portfolio with ease.
+            {t("inspireWallet.description")}
           </p>
         </div>
 
@@ -271,11 +424,10 @@ const InspireWallet = () => {
           }}
         >
           <h3 className="text-3xl font-bold mb-4">
-            Download Inspire Wallet Today
+            {t("inspireWallet.download.title")}
           </h3>
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-            Take control of your financial future with our comprehensive mobile
-            application. Available for both iOS and Android devices.
+            {t("inspireWallet.download.description")}
           </p>
 
           {/* App Rating */}
@@ -293,7 +445,7 @@ const InspireWallet = () => {
                 ))}
               </div>
               <span className="text-white font-semibold">
-                5.0 Stars • 6 Reviews
+                {t("inspireWallet.rating")}
               </span>
             </div>
           </div>
@@ -334,21 +486,27 @@ const InspireWallet = () => {
           {/* App Info */}
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="bg-white/10 rounded-xl p-4">
-              <h4 className="font-bold text-lg mb-2">Free to Download</h4>
+              <h4 className="font-bold text-lg mb-2">
+                {t("inspireWallet.info.free.title")}
+              </h4>
               <p className="text-white/80 text-sm">
-                No subscription fees or hidden costs
+                {t("inspireWallet.info.free.description")}
               </p>
             </div>
             <div className="bg-white/10 rounded-xl p-4">
-              <h4 className="font-bold text-lg mb-2">Bank-Level Security</h4>
+              <h4 className="font-bold text-lg mb-2">
+                {t("inspireWallet.info.security.title")}
+              </h4>
               <p className="text-white/80 text-sm">
-                Your data is protected with advanced encryption
+                {t("inspireWallet.info.security.description")}
               </p>
             </div>
             <div className="bg-white/10 rounded-xl p-4">
-              <h4 className="font-bold text-lg mb-2">Real-Time Updates</h4>
+              <h4 className="font-bold text-lg mb-2">
+                {t("inspireWallet.info.realtime.title")}
+              </h4>
               <p className="text-white/80 text-sm">
-                Live market data and portfolio tracking
+                {t("inspireWallet.info.realtime.description")}
               </p>
             </div>
           </div>

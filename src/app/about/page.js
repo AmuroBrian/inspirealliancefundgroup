@@ -13,8 +13,8 @@ const boardOfDirectors = [
     {
         name: "Brian Perez",
         position: "President",
-        since: "2019",
-        description: "Strategic leader with extensive experience in financial services, technology, and corporate governance, driving the company's vision and growth initiatives through innovation and digital transformation.",
+        since: "2021",
+        description: "Technology leader with extensive experience in digital innovation and systems architecture, driving the company's vision for technological advancement and growth.",
         slug: "brian-perez"
     },
     {
@@ -24,6 +24,7 @@ const boardOfDirectors = [
         description: "Experienced executive with deep expertise in business operations and strategic planning, supporting organizational development and expansion.",
         slug: "rhia-alberto"
     },
+
     {
         name: "Atty. Renato Pineda",
         position: "Non-Executive Director",
@@ -80,7 +81,7 @@ const corporateOfficers = [
     },
     {
         name: "Shelah Reynaldo",
-        position: "Secretary",
+        position: "Software Developer/Secretary",
         description: "Executive support, documentation management, and coordination of board and management communications.",
         slug: "shelah-reynaldo"
     },

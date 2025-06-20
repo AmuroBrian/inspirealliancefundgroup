@@ -5,7 +5,302 @@ import Image from "next/image";
 
 const TravelSecurity = () => {
   const [animatedElements, setAnimatedElements] = useState(new Set());
+  const [currentLang, setCurrentLang] = useState("en");
   const sectionRef = useRef(null);
+
+  // Static translations for Travel Security
+  const translations = {
+    en: {
+      travelSecurity: {
+        title: "Coverage Area of Our Inspire Protection",
+        subtitle: "Comprehensive Travel Security for Metro Manila",
+        description:
+          "Experience peace of mind with our 24/7 travel security coverage across Metro Manila's key destinations. Our Inspire Protection service provides comprehensive safety solutions for business travelers, tourists, and residents.",
+        coverageNotice:
+          "Currently serving Metro Manila with plans to expand nationwide",
+        sections: {
+          coverageAreas: "Metro Manila Coverage Areas",
+          protectionServices: "Protection Services",
+          protectionBenefits: "Protection Benefits",
+          metroManilaNetwork: "Metro Manila Security Network",
+          whyChooseUs: "Why Choose Our Protection",
+        },
+        ui: {
+          coverageAreas: "Coverage Areas",
+          keyLocations: "Key Locations",
+          readMore: "Read More",
+          collapse: "Collapse",
+        },
+        benefits: {
+          policeReport: {
+            title: "Police Report Assistance",
+            description:
+              "Complete support with filing police reports and legal documentation for any incidents during your stay.",
+          },
+          mealAllowance: {
+            title: "Daily Meal Allowance",
+            description:
+              "Emergency meal allowance during extended incident resolution.",
+            perDay: "per day",
+          },
+          comprehensiveSupport: {
+            title: "Comprehensive Support",
+            description:
+              "24/7 assistance covering all aspects of your travel security needs with professional support staff.",
+          },
+        },
+        stats: {
+          citiesCovered: "17 Cities Covered",
+          responseReady: "24/7 Response Ready",
+          securityPersonnel: "50+ Security Personnel",
+          averageResponse: "< 15 min Average Response",
+        },
+        whyChoose: {
+          support: {
+            title: "24/7 Professional Support",
+            description:
+              "Round-the-clock assistance from trained security professionals with local expertise and emergency response capabilities.",
+          },
+          quickEasy: {
+            title: "Quick & Easy Activation",
+            description:
+              "Simple activation process with immediate coverage. Download our app and activate protection within minutes of arrival.",
+          },
+          trustProtection: {
+            title: "Trusted Protection Network",
+            description:
+              "Established security network with proven track record of protecting travelers across Metro Manila's diverse districts.",
+          },
+        },
+        pricing: {
+          title: "Protection Pricing",
+          specialOffer: {
+            title: "Special Rates for Inspire Clients",
+          },
+          inspireClients: {
+            label: "Inspire Clients",
+            description: "Exclusive rates for Inspire Alliance clients",
+          },
+          generalClients: {
+            label: "General Clients",
+            description: "Standard protection rates",
+          },
+        },
+        trustIndicators: {
+          securePayment: "Secure Payment",
+          protectedData: "Protected Data",
+          instantActivation: "Instant Activation",
+        },
+        beforeTravel: {
+          title: "Before You Travel",
+          description: "Get protected in 3 simple steps",
+          steps: {
+            step1: {
+              title: "Download App",
+              description:
+                "Download the Inspire Protection app from your device's app store",
+            },
+            step2: {
+              title: "Register & Verify",
+              description:
+                "Create your account and verify your travel details for Metro Manila",
+            },
+            step3: {
+              title: "Activate Protection",
+              description:
+                "Activate your protection plan and receive 24/7 coverage confirmation",
+            },
+          },
+        },
+        download: {
+          googlePlay: "Download from Google Play",
+          appStore: "Download from App Store",
+        },
+        cities: {
+          manila: {
+            district: "Historic Capital District",
+            areas: [
+              "Intramuros",
+              "Binondo",
+              "Malate",
+              "Ermita",
+              "Paco",
+              "Santa Ana",
+            ],
+            description:
+              "Historic capital with cultural landmarks and government offices",
+            keyLocations: [
+              "Rizal Park",
+              "Manila Cathedral",
+              "Malacañang Palace",
+              "Port of Manila",
+            ],
+          },
+        },
+      },
+    },
+    ja: {
+      travelSecurity: {
+        title: "インスパイア・プロテクションのカバーエリア",
+        subtitle: "メトロマニラ向け包括的旅行セキュリティ",
+        description:
+          "メトロマニラの主要目的地全体で24時間年中無休の旅行セキュリティカバレッジで安心を体験してください。当社のインスパイア・プロテクション・サービスは、出張者、観光客、住民向けの包括的な安全ソリューションを提供します。",
+        coverageNotice: "現在メトロマニラにサービスを提供中、全国展開を計画中",
+        sections: {
+          coverageAreas: "メトロマニラ・カバーエリア",
+          protectionServices: "プロテクション・サービス",
+          protectionBenefits: "プロテクション・ベネフィット",
+          metroManilaNetwork: "メトロマニラ・セキュリティ・ネットワーク",
+          whyChooseUs: "当社の保護を選ぶ理由",
+        },
+        ui: {
+          coverageAreas: "カバーエリア",
+          keyLocations: "主要ロケーション",
+          readMore: "もっと読む",
+          collapse: "折りたたむ",
+        },
+        benefits: {
+          policeReport: {
+            title: "警察レポート支援",
+            description:
+              "滞在中の事件に対する警察レポートの提出と法的文書作成の完全サポート。",
+          },
+          mealAllowance: {
+            title: "日額食事手当",
+            description: "事件解決期間延長時の緊急食事手当。",
+            perDay: "日額",
+          },
+          comprehensiveSupport: {
+            title: "包括的サポート",
+            description:
+              "プロフェッショナルサポートスタッフによる旅行セキュリティニーズのあらゆる側面をカバーする24時間年中無休のアシスタンス。",
+          },
+        },
+        stats: {
+          citiesCovered: "17都市をカバー",
+          responseReady: "24時間年中無休の対応準備",
+          securityPersonnel: "50人以上のセキュリティ担当者",
+          averageResponse: "平均応答時間15分未満",
+        },
+        whyChoose: {
+          support: {
+            title: "24時間年中無休プロフェッショナルサポート",
+            description:
+              "地域専門知識と緊急対応能力を持つ訓練されたセキュリティプロフェッショナルからの24時間体制のアシスタンス。",
+          },
+          quickEasy: {
+            title: "迅速・簡単な有効化",
+            description:
+              "即座のカバレッジを伴うシンプルな有効化プロセス。アプリをダウンロードして到着数分以内に保護を有効化。",
+          },
+          trustProtection: {
+            title: "信頼されるプロテクション・ネットワーク",
+            description:
+              "メトロマニラの多様な地区全体で旅行者を保護する実績のある確立されたセキュリティネットワーク。",
+          },
+        },
+        pricing: {
+          title: "プロテクション料金",
+          specialOffer: {
+            title: "インスパイアクライアント向け特別料金",
+          },
+          inspireClients: {
+            label: "インスパイアクライアント",
+            description: "インスパイア・アライアンスクライアント向け独占料金",
+          },
+          generalClients: {
+            label: "一般クライアント",
+            description: "標準プロテクション料金",
+          },
+        },
+        trustIndicators: {
+          securePayment: "セキュア決済",
+          protectedData: "データ保護",
+          instantActivation: "即座の有効化",
+        },
+        beforeTravel: {
+          title: "旅行前に",
+          description: "3つの簡単なステップで保護されます",
+          steps: {
+            step1: {
+              title: "アプリをダウンロード",
+              description:
+                "デバイスのアプリストアからインスパイア・プロテクション・アプリをダウンロード",
+            },
+            step2: {
+              title: "登録・認証",
+              description: "アカウントを作成し、メトロマニラの旅行詳細を認証",
+            },
+            step3: {
+              title: "プロテクション有効化",
+              description:
+                "プロテクションプランを有効化し、24時間年中無休のカバレッジ確認を受信",
+            },
+          },
+        },
+        download: {
+          googlePlay: "Google Playからダウンロード",
+          appStore: "App Storeからダウンロード",
+        },
+        cities: {
+          manila: {
+            district: "歴史的首都地区",
+            areas: [
+              "イントラムロス",
+              "ビノンド",
+              "マラテ",
+              "エルミタ",
+              "パコ",
+              "サンタアナ",
+            ],
+            description: "文化的ランドマークと政府オフィスがある歴史的首都",
+            keyLocations: [
+              "リサール公園",
+              "マニラ大聖堂",
+              "マラカニアン宮殿",
+              "マニラ港",
+            ],
+          },
+        },
+      },
+    },
+  };
+
+  const t = (key) => {
+    const keys = key.split(".");
+    let result = translations[currentLang];
+    for (const k of keys) {
+      result = result[k];
+      if (!result) break;
+    }
+    return result || key;
+  };
+
+  // Listen for language changes
+  useEffect(() => {
+    // Check for saved language on load
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("selectedLanguage");
+      if (savedLang && (savedLang === "en" || savedLang === "ja")) {
+        setCurrentLang(savedLang);
+      }
+    }
+
+    // Listen for language change events
+    const handleLanguageChange = (event) => {
+      setCurrentLang(event.detail.language);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("languageChanged", handleLanguageChange);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("languageChanged", handleLanguageChange);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -62,17 +357,23 @@ const TravelSecurity = () => {
   const metroManilaCities = [
     {
       city: "Manila",
-      district: "National Capital Region",
-      areas: ["Intramuros", "Binondo", "Ermita", "Malate", "Sampaloc", "Tondo"],
+      district: t("travelSecurity.cities.manila.district"),
+      areas: [
+        t("travelSecurity.cities.manila.areas.0"),
+        t("travelSecurity.cities.manila.areas.1"),
+        t("travelSecurity.cities.manila.areas.2"),
+        t("travelSecurity.cities.manila.areas.3"),
+        t("travelSecurity.cities.manila.areas.4"),
+        t("travelSecurity.cities.manila.areas.5"),
+      ],
       icon: "🏛️",
       color: "from-blue-600 to-indigo-600",
-      description:
-        "Historic capital city with comprehensive business district coverage",
+      description: t("travelSecurity.cities.manila.description"),
       keyLocations: [
-        "Rizal Park",
-        "Manila Bay",
-        "Chinatown",
-        "University Belt",
+        t("travelSecurity.cities.manila.keyLocations.0"),
+        t("travelSecurity.cities.manila.keyLocations.1"),
+        t("travelSecurity.cities.manila.keyLocations.2"),
+        t("travelSecurity.cities.manila.keyLocations.3"),
       ],
     },
     {
@@ -426,20 +727,17 @@ const TravelSecurity = () => {
             </svg>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent leading-tight">
-            Coverage Area of Our Inspire Protection
+            {t("travelSecurity.title")}
           </h2>
           <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700">
-            Metro Manila Comprehensive Security
+            {t("travelSecurity.subtitle")}
           </h3>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
-            Complete protection services across all major cities and business
-            districts in Metro Manila. From Makati CBD to BGC, from Ortigas to
-            Alabang - we've got you covered 24/7.
+            {t("travelSecurity.description")}
           </p>
           <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
             <p className="text-lg font-semibold text-blue-800">
-              This protection covers the following situations during your 3- or
-              4-day stay in Metro Manila, Philippines:
+              {t("travelSecurity.coverageNotice")}
             </p>
           </div>
         </div>
@@ -447,7 +745,7 @@ const TravelSecurity = () => {
         {/* Metro Manila Coverage Areas */}
         <div className="mb-24 max-w-6xl mx-auto">
           <h3 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
-            Metro Manila Coverage Areas
+            {t("travelSecurity.sections.coverageAreas")}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
             {metroManilaCities.map((area, index) => (
@@ -472,7 +770,7 @@ const TravelSecurity = () => {
 
                   <div className="mb-4">
                     <h5 className="font-semibold text-gray-800 mb-2 text-sm">
-                      Coverage Areas:
+                      {t("travelSecurity.ui.coverageAreas")}
                     </h5>
                     <div className="flex flex-wrap gap-1">
                       {area.areas.slice(0, 3).map((location, idx) => (
@@ -493,7 +791,7 @@ const TravelSecurity = () => {
 
                   <div>
                     <h5 className="font-semibold text-gray-800 mb-2 text-sm">
-                      Key Locations:
+                      {t("travelSecurity.ui.keyLocations")}
                     </h5>
                     <ul className="text-xs text-gray-600 space-y-1">
                       {area.keyLocations.slice(0, 3).map((location, idx) => (
@@ -516,7 +814,7 @@ const TravelSecurity = () => {
         <div className="mb-20">
           <div className="max-w-6xl mx-auto px-6">
             <h3 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Comprehensive Protection Services
+              {t("travelSecurity.sections.protectionServices")}
             </h3>
             <div className="flex justify-center">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl">
@@ -560,7 +858,7 @@ const TravelSecurity = () => {
         {/* Protection Benefits */}
         <div className="mb-20 max-w-6xl mx-auto">
           <h3 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-            Protection Benefits
+            {t("travelSecurity.sections.protectionBenefits")}
           </h3>
           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 md:p-12 border border-green-200 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
@@ -570,11 +868,11 @@ const TravelSecurity = () => {
                     <span className="text-white text-xl">📋</span>
                   </div>
                   <h4 className="text-lg font-bold text-gray-800">
-                    Police Report Assistance
+                    {t("travelSecurity.benefits.policeReport.title")}
                   </h4>
                 </div>
                 <p className="text-gray-600">
-                  Assistance with filing police reports
+                  {t("travelSecurity.benefits.policeReport.description")}
                 </p>
               </div>
 
@@ -584,13 +882,13 @@ const TravelSecurity = () => {
                     <span className="text-white text-xl">🍽️</span>
                   </div>
                   <h4 className="text-lg font-bold text-gray-800">
-                    Daily Meal Allowance
+                    {t("travelSecurity.benefits.mealAllowance.title")}
                   </h4>
                 </div>
                 <p className="text-gray-600">
-                  Meal allowance of{" "}
+                  {t("travelSecurity.benefits.mealAllowance.description")}{" "}
                   <span className="font-bold text-blue-600">
-                    ₱2,000 per day
+                    ₱2,000 {t("travelSecurity.benefits.mealAllowance.perDay")}
                   </span>
                 </p>
               </div>
@@ -601,11 +899,13 @@ const TravelSecurity = () => {
                     <span className="text-white text-xl">🛡️</span>
                   </div>
                   <h4 className="text-lg font-bold text-gray-800">
-                    Comprehensive Support
+                    {t("travelSecurity.benefits.comprehensiveSupport.title")}
                   </h4>
                 </div>
                 <p className="text-gray-600">
-                  Comprehensive support until your return
+                  {t(
+                    "travelSecurity.benefits.comprehensiveSupport.description"
+                  )}
                 </p>
               </div>
 
@@ -675,28 +975,36 @@ const TravelSecurity = () => {
         {/* Metro Manila Statistics */}
         <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12 mb-20 max-w-5xl mx-auto">
           <h3 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
-            Our Metro Manila Network
+            {t("travelSecurity.sections.metroManilaNetwork")}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600 mb-2">17</div>
-              <div className="text-gray-600">Cities Covered</div>
+              <div className="text-gray-600">
+                {t("travelSecurity.stats.citiesCovered")}
+              </div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-purple-600 mb-2">
                 24/7
               </div>
-              <div className="text-gray-600">Response Ready</div>
+              <div className="text-gray-600">
+                {t("travelSecurity.stats.responseReady")}
+              </div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-teal-600 mb-2">50+</div>
-              <div className="text-gray-600">Security Personnel</div>
+              <div className="text-gray-600">
+                {t("travelSecurity.stats.securityPersonnel")}
+              </div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-green-600 mb-2">
                 10min
               </div>
-              <div className="text-gray-600">Average Response</div>
+              <div className="text-gray-600">
+                {t("travelSecurity.stats.averageResponse")}
+              </div>
             </div>
           </div>
         </div>
@@ -722,7 +1030,7 @@ const TravelSecurity = () => {
               {/* Left Content */}
               <div>
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-12">
-                  WHY CHOOSE US?
+                  {t("travelSecurity.sections.whyChooseUs")}
                 </h3>
 
                 <div className="space-y-8">
@@ -746,12 +1054,12 @@ const TravelSecurity = () => {
                     <div className="flex-1">
                       <div className="flex items-center">
                         <h4 className="text-xl font-bold text-white mr-4">
-                          24/7 SUPPORT
+                          {t("travelSecurity.whyChoose.support.title")}
                         </h4>
                         <div className="flex-1 h-0.5 bg-gradient-to-r from-orange-500 to-transparent"></div>
                       </div>
                       <p className="text-gray-300 mt-2">
-                        Round-the-clock emergency assistance and monitoring
+                        {t("travelSecurity.whyChoose.support.description")}
                       </p>
                     </div>
                   </div>
@@ -776,12 +1084,12 @@ const TravelSecurity = () => {
                     <div className="flex-1">
                       <div className="flex items-center">
                         <h4 className="text-xl font-bold text-white mr-4">
-                          QUICK & EASY
+                          {t("travelSecurity.whyChoose.quickEasy.title")}
                         </h4>
                         <div className="flex-1 h-0.5 bg-gradient-to-r from-orange-500 to-transparent"></div>
                       </div>
                       <p className="text-gray-300 mt-2">
-                        Streamlined processes and rapid response deployment
+                        {t("travelSecurity.whyChoose.quickEasy.description")}
                       </p>
                     </div>
                   </div>
@@ -806,12 +1114,14 @@ const TravelSecurity = () => {
                     <div className="flex-1">
                       <div className="flex items-center">
                         <h4 className="text-xl font-bold text-white mr-4">
-                          TRUST & PROTECTION
+                          {t("travelSecurity.whyChoose.trustProtection.title")}
                         </h4>
                         <div className="flex-1 h-0.5 bg-gradient-to-r from-orange-500 to-transparent"></div>
                       </div>
                       <p className="text-gray-300 mt-2">
-                        Comprehensive security backed by professional expertise
+                        {t(
+                          "travelSecurity.whyChoose.trustProtection.description"
+                        )}
                       </p>
                     </div>
                   </div>
@@ -871,7 +1181,7 @@ const TravelSecurity = () => {
                       </svg>
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold">
-                      PRICING TABLE
+                      {t("travelSecurity.pricing.title")}
                     </h3>
                   </div>
 
@@ -904,7 +1214,7 @@ const TravelSecurity = () => {
                           </svg>
                         </div>
                         <h4 className="text-xl font-bold text-orange-300">
-                          Special Offer Alert!
+                          {t("travelSecurity.pricing.specialOffer.title")}
                         </h4>
                       </div>
                       <p className="text-white/90 leading-relaxed">
@@ -944,10 +1254,10 @@ const TravelSecurity = () => {
                         ₱625
                       </div>
                       <div className="text-teal-100 font-medium">
-                        Inspire Clients
+                        {t("travelSecurity.pricing.inspireClients.label")}
                       </div>
                       <div className="mt-4 text-sm text-teal-100">
-                        Special rate for existing Inspire Wallet holders
+                        {t("travelSecurity.pricing.inspireClients.description")}
                       </div>
                     </div>
                   </div>
@@ -959,10 +1269,10 @@ const TravelSecurity = () => {
                         ₱1,250
                       </div>
                       <div className="text-teal-100 font-medium">
-                        General Clients
+                        {t("travelSecurity.pricing.generalClients.label")}
                       </div>
                       <div className="mt-4 text-sm text-teal-100">
-                        Standard rate for new clients
+                        {t("travelSecurity.pricing.generalClients.description")}
                       </div>
                     </div>
                   </div>
@@ -1009,7 +1319,7 @@ const TravelSecurity = () => {
                       />
                     </svg>
                     <span className="text-sm font-medium text-gray-700">
-                      Secure Payment
+                      {t("travelSecurity.trustIndicators.securePayment")}
                     </span>
                   </div>
                   <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-md">
@@ -1027,7 +1337,7 @@ const TravelSecurity = () => {
                       />
                     </svg>
                     <span className="text-sm font-medium text-gray-700">
-                      Protected Data
+                      {t("travelSecurity.trustIndicators.protectedData")}
                     </span>
                   </div>
                   <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-md">
@@ -1045,7 +1355,7 @@ const TravelSecurity = () => {
                       />
                     </svg>
                     <span className="text-sm font-medium text-gray-700">
-                      Instant Activation
+                      {t("travelSecurity.trustIndicators.instantActivation")}
                     </span>
                   </div>
                 </div>
@@ -1070,17 +1380,17 @@ const TravelSecurity = () => {
             </span>
           </div>
           <h3 className="text-2xl md:text-3xl font-extrabold text-center mb-4 text-blue-900">
-            Before You Travel
+            {t("travelSecurity.beforeTravel.title")}
           </h3>
           <p className="text-center text-lg text-gray-700 mb-6">
-            Prepare for your trip to the Philippines with Inspire Wallet.
+            {t("travelSecurity.beforeTravel.description")}
           </p>
           {/* Download Buttons */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-10">
             {/* Google Play */}
             <div className="flex flex-col items-center">
               <span className="mb-2 text-sm font-semibold text-green-700">
-                Google Play
+                {t("travelSecurity.download.googlePlay")}
               </span>
               <a
                 href="https://play.google.com/store/apps/details?id=com.inspire.inspirewallet&pcampaignid=web_share"
@@ -1099,7 +1409,7 @@ const TravelSecurity = () => {
             {/* App Store */}
             <div className="flex flex-col items-center">
               <span className="mb-2 text-sm font-semibold text-blue-700">
-                App Store
+                {t("travelSecurity.download.appStore")}
               </span>
               <a
                 href="https://apps.apple.com/ph/app/inspire-wallet/id6642689775"
@@ -1124,11 +1434,10 @@ const TravelSecurity = () => {
               </div>
               <div>
                 <span className="block font-semibold text-blue-800">
-                  Download & Register
+                  {t("travelSecurity.beforeTravel.steps.step1.title")}
                 </span>
                 <span className="block text-gray-700">
-                  Download and register the Inspire Wallet app from the Apple
-                  Store or other platforms.
+                  {t("travelSecurity.beforeTravel.steps.step1.description")}
                 </span>
               </div>
             </div>
@@ -1139,12 +1448,10 @@ const TravelSecurity = () => {
               </div>
               <div>
                 <span className="block font-semibold text-teal-800">
-                  Apply for Travel Protection
+                  {t("travelSecurity.beforeTravel.steps.step2.title")}
                 </span>
                 <span className="block text-gray-700">
-                  Navigate to{" "}
-                  <span className="font-bold">MENU &gt; Travel Protection</span>{" "}
-                  in the app to apply for the service.
+                  {t("travelSecurity.beforeTravel.steps.step2.description")}
                 </span>
               </div>
             </div>
@@ -1155,12 +1462,10 @@ const TravelSecurity = () => {
               </div>
               <div>
                 <span className="block font-semibold text-yellow-800">
-                  Submit Declaration Form
+                  {t("travelSecurity.beforeTravel.steps.step3.title")}
                 </span>
                 <span className="block text-gray-700">
-                  Submission of a declaration form (e.g., items you are
-                  bringing) is <span className="font-bold">mandatory</span>.
-                  Please ensure the form is submitted prior to your departure.
+                  {t("travelSecurity.beforeTravel.steps.step3.description")}
                 </span>
               </div>
             </div>

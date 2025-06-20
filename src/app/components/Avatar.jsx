@@ -39,15 +39,13 @@ const Avatar = ({
   // Map names to actual filenames in public/officers/
   const getImageFileName = (fullName) => {
     const nameMap = {
-      "Melody Santos": "melody.png",
       "Rhia Alberto": "rhia.png",
-      "Andrei Bergano": "andrei.png",
       "Atty. Renato Pineda": "renato.png",
       "Freddie Reyes": "freddie.png",
       "Ronaldo Castillo": "ronald.png",
       "Carlos Perez": "carlos.png",
       "Brian Perez": "brian.png",
-      "Raphael Jeremy Reyes": "rj.png",
+      "Jaime Flores": "jaime.png",
       "Gerlie De Asis": "gerlie.png",
       "Anne Colinares": "anita.png",
       "Neil Brion": "neil.png",
