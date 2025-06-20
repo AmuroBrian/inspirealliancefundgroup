@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const leftLogos = ["ingi.png", "unb.png", "gmfc.png.png"];
 
@@ -25,7 +25,67 @@ const useIsMobile = () => {
 };
 
 const Subsidiaries = () => {
+  const [mounted, setMounted] = useState(false);
+  const [currentLang, setCurrentLang] = useState("en");
   const isMobile = useIsMobile();
+
+  // Simple translation function
+  const t = (key) => {
+    const translations = {
+      en: { "subsidiaries.title": "Our Subsidiaries" },
+      ja: { "subsidiaries.title": "当社の子会社" },
+    };
+    return translations[currentLang][key] || key;
+  };
+
+  // Listen for language changes
+  useEffect(() => {
+    // Check for saved language on load
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("selectedLanguage");
+      if (savedLang && (savedLang === "en" || savedLang === "ja")) {
+        setCurrentLang(savedLang);
+      }
+    }
+
+    // Listen for language change events
+    const handleLanguageChange = (event) => {
+      setCurrentLang(event.detail.language);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("languageChanged", handleLanguageChange);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("languageChanged", handleLanguageChange);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          minHeight: 400,
+          background: "#fff",
+          padding: "40px 0",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
+
   const containerWidth = isMobile ? "100%" : 1200;
 
   const logoBox = {
@@ -123,7 +183,7 @@ const Subsidiaries = () => {
             textAlign: isMobile ? "center" : "left",
           }}
         >
-          Our Subsidiaries
+          {t("subsidiaries.title")}
         </h2>
         <div
           style={{

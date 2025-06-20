@@ -1,24 +1,124 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  // HOOKS IN STRICT ORDER - NO CONDITIONAL CALLS ANYWHERE
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [currentLang, setCurrentLang] = useState("en");
 
+  const pathname = usePathname();
+
+  // Temporary static translations to avoid hooks order issues
+  const translations = {
+    en: {
+      about: "About",
+      services: "Services & Solutions",
+      investment_insights: "Investment Insights",
+      contact: "Contact",
+      home: "Home",
+    },
+    ja: {
+      about: "会社情報",
+      services: "サービス・ソリューション",
+      investment_insights: "投資インサイト",
+      contact: "お問い合わせ",
+      home: "ホーム",
+    },
+  };
+
+  const t = (key) => {
+    const cleanKey = key.replace("header.", "");
+    return translations[currentLang][cleanKey] || cleanKey;
+  };
+
+  // Moved useEffect before useCallback to test different order
   useEffect(() => {
     setMounted(true);
+
+    // Check for saved language preference
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("selectedLanguage");
+      if (savedLang && (savedLang === "en" || savedLang === "ja")) {
+        setCurrentLang(savedLang);
+      }
+    }
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        mounted &&
+        isLangDropdownOpen &&
+        !event.target.closest(".language-dropdown")
+      ) {
+        setIsLangDropdownOpen(false);
+      }
+    };
+
+    if (mounted) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [mounted, isLangDropdownOpen]);
+
+  // ALL REGULAR FUNCTIONS - NO HOOKS ALLOWED BELOW THIS POINT
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  if (!mounted) {
-    return null;
-  }
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80; // Height of the fixed header (h-20 = 80px)
+      const elementPosition = element.offsetTop - headerHeight;
 
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    }
+    setIsMenuOpen(false); // Close mobile menu after clicking
+  };
+
+  const changeLanguage = (langCode) => {
+    setCurrentLang(langCode);
+    setIsLangDropdownOpen(false);
+
+    // Store language preference
+    if (typeof window !== "undefined") {
+      localStorage.setItem("selectedLanguage", langCode);
+
+      // Trigger a custom event to notify other components
+      window.dispatchEvent(
+        new CustomEvent("languageChanged", {
+          detail: { language: langCode },
+        })
+      );
+    }
+  };
+
+  const toggleLanguageDropdown = () => {
+    setIsLangDropdownOpen(!isLangDropdownOpen);
+  };
+
+  // Static data - no hooks
+  const languages = [
+    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "ja", name: "日本語", flag: "🇯🇵" },
+  ];
+
+  const getCurrentLanguage = () => {
+    return languages.find((lang) => lang.code === currentLang) || languages[0];
+  };
+
+  // 6. Render - No early returns to avoid hooks order issues
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/95 shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,57 +139,129 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link
-              href="/news"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              News
-            </Link>
-            <Link
-              href="/mission"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Mission
-            </Link>
-            <Link
-              href="/collaborations"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Collaborations
-            </Link>
-            <Link
-              href="/services"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Services
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Contact Us
-            </Link>
+            {mounted && pathname === "/" && (
+              // Main page - show all menu items
+              <>
+                <Link
+                  href="/about"
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  {t("header.about")}
+                </Link>
+                <button
+                  onClick={() => handleScrollToSection("services")}
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
+                >
+                  {t("header.services")}
+                </button>
+                <button
+                  onClick={() => handleScrollToSection("investment-insights")}
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
+                >
+                  {t("header.investment_insights")}
+                </button>
+                <button
+                  onClick={() => handleScrollToSection("contact")}
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
+                >
+                  {t("header.contact")}
+                </button>
+              </>
+            )}
           </nav>
 
           {/* Right Section */}
           <div className="flex items-center space-x-4">
+            {/* Home and About for non-main pages */}
+            {mounted && pathname !== "/" && (
+              <div className="hidden md:flex items-center space-x-6 mr-6">
+                <Link
+                  href="/"
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  {t("header.home")}
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  {t("header.about")}
+                </Link>
+              </div>
+            )}
+
             {/* Language Selector */}
-            <button
-              className="hidden md:flex items-center space-x-2 bg-[#b8860b] text-white px-6 py-1.5 rounded text-sm hover:bg-[#96700a] transition-colors duration-300 min-w-[120px] justify-center"
-              style={{
-                background:
-                  "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
-              }}
-            >
-              <Image
-                src="/icon%20logo.png"
-                alt="Language"
-                width={20}
-                height={20}
-                className="w-5 h-5"
-              />
-              <span>Lang</span>
-            </button>
+            <div className="hidden md:block relative language-dropdown">
+              <button
+                onClick={toggleLanguageDropdown}
+                className="flex items-center space-x-2 bg-[#b8860b] text-white px-6 py-1.5 rounded text-sm hover:bg-[#96700a] transition-colors duration-300 min-w-[120px] justify-center"
+                style={{
+                  background:
+                    "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)",
+                }}
+              >
+                <Image
+                  src="/icon%20logo.png"
+                  alt="Language"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5"
+                />
+                <span>{mounted ? getCurrentLanguage().name : "English"}</span>
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    isLangDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {/* Language Dropdown */}
+              {mounted && isLangDropdownOpen && (
+                <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-50">
+                  {languages.map((language) => (
+                    <button
+                      key={language.code}
+                      onClick={() => changeLanguage(language.code)}
+                      className={`w-full px-4 py-3 text-left flex items-center space-x-3 hover:bg-gray-50 transition-colors duration-200 ${
+                        currentLang === language.code
+                          ? "bg-gray-100 text-blue-600 font-medium"
+                          : "text-gray-700"
+                      } ${language === languages[0] ? "rounded-t-md" : ""} ${
+                        language === languages[languages.length - 1]
+                          ? "rounded-b-md"
+                          : ""
+                      }`}
+                    >
+                      <span className="text-lg">{language.flag}</span>
+                      <span>{language.name}</span>
+                      {currentLang === language.code && (
+                        <svg
+                          className="w-4 h-4 ml-auto"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -120,46 +292,92 @@ const Header = () => {
         {/* Mobile Menu */}
         <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-            <Link
-              href="/news"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              News
-            </Link>
-            <Link
-              href="/mission"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Mission
-            </Link>
-            <Link
-              href="/collaborations"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Collaborations
-            </Link>
-            <Link
-              href="/services"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Services
-            </Link>
-            <Link
-              href="/contact"
-              className="block px-3 py-1.5 text-gray-800 hover:text-[#b8860b] transition-colors duration-300 tracking-wide"
-            >
-              Contact Us
-            </Link>
-            <button className="w-full mt-2 flex items-center justify-center space-x-2 bg-[#b8860b] text-white px-3 py-1.5 rounded text-sm hover:bg-[#96700a] transition-colors duration-300">
-              <Image
-                src="/icon%20logo.png"
-                alt="Language"
-                width={20}
-                height={20}
-                className="w-5 h-5"
-              />
-              <span>Lang</span>
-            </button>
+            {mounted && pathname === "/" ? (
+              // Main page - show all menu items
+              <>
+                <Link
+                  href="/about"
+                  className="block px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  {t("header.about")}
+                </Link>
+                <button
+                  onClick={() => handleScrollToSection("services")}
+                  className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  {t("header.services")}
+                </button>
+                <button
+                  onClick={() => handleScrollToSection("investment-insights")}
+                  className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  {t("header.investment_insights")}
+                </button>
+                <button
+                  onClick={() => handleScrollToSection("contact")}
+                  className="block w-full text-left px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  {t("header.contact")}
+                </button>
+              </>
+            ) : mounted ? (
+              // Other pages - show only Home and About
+              <>
+                <Link
+                  href="/"
+                  className="block px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  {t("header.home")}
+                </Link>
+                <Link
+                  href="/about"
+                  className="block px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                >
+                  {t("header.about")}
+                </Link>
+              </>
+            ) : null}
+            {/* Mobile Language Selector */}
+            {mounted && (
+              <div className="mt-2 space-y-2">
+                {languages.map((language) => (
+                  <button
+                    key={language.code}
+                    onClick={() => {
+                      changeLanguage(language.code);
+                      setIsMenuOpen(false);
+                    }}
+                    className={`w-full flex items-center justify-center space-x-2 px-3 py-2 rounded text-sm transition-colors duration-300 ${
+                      currentLang === language.code
+                        ? "text-white font-medium"
+                        : "text-white/80 hover:text-white"
+                    }`}
+                    style={{
+                      background:
+                        currentLang === language.code
+                          ? "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)"
+                          : "linear-gradient(0deg, rgba(128, 195, 42, 0.7) 0%, rgba(75, 136, 139, 0.7) 50%, rgba(56, 115, 175, 0.7) 100%)",
+                    }}
+                  >
+                    <span className="text-lg">{language.flag}</span>
+                    <span>{language.name}</span>
+                    {currentLang === language.code && (
+                      <svg
+                        className="w-4 h-4 ml-auto"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

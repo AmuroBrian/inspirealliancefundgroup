@@ -1,0 +1,997 @@
+{
+  "header": {
+    "about": "About",
+    "services": "Services & Solutions",
+    "investment_insights": "Investment Insights",
+    "contact": "Contact",
+    "home": "Home",
+    "language": "Lang"
+  },
+  "hero": {
+    "welcome": "Welcome to Inspire Alliance Fund Group",
+    "tagline1": "Empowering Global Financial Innovation",
+    "tagline2": "Your Trusted Partner in Investment Excellence",
+    "tagline3": "Building Tomorrow's Financial Solutions Today",
+    "tagline4": "Where Vision Meets Financial Expertise",
+    "tagline5": "Driving Sustainable Investment Growth",
+    "tagline6": "Connecting Opportunities, Creating Value",
+    "main_title": "Transforming Financial Futures",
+    "description": "At Inspire Alliance Fund Group, we're dedicated to revolutionizing the financial landscape through innovative investment strategies and unwavering commitment to excellence. Our comprehensive suite of financial services, combined with cutting-edge technology and expert insights, empowers businesses and individuals to achieve their financial goals. Join us in shaping a future where financial success knows no bounds."
+  },
+  "about": {
+    "title": "Collaborations",
+    "subtitle": "About Inspire Alliance Fund Group Inc.",
+    "description": "At Inspire Alliance Fund Group Inc., we are driven by a powerful purpose: to empower dreams and ignite meaningful change. Founded on the belief that lasting progress begins with opportunity, we exist to support individuals who are ready to make a difference—not just in their own lives, but in the communities around them.\n\nWe go beyond traditional funding. We are a dynamic movement that bridges passionate visionaries with the support, trust, and resources they need to transform ideas into lasting impact. Whether it's launching a small business, starting a social initiative, or developing innovative solutions, we're here to back bold ambitions.\n\nBy investing in people, we help spark growth, nurture resilience, and create a ripple effect that uplifts entire economies. Our commitment is unwavering: to fund possibilities, champion potential, and walk alongside changemakers on a shared journey toward a more empowered, hopeful, and innovative world."
+  },
+  "mission": {
+    "title": "Our Mission",
+    "description1": "At Inspire Alliance Fund Group Inc., our mission is to ignite change by empowering dreams. We believe that real progress begins when individuals are given the resources, trust, and opportunities to build a better future—not just for themselves, but for their communities and beyond.",
+    "description2": "We are more than a funding platform; we are a movement that connects purpose-driven people with the support they need to turn ideas into impact. By investing in human potential, we cultivate a ripple effect—supporting lives, strengthening economies, and shaping a future where hope and innovation thrive together.",
+    "description3": "Our commitment is clear: to inspire growth, fund possibilities, and fuel a collective journey toward a more empowered world.",
+    "vision_title": "Our Vision",
+    "vision_description1": "We envision a world where every individual has the opportunity to transform their dreams into reality. Through strategic partnerships, innovative solutions, and unwavering support, we aim to be the catalyst for sustainable growth and positive change across communities worldwide.",
+    "vision_description2": "Our vision extends beyond financial success—we strive to create a legacy of empowerment, where each investment we make contributes to a more equitable and prosperous future for all."
+  },
+  "services": {
+    "title": "Our Services & Solutions",
+    "subtitle": "Discover our comprehensive suite of services designed to help you succeed in the Japanese market",
+    "banking": {
+      "title": "International Banking Solutions",
+      "description": "Expert consultancy services helping foreigners open bank accounts in the Philippines. We provide comprehensive guidance through the Philippine banking system, payment solutions, and financial growth strategies tailored for international clients."
+    },
+    "business": {
+      "title": "Strategic Business Advisory",
+      "description": "Comprehensive business consulting for foreigners establishing businesses in the Philippines. We handle SEC registration, business banking, corporate setup, and complete regulatory compliance to help you successfully launch your Philippine business."
+    },
+    "travel": {
+      "title": "Comprehensive Travel Security",
+      "description": "Travel with confidence through our comprehensive protection services. We offer extensive coverage and support for international travelers, ensuring peace of mind throughout your journey."
+    },
+    "realestate": {
+      "title": "Premium Real Estate Solutions",
+      "description": "Discover exceptional real estate opportunities in Japan. Our dedicated team provides end-to-end property services, from investment consultation to property management, tailored to your specific needs."
+    },
+    "japanese": {
+      "title": "Japanese Product Innovation",
+      "description": "Bridge the gap between Japanese innovation and global markets. We specialize in marketing and promoting authentic Japanese products, helping businesses expand their reach while maintaining cultural authenticity."
+    },
+    "wallet": {
+      "title": "Inspire Wallet - FinTech Mobile Application",
+      "description": "Your all-in-one financial companion for investment tracking, stock management, and portfolio monitoring. Features real-time analytics, forex converter, transaction history, and bank-level security. Perfect for both experienced investors and beginners looking to manage their financial portfolio efficiently."
+    }
+  },
+  "servicePages": {
+    "wallet": {
+      "title": "Inspire Wallet - FinTech Mobile Application",
+      "description": "Inspire Wallet is your comprehensive financial companion designed to revolutionize how you manage your investments, track your portfolio, and handle financial transactions in the digital age. As a cutting-edge FinTech mobile application developed by Inspire Holdings Incorporated, we combine advanced financial technology with user-friendly design to create the ultimate investment management experience.\n\nOur mobile application serves as your personal investment command center, providing real-time portfolio monitoring, advanced analytics, and comprehensive financial management tools all in one secure platform. Whether you're a seasoned investor managing a diverse portfolio or someone just beginning their investment journey, Inspire Wallet provides the sophisticated tools and insights you need to make informed financial decisions.\n\nDownload Inspire Wallet today from the Apple App Store or Google Play Store and experience the future of mobile financial management."
+    },
+    "banking": {
+      "title": "International Banking Solutions",
+      "description": "Navigating the Philippine banking system as a foreigner can be challenging and overwhelming. At Inspire Alliance Fund Group, we specialize in providing comprehensive banking solutions specifically designed to help international clients successfully establish their financial presence in the Philippines.\n\nOur expert team understands the unique challenges foreigners face when trying to open bank accounts in the Philippines, and we're here to make the process seamless and stress-free. We work closely with our partner banks including BDO, BPI, CTBC Bank, UnionBank, and Security Bank to ensure you have access to the best banking options.\n\nTrust Inspire Alliance Fund Group to be your reliable partner in establishing and growing your financial presence in the Philippines."
+    },
+    "business": {
+      "title": "Strategic Business Advisory",
+      "description": "Starting a business in the Philippines as a foreigner can be complex and overwhelming. At Inspire Alliance Fund Group, we specialize in providing comprehensive business advisory services specifically designed to help international entrepreneurs successfully establish and operate their businesses in the Philippines.\n\nOur comprehensive business registration services include SEC registration, BIR registration, DTI registration, and all necessary permits and licenses. We provide end-to-end consulting services that guide you through every step of the business establishment process.\n\nTrust Inspire Alliance Fund Group to be your comprehensive partner in establishing and growing your business presence in the Philippines."
+    },
+    "travel": {
+      "title": "Comprehensive Travel Security",
+      "description": "In an interconnected world where business and leisure travel are essential, comprehensive travel security has become paramount. Our travel protection services offer peace of mind through extensive coverage and proactive support, ensuring you can focus on your journey while we handle your security and safety concerns.\n\nOur comprehensive approach encompasses multiple layers of protection, from pre-travel risk assessment to 24/7 emergency support during your journey. We provide detailed destination briefings, real-time security monitoring, emergency medical coverage, and evacuation services.\n\nExperience the confidence that comes with comprehensive travel protection, where your safety is our priority."
+    },
+    "realestate": {
+      "title": "Premium Real Estate Solutions",
+      "description": "The Philippine real estate market offers exceptional opportunities for both local and international investors. At Inspire Alliance Fund Group, we connect you with the Philippines' most reputable real estate developers through our extensive network of trusted partners.\n\nWe work with over 14 affiliated developers, including industry leaders like Ayala Land, SMDC, Megaworld, Century Properties, and Filinvest. From luxury condominiums to affordable housing solutions, we have options that meet your criteria.\n\nTrust Inspire Alliance Fund Group to be your reliable partner in Philippine real estate, where expert guidance meets exceptional opportunities."
+    },
+    "japanese": {
+      "title": "Japanese Product Innovation",
+      "description": "Japan stands at the forefront of global innovation, consistently producing products and technologies that define industry standards worldwide. At Inspire Alliance Fund Group, we proudly bring authentic Japanese products to the Philippines.\n\nOur Japanese Product Innovation service represents a carefully curated collection of premium Japanese products, from advanced health technology to beauty products and AI applications. Each product has been selected for its authenticity, quality, and potential to enhance Filipino consumers' lives.\n\nExperience the power of authentic Japanese innovation, where traditional craftsmanship meets cutting-edge technology."
+    },
+    "notFound": {
+      "title": "Service Not Found",
+      "description": "The requested service page could not be found."
+    },
+    "backHome": "Back to Home",
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Contact our experts today to learn more about how we can help you achieve your goals."
+    }
+  },
+  "inspireWallet": {
+    "title": "Inspire Wallet",
+    "subtitle": "FinTech Mobile Application",
+    "description": "Your all-in-one financial companion designed to keep you on top of your investments, stocks, and financial transactions. Whether you're an experienced investor or just getting started, our app provides you with the tools to manage your portfolio with ease.",
+    "features": {
+      "tracking": {
+        "title": "Investment Tracking",
+        "description": "Monitor your investment portfolio and see how your assets perform in real time with comprehensive analytics and insights."
+      },
+      "stocks": {
+        "title": "Stock Management",
+        "description": "Stay updated on your stock holdings and market movements with real-time data and professional-grade market analysis."
+      },
+      "withdrawal": {
+        "title": "Withdrawal Management",
+        "description": "Track the amounts you've withdrawn and plan your future financial moves with confidence and strategic insights."
+      },
+      "history": {
+        "title": "Transaction History",
+        "description": "View a detailed history of all your transactions, including investments, stocks, and withdrawals, all in one secure place."
+      },
+      "trading": {
+        "title": "Trading Platform",
+        "description": "Advanced trading platform supporting both cryptocurrency and forex markets with real-time data, charts, and professional trading tools."
+      },
+      "security": {
+        "title": "Robust Security",
+        "description": "Your sensitive financial information remains safe and secure with bank-level encryption and advanced security protocols."
+      }
+    },
+    "download": {
+      "title": "Download Inspire Wallet Today",
+      "description": "Take control of your financial future with our comprehensive mobile application. Available for both iOS and Android devices."
+    },
+    "rating": "5.0 Stars • 6 Reviews",
+    "info": {
+      "free": {
+        "title": "Free to Download",
+        "description": "No subscription fees or hidden costs"
+      },
+      "security": {
+        "title": "Bank-Level Security",
+        "description": "Your data is protected with advanced encryption"
+      },
+      "realtime": {
+        "title": "Real-Time Updates",
+        "description": "Live market data and portfolio tracking"
+      }
+    }
+  },
+  "bankingPartners": {
+    "title": "Our Banking Partners",
+    "description": "We've partnered with the Philippines' most trusted banks to provide you with diverse banking options, each offering unique advantages to meet your specific financial needs.",
+    "keyFeatures": "Key Features:",
+    "banks": {
+      "bdo": {
+        "fullName": "Banco de Oro",
+        "tagline": "Find Ways",
+        "description": "As the Philippines' largest bank, BDO offers comprehensive financial solutions with the widest network of branches and ATMs nationwide. Perfect for foreigners seeking accessibility and reliability.",
+        "features": [
+          "Largest ATM Network",
+          "International Services",
+          "Multi-Currency Accounts",
+          "Online Banking"
+        ]
+      },
+      "bpi": {
+        "fullName": "Bank of the Philippine Islands",
+        "tagline": "A Bank for Every Juan",
+        "description": "The Philippines' oldest bank combines tradition with innovation, offering premium banking services with a focus on digital transformation and customer excellence.",
+        "features": [
+          "Premium Banking",
+          "Digital Innovation",
+          "Investment Products",
+          "International Remittance"
+        ]
+      },
+      "ctbc": {
+        "fullName": "CTBC Bank Philippines",
+        "tagline": "Banking with Heart",
+        "description": "A Taiwanese-owned bank bringing international expertise to the Philippines, specializing in cross-border transactions and serving the global Filipino community.",
+        "features": [
+          "Cross-Border Expertise",
+          "International Transfers",
+          "Foreign Currency",
+          "Global Network"
+        ]
+      },
+      "unionbank": {
+        "fullName": "Union Bank of the Philippines",
+        "tagline": "Tech Up Philippines",
+        "description": "The Philippines' most innovative digital bank, leading in fintech solutions and digital banking experiences designed for the modern, tech-savvy customer.",
+        "features": [
+          "Digital Banking Leader",
+          "Fintech Innovation",
+          "Mobile Banking",
+          "Cryptocurrency Ready"
+        ]
+      },
+      "security": {
+        "fullName": "Security Bank Corporation",
+        "tagline": "Your Security is Our Priority",
+        "description": "Known for personalized service and robust security measures, Security Bank provides tailored banking solutions with a focus on customer protection and financial security.",
+        "features": [
+          "Personalized Service",
+          "High Security",
+          "Wealth Management",
+          "Corporate Banking"
+        ]
+      }
+    },
+    "cta": {
+      "downloadTitle": "DOWNLOAD INSPIRE WALLET",
+      "subtitle": "To Open Bank Account",
+      "description": "Start your Philippine banking journey with ease! Download the Inspire Wallet app and get connected to our trusted banking partners. Open your account seamlessly with digital convenience and professional guidance.",
+      "whyChoose": {
+        "title": "Why Choose Inspire Wallet?",
+        "description": "Connect to multiple bank partners, get expert guidance, track your applications, and enjoy secure digital banking - all in one convenient app.",
+        "highlight": "Download now and start your Philippine banking journey!"
+      },
+      "targetAudience": "Whether you're a foreign investor, OFW, or newcomer to the Philippines, Inspire Wallet simplifies your banking experience.",
+      "finalCta": "Download the app now and take your first step towards financial freedom in the Philippines!"
+    },
+    "features": {
+      "multipleBanks": {
+        "title": "Multiple Banks",
+        "description": "Access to all partner banks"
+      },
+      "expertGuidance": {
+        "title": "Expert Guidance",
+        "description": "Professional support throughout"
+      }
+    },
+    "trustIndicators": {
+      "secure": "Secure Banking",
+      "protected": "Protected Data",
+      "quick": "Quick Setup"
+    },
+    "download": {
+      "title": "Ready to Open Your Bank Account?",
+      "description": "Download Inspire Wallet and connect with our banking partners today.",
+      "googlePlay": "Google Play",
+      "appStore": "App Store"
+    },
+    "steps": {
+      "step1": {
+        "title": "Download & Register",
+        "description": "Download and register the Inspire Wallet app from the App Store or Google Play."
+      },
+      "step2": {
+        "title": "Choose Your Bank",
+        "description": "Navigate to Banking Services and select from our partner banks (BDO, BPI, UnionBank, etc.)."
+      },
+      "step3": {
+        "title": "Complete Application",
+        "description": "Fill out your bank application with our guided process and get expert assistance throughout."
+      }
+    }
+  },
+  "secPhilippines": {
+    "title": "Securities and Exchange Commission (SEC) Philippines",
+    "description": "The government agency responsible for regulating the securities market and registering corporations and partnerships in the Philippines",
+    "content": {
+      "whatIs": {
+        "title": "What is SEC Philippines?",
+        "paragraph1": "The Securities and Exchange Commission (SEC) is the primary government agency responsible for regulating the securities market and overseeing the registration of corporations, partnerships, and other business entities in the Philippines.",
+        "paragraph2": "Established to protect investors and maintain fair, orderly, and efficient markets, the SEC plays a crucial role in the Philippine business landscape by ensuring corporate compliance and promoting transparency in business operations."
+      },
+      "whyEssential": {
+        "title": "Why SEC Registration is Essential:",
+        "points": {
+          "legalRecognition": "Legal Recognition: Provides your business with legal personality and recognition under Philippine law",
+          "businessOperations": "Business Operations: Required before you can legally operate, open bank accounts, or enter contracts",
+          "investorProtection": "Investor Protection: Ensures transparency and builds trust with potential investors and partners",
+          "complianceFramework": "Compliance Framework: Establishes proper corporate governance and regulatory compliance structure"
+        }
+      }
+    },
+    "servicesTitle": "Key SEC Functions & Services",
+    "services": {
+      "corporateRegistration": {
+        "title": "Corporate Registration",
+        "description": "Complete registration of corporations, partnerships, and other business entities"
+      },
+      "businessLicensing": {
+        "title": "Business Licensing",
+        "description": "Issuance of licenses for various business activities and commercial operations"
+      },
+      "regulatoryCompliance": {
+        "title": "Regulatory Compliance",
+        "description": "Monitoring and enforcement of corporate governance and securities regulations"
+      },
+      "financialOversight": {
+        "title": "Financial Oversight",
+        "description": "Supervision of public companies and financial market participants"
+      },
+      "investorProtection": {
+        "title": "Investor Protection",
+        "description": "Safeguarding investor interests and ensuring market transparency"
+      },
+      "marketDevelopment": {
+        "title": "Market Development",
+        "description": "Promoting capital market growth and development in the Philippines"
+      }
+    },
+    "cta": {
+      "title": "Ready to Register Your Business with SEC Philippines?",
+      "description": "Let our experts handle your SEC registration process from start to finish. We ensure all documentation is properly prepared and submitted for fast, compliant registration.",
+      "button": "Start SEC Registration"
+    },
+    "modal": {
+      "title": "SEC Registration Request",
+      "form": {
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "Enter your full name",
+        "businessName": "Business Name",
+        "businessNamePlaceholder": "Enter desired business name",
+        "email": "Email Address",
+        "emailPlaceholder": "your@email.com",
+        "submit": "Submit Registration Request",
+        "submitting": "Submitting..."
+      },
+      "errorMessage": "Failed to send registration request. Please try again later.",
+      "configurationError": "Email service is not configured. Please contact the administrator.",
+      "success": {
+        "title": "Request Submitted!",
+        "message": "Thank you for your SEC registration request. Our team will contact you shortly to assist with your business registration process.",
+        "autoClose": "This window will close automatically..."
+      }
+    }
+  },
+  "realEstate": {
+    "title": "Premium Real Estate Solutions",
+    "description": "Discover exceptional real estate opportunities through our network of trusted developer partners. We help you find suitable and affordable properties that match your lifestyle and investment goals.",
+    "content": {
+      "partnerTitle": "Your Trusted Real Estate Partner",
+      "paragraph1": "Inspire Alliance connects you with the Philippines' most reputable real estate developers, offering a comprehensive range of properties from affordable housing to luxury developments.",
+      "paragraph2": "Our extensive network of affiliated developers ensures you have access to the best properties in prime locations, whether you're looking for your dream home or a smart investment opportunity."
+    },
+    "features": {
+      "expertGuidance": {
+        "title": "Expert Guidance",
+        "description": "Professional consultation throughout your property journey"
+      },
+      "diversePortfolio": {
+        "title": "Diverse Portfolio",
+        "description": "Wide range of properties from various trusted developers"
+      },
+      "affordableOptions": {
+        "title": "Affordable Options",
+        "description": "Properties that fit different budgets and requirements"
+      },
+      "primeLocations": {
+        "title": "Prime Locations",
+        "description": "Strategic locations with excellent connectivity and amenities"
+      }
+    },
+    "stats": {
+      "developersTitle": "14+ Developer Partners",
+      "developersDescription": "Trusted relationships with leading real estate developers",
+      "availableUnits": "Available Units",
+      "primeLocations": "Prime Locations"
+    },
+    "developersTitle": "Our Affiliated Real Estate Developers",
+    "developers": {
+      "ayalaland": {
+        "description": "Premier lifestyle communities and sustainable developments",
+        "specialties": [
+          "Luxury Condominiums",
+          "Master-planned Communities",
+          "Commercial Spaces"
+        ]
+      },
+      "century": {
+        "description": "Innovative architectural designs and premium living spaces",
+        "specialties": [
+          "High-rise Condominiums",
+          "Luxury Residences",
+          "Mixed-use Developments"
+        ]
+      },
+      "federalland": {
+        "description": "Quality homes and integrated lifestyle communities",
+        "specialties": [
+          "Residential Communities",
+          "Affordable Housing",
+          "Commercial Properties"
+        ]
+      },
+      "filinvest": {
+        "description": "Comprehensive real estate solutions and urban development",
+        "specialties": [
+          "Township Development",
+          "Residential Projects",
+          "Office Buildings"
+        ]
+      },
+      "goldentopper": {
+        "description": "Affordable quality homes for Filipino families",
+        "specialties": [
+          "House and Lot",
+          "Townhouses",
+          "Subdivision Development"
+        ]
+      },
+      "iprosperity": {
+        "description": "Investment-grade properties and rental solutions",
+        "specialties": [
+          "Investment Properties",
+          "Rental Management",
+          "Property Development"
+        ]
+      },
+      "megaworld": {
+        "description": "Live-work-play-learn township developments",
+        "specialties": [
+          "Township Development",
+          "Condominiums",
+          "Commercial Centers"
+        ]
+      },
+      "ortigasland": {
+        "description": "Strategic locations and premium office developments",
+        "specialties": [
+          "Office Buildings",
+          "Mixed-use Developments",
+          "Retail Spaces"
+        ]
+      },
+      "phirst": {
+        "description": "Affordable housing solutions for growing families",
+        "specialties": [
+          "Affordable Housing",
+          "House and Lot",
+          "Community Development"
+        ]
+      },
+      "robinsonland": {
+        "description": "Integrated lifestyle destinations and residential communities",
+        "specialties": [
+          "Residential Condominiums",
+          "Shopping Centers",
+          "Office Buildings"
+        ]
+      },
+      "rockwell": {
+        "description": "Luxury living and premium lifestyle developments",
+        "specialties": [
+          "Luxury Condominiums",
+          "Premium Residences",
+          "Exclusive Communities"
+        ]
+      },
+      "shangri": {
+        "description": "World-class luxury developments and hospitality",
+        "specialties": [
+          "Luxury Residences",
+          "Hotel Developments",
+          "Premium Commercial"
+        ]
+      },
+      "smdc": {
+        "description": "Accessible luxury living in prime locations",
+        "specialties": [
+          "Condominiums",
+          "Residential Towers",
+          "Mixed-use Projects"
+        ]
+      },
+      "vistaland": {
+        "description": "Comprehensive housing solutions and community development",
+        "specialties": [
+          "Subdivision Development",
+          "House and Lot",
+          "Community Planning"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Explore Our Complete Property Portfolio",
+      "description": "Visit our dedicated real estate platform to browse detailed information about available units, floor plans, pricing, and amenities from all our affiliated developers.",
+      "button": "Visit Inspire Real Estate",
+      "opensNewWindow": "Opens in new window"
+    },
+    "infoCards": {
+      "detailedListings": {
+        "title": "📋 Detailed Listings",
+        "description": "Complete property information and specifications"
+      },
+      "virtualTours": {
+        "title": "📸 Virtual Tours",
+        "description": "High-quality images and floor plans"
+      },
+      "pricingInfo": {
+        "title": "💰 Pricing Info",
+        "description": "Transparent pricing and payment options"
+      }
+    }
+  },
+  "travelSecurity": {
+    "title": "Coverage Area of Our Inspire Protection",
+    "subtitle": "Metro Manila Comprehensive Security",
+    "description": "Complete protection services across all major cities and business districts in Metro Manila. From Makati CBD to BGC, from Ortigas to Alabang - we've got you covered 24/7.",
+    "coverageNotice": "This protection covers the following situations during your 3- or 4-day stay in Metro Manila, Philippines:",
+    "sections": {
+      "coverageAreas": "Metro Manila Coverage Areas",
+      "protectionServices": "Comprehensive Protection Services",
+      "protectionBenefits": "Protection Benefits",
+      "metroManilaNetwork": "Our Metro Manila Network",
+      "whyChooseUs": "WHY CHOOSE US?"
+    },
+    "ui": {
+      "coverageAreas": "Coverage Areas:",
+      "keyLocations": "Key Locations:"
+    },
+    "benefits": {
+      "policeReport": {
+        "title": "Police Report Assistance",
+        "description": "Assistance with filing police reports"
+      },
+      "mealAllowance": {
+        "title": "Daily Meal Allowance",
+        "description": "Meal allowance of",
+        "perDay": "per day"
+      },
+      "comprehensiveSupport": {
+        "title": "Comprehensive Support",
+        "description": "Comprehensive support until your return"
+      }
+    },
+    "stats": {
+      "citiesCovered": "Cities Covered",
+      "responseReady": "Response Ready",
+      "securityPersonnel": "Security Personnel",
+      "averageResponse": "Average Response"
+    },
+    "whyChoose": {
+      "support": {
+        "title": "24/7 SUPPORT",
+        "description": "Round-the-clock emergency assistance and monitoring"
+      },
+      "quickEasy": {
+        "title": "QUICK & EASY",
+        "description": "Streamlined processes and rapid response deployment"
+      },
+      "trustProtection": {
+        "title": "TRUST & PROTECTION",
+        "description": "Comprehensive security backed by professional expertise"
+      }
+    },
+    "pricing": {
+      "title": "PRICING TABLE",
+      "specialOffer": {
+        "title": "Special Offer Alert!"
+      },
+      "inspireClients": {
+        "label": "Inspire Clients",
+        "description": "Special rate for existing Inspire Wallet holders"
+      },
+      "generalClients": {
+        "label": "General Clients",
+        "description": "Standard rate for new clients"
+      }
+    },
+    "trustIndicators": {
+      "securePayment": "Secure Payment",
+      "protectedData": "Protected Data",
+      "instantActivation": "Instant Activation"
+    },
+    "beforeTravel": {
+      "title": "Before You Travel",
+      "description": "Prepare for your trip to the Philippines with Inspire Wallet.",
+      "steps": {
+        "step1": {
+          "title": "Download & Register",
+          "description": "Download and register the Inspire Wallet app from the Apple Store or other platforms."
+        },
+        "step2": {
+          "title": "Apply for Travel Protection",
+          "description": "Navigate to MENU > Travel Protection in the app to apply for the service."
+        },
+        "step3": {
+          "title": "Submit Declaration Form",
+          "description": "Submission of a declaration form (e.g., items you are bringing) is mandatory. Please ensure the form is submitted prior to your departure."
+        }
+      }
+    },
+    "download": {
+      "googlePlay": "Google Play",
+      "appStore": "App Store"
+    }
+  },
+  "japaneseProducts": {
+    "header": {
+      "title": "Japanese Product Innovation",
+      "description": "Discover authentic Japanese products now available in the Philippines. Experience the perfect blend of traditional craftsmanship and cutting-edge innovation that defines Japanese excellence."
+    },
+    "introduction": {
+      "title": "Bringing Japan to the Philippines",
+      "paragraph1": "Inspire Alliance Fund Group proudly brings you an exclusive collection of authentic Japanese products, carefully selected for their quality, innovation, and cultural significance. Our marketing strategy focuses on introducing Filipino consumers to the exceptional standards of Japanese craftsmanship.",
+      "paragraph2": "From advanced technology solutions to premium lifestyle products, each item in our portfolio represents the pinnacle of Japanese innovation. We bridge the gap between Japanese excellence and Philippine market needs, ensuring accessibility without compromising authenticity."
+    },
+    "features": {
+      "authenticQuality": {
+        "title": "Authentic Quality",
+        "description": "Genuine Japanese products with verified authenticity"
+      },
+      "innovationFocus": {
+        "title": "Innovation Focus",
+        "description": "Cutting-edge technology and design excellence"
+      },
+      "localAccessibility": {
+        "title": "Local Accessibility",
+        "description": "Available in the Philippines with local support"
+      },
+      "culturalBridge": {
+        "title": "Cultural Bridge",
+        "description": "Connecting Japanese excellence with Filipino values"
+      }
+    },
+    "stats": {
+      "premiumProducts": "9+ Premium Products",
+      "curatedDescription": "Carefully curated Japanese innovations for the Philippine market",
+      "productCategories": "Product Categories",
+      "authenticJapanese": "Authentic Japanese"
+    },
+    "sections": {
+      "productCategories": "Product Categories",
+      "featuredProducts": "Featured Japanese Products"
+    },
+    "categories": {
+      "energyTechnology": "Energy Technology",
+      "beautyWellness": "Beauty & Wellness",
+      "securityTechnology": "Security Technology",
+      "businessSolutions": "Business Solutions"
+    },
+    "categoryDescriptions": {
+      "energyTechnology": "Energy-saving solutions and efficiency innovations",
+      "beautyWellness": "Premium skincare, anti-aging, and wellness products",
+      "securityTechnology": "Data protection and secure access solutions",
+      "businessSolutions": "Enterprise software and collaboration tools"
+    },
+    "categoryCounts": {
+      "energyTechnology": "1 Product",
+      "beautyWellness": "6 Products",
+      "securityTechnology": "1 Product",
+      "businessSolutions": "1 Product"
+    },
+    "products": {
+      "alphaHT": {
+        "description": "Revolutionary Japanese technology that reduces electricity consumption for split-type air conditioners by filtering residue between evaporator and condenser, decreasing compressor load",
+        "features": {
+          "energyReduction": "Energy Consumption Reduction",
+          "airConditionerEfficiency": "Air Conditioner Efficiency",
+          "compressorOptimization": "Compressor Load Optimization"
+        }
+      },
+      "clinience": {
+        "description": "Comprehensive Japanese skincare supplement line featuring individual specialized products for Vitamin C, Ceramide, Cytokine, and NMN, each formulated for targeted skin health benefits and internal rejuvenation",
+        "features": {
+          "vitaminC": "Individual Vitamin C Product",
+          "ceramide": "Separate Ceramide Formula",
+          "cytokineNMN": "Dedicated Cytokine & NMN Lines"
+        }
+      },
+      "cysay": {
+        "description": "Advanced Japanese dermashot treatment utilizing precision microneedle technology for anti-wrinkle therapy that can be safely applied to any area of the body for skin rejuvenation",
+        "features": {
+          "microneedle": "Microneedle Technology",
+          "antiWrinkle": "Anti-Wrinkle Treatment",
+          "fullBody": "Full Body Application"
+        }
+      },
+      "sqrc": {
+        "description": "Secure QR Code technology that protects personal data through advanced public and private key encryption, providing secure information access for corporate and enterprise applications",
+        "features": {
+          "dataProtection": "Data Protection Encryption",
+          "publicPrivateKey": "Public & Private Key Security",
+          "enterpriseQR": "Enterprise QR Solutions"
+        }
+      },
+      "desknetNEO": {
+        "description": "Comprehensive Japanese business management application featuring integrated tools for administration, monitoring, time keeping, file management, and secure cloud storage solutions",
+        "features": {
+          "management": "Management & Administration",
+          "timeKeeping": "Time Keeping & Monitoring",
+          "fileManagement": "File Management & Storage"
+        }
+      },
+      "fomJapan": {
+        "description": "Advanced Japanese skincare solution specifically formulated for skin brightening and radiance enhancement, utilizing premium Japanese ingredients and technology",
+        "features": {
+          "skinBrightening": "Skin Brightening Formula",
+          "radianceEnhancement": "Radiance Enhancement",
+          "premiumIngredients": "Premium Japanese Ingredients"
+        }
+      },
+      "pureExom": {
+        "description": "Revolutionary Japanese anti-aging treatment featuring advanced exosome powder contained in convenient vials for cellular regeneration and comprehensive skin rejuvenation",
+        "features": {
+          "exosomePowder": "Advanced Exosome Powder",
+          "vialPackaging": "Convenient Vial Packaging",
+          "cellularRegeneration": "Cellular Regeneration Technology"
+        }
+      },
+      "stemsAI": {
+        "description": "Japanese anti-aging product that uses stem cell technology to help reduce signs of aging and improve skin appearance",
+        "features": {
+          "stemCell": "Stem Cell Technology",
+          "antiAging": "Anti-Aging Benefits",
+          "skinImprovement": "Skin Improvement"
+        }
+      },
+      "youBeYou": {
+        "description": "Premium Japanese face mask collection featuring both Night YBY and Day YBY formulations designed for glowing skin effect and deep moisturization",
+        "features": {
+          "nightDay": "Night & Day Formulations",
+          "glowingSkin": "Glowing Skin Effect",
+          "deepMoisturization": "Deep Moisturization"
+        }
+      }
+    },
+    "cta": {
+      "title": "Explore Our Complete Japanese Product Collection",
+      "description": "Visit our dedicated marketing platform to discover detailed information about all our Japanese products, pricing, availability, and exclusive offers. Experience authentic Japanese innovation today.",
+      "buttonText": "Visit Inspire Next Global",
+      "newWindowNote": "Opens in new window"
+    },
+    "infoCards": {
+      "productCatalog": {
+        "title": "Product Catalog",
+        "description": "Complete product information and specifications"
+      },
+      "inquirySupport": {
+        "title": "Inquiry Support",
+        "description": "Direct contact for product inquiries and orders"
+      },
+      "localDelivery": {
+        "title": "Local Delivery",
+        "description": "Convenient delivery throughout the Philippines"
+      }
+    },
+    "contact": {
+      "title": "Ready to Experience Japanese Excellence?",
+      "description": "Contact us today for product inquiries, bulk orders, or partnership opportunities. Let us bring authentic Japanese innovation to your doorstep.",
+      "phoneInquiries": "Phone Inquiries Welcome",
+      "emailSupport": "Email Support Available"
+    }
+  },
+  "investmentInsights": {
+    "header": {
+      "title": "Investment Performance & Insights",
+      "description": "Transparent financial metrics from our SEC-registered investment company managing ₱1.6B in Philippine Peso investments"
+    },
+    "tabs": {
+      "performance": "Performance",
+      "philosophy": "Philosophy",
+      "marketInsights": "Market Insights",
+      "riskManagement": "Risk Management"
+    },
+    "metrics": {
+      "investmentCapital": {
+        "title": "Investment Capital",
+        "subtitle": "SEC-Audited Assets"
+      },
+      "annualRevenue": {
+        "title": "Annual Revenue",
+        "subtitle": "2024 Performance"
+      },
+      "netReturn": {
+        "title": "Net Return (YTD)",
+        "subtitle": "vs 8.8% PSEi"
+      },
+      "sharpeRatio": {
+        "title": "Sharpe Ratio",
+        "subtitle": "Above market avg"
+      },
+      "maxDrawdown": {
+        "title": "Max Drawdown",
+        "subtitle": "Lower than benchmark"
+      }
+    },
+    "charts": {
+      "inspireGrowthFund": "Inspire Growth Fund",
+      "marketBenchmark": "Market Benchmark",
+      "ourFund": "Our Fund",
+      "marketAverage": "Market Average",
+      "quarterlyPerformanceTitle": "Quarterly Performance (% Returns)",
+      "portfolioAllocation": "Portfolio Allocation",
+      "riskMetricsComparison": "Risk Metrics Comparison"
+    },
+    "allocation": {
+      "technology": "Technology",
+      "healthcare": "Healthcare",
+      "realEstate": "Real Estate",
+      "esgBonds": "ESG Bonds",
+      "emergingMarkets": "Emerging Markets"
+    },
+    "riskMetrics": {
+      "volatility": "Volatility",
+      "sharpeRatio": "Sharpe Ratio",
+      "maxDrawdown": "Max Drawdown",
+      "beta": "Beta"
+    },
+    "philosophy": {
+      "disciplinedValue": {
+        "title": "Disciplined Value Investing",
+        "description": "We identify undervalued assets with strong fundamentals and long-term growth potential."
+      },
+      "riskAdjusted": {
+        "title": "Risk-Adjusted Returns",
+        "description": "Our strategies focus on maximizing returns while maintaining prudent risk management."
+      },
+      "esgIntegration": {
+        "title": "ESG Integration",
+        "description": "Environmental, Social, and Governance factors are integral to our investment decisions."
+      },
+      "activeManagement": {
+        "title": "Active Management",
+        "description": "Continuous monitoring and strategic adjustments to optimize portfolio performance."
+      }
+    },
+    "insights": {
+      "philippineGrowth": {
+        "title": "Philippine Economic Growth Outlook",
+        "summary": "Philippine GDP showing strong recovery with infrastructure and digital transformation investments.",
+        "category": "Philippine Market"
+      },
+      "esgTrends": {
+        "title": "ESG Investment Trends in PH",
+        "summary": "Sustainable investing in Philippine markets continues to outperform traditional strategies in Q4 2023.",
+        "category": "ESG Research"
+      },
+      "techSector": {
+        "title": "Philippine Tech Sector Growth",
+        "summary": "Strategic positioning in AI and renewable energy technologies driving Philippine market growth for 2024.",
+        "category": "Sector Analysis"
+      },
+      "readTime": {
+        "fiveMin": "5 min read",
+        "sixMin": "6 min read",
+        "sevenMin": "7 min read"
+      },
+      "readMore": "Read More",
+      "viewAllButton": "View All Market Insights"
+    },
+    "risk": {
+      "dueDiligence": {
+        "title": "Due Diligence",
+        "description": "Rigorous 15-point evaluation process for every investment opportunity."
+      },
+      "diversification": {
+        "title": "Diversification",
+        "description": "Strategic allocation across sectors, geographies, and asset classes."
+      },
+      "realTimeMonitoring": {
+        "title": "Real-time Monitoring",
+        "description": "Continuous portfolio monitoring with automated risk alerts."
+      }
+    },
+    "cta": {
+      "title": "Ready to Explore Partnership Opportunities?",
+      "description": "Schedule a consultation with our Philippine investment team to explore partnership opportunities and discuss how our ₱1.6B investment experience can benefit your financial goals.",
+      "scheduleButton": "Schedule Consultation",
+      "downloadButton": "Download Company Profile"
+    },
+    "disclaimer": {
+      "line1": "* Financial data as of 2024, verified by audited financial statements.",
+      "line2": "Investment Capital represents company's investment portfolio as disclosed in SEC filings.",
+      "line3": "Annual Revenue from investment activities and business operations.",
+      "line4": "Past performance does not guarantee future results.",
+      "secRegistration": "SEC Registration No: 2025050202717-12"
+    }
+  },
+  "subsidiaries": {
+    "title": "Our Subsidiaries"
+  },
+  "success_stories": {
+    "title": "Success Stories",
+    "subtitle": "Discover how our funding and support have helped transform innovative ideas into impactful realities.",
+    "search_placeholder": "Search success stories...",
+    "all": "All",
+    "all_stories": "All Stories",
+    "read_case_study": "Read Case Study →",
+    "view_all": "View All Success Stories",
+    "page_title": "Success Stories",
+    "page_subtitle": "Discover how our strategic investments and expert guidance have transformed innovative ideas into thriving enterprises that create lasting value for stakeholders and communities.",
+    "no_results_title": "No Stories Found",
+    "no_results_subtitle": "Try adjusting your search criteria or browse all categories.",
+    "cta_title": "Ready to Create Your Success Story?",
+    "cta_subtitle": "Join the ranks of innovative companies that have transformed their vision into reality with our strategic investment and comprehensive support.",
+    "contact_team": "Contact Our Investment Team",
+    "explore_services": "Explore Our Services",
+    "investment_suffix": "investment",
+    "categories": {
+      "Technology": "Technology",
+      "Healthcare": "Healthcare",
+      "Environment": "Environment",
+      "Education": "Education",
+      "Agriculture": "Agriculture"
+    },
+    "detail": {
+      "home": "Home",
+      "loading": "Loading success story...",
+      "breadcrumb": "Success Stories",
+      "investment_analyst": "Investment Analyst",
+      "executive_summary": "Executive Summary",
+      "key_metrics": "Key Success Metrics",
+      "impact_analysis": "Impact Analysis",
+      "key_achievements": "Key Achievements",
+      "challenges_overcome": "Challenges Overcome",
+      "investment_outcomes": "Investment Outcomes",
+      "investment_conclusion": "Investment Conclusion",
+      "investment_details": "Investment Details",
+      "impact_metrics": "Impact Metrics",
+      "investment_opportunities": "Investment Opportunities",
+      "investment_opportunities_desc": "Discover similar investment opportunities in our portfolio.",
+      "learn_more": "Learn More",
+      "related_stories": "Related Success Stories",
+      "disclaimer": "Disclaimer:",
+      "disclaimer_text": "This case study is for informational purposes only and represents historical performance. Past investment results do not guarantee future returns. All investments carry risk of loss. Please consult with qualified investment advisors before making investment decisions.",
+      "sec_registration": "SEC Registration No: 2025050202717-12",
+      "category": "Category:",
+      "location": "Location:",
+      "investment": "Investment:",
+      "team_size": "Team Size:",
+      "year": "Year:"
+    }
+  },
+  "news": {
+    "title": "World News",
+    "info_text": "Stay informed with the latest headlines from BBC World News. Click any headline to read the full article.",
+    "read_full_article": "Read full article",
+    "loading": "Loading news...",
+    "no_news": "No news available at the moment.",
+    "source": "BBC World News"
+  },
+  "contact": {
+    "page_title": "Contact Us",
+    "page_subtitle": "Ready to start your journey with Inspire Alliance Fund Group? We're here to help you every step of the way.",
+    "form": {
+      "title": "Get In Touch",
+      "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+      "name_label": "Your Name",
+      "name_placeholder": "Enter your full name",
+      "company_label": "Company Name",
+      "company_placeholder": "Your company (optional)",
+      "email_label": "Email Address",
+      "email_placeholder": "your@email.com",
+      "message_label": "Your Message",
+      "message_placeholder": "Tell us about your inquiry...",
+      "send_button": "Send Message",
+      "sending": "Sending...",
+      "required": "*",
+      "error_config": "Email service is not configured. Please contact the administrator.",
+      "error_send": "Failed to send message. Please try again later.",
+      "success_message": "Thank you! We've received your message and will get back to you soon."
+    },
+    "offices": {
+      "title": "Our Offices",
+      "subtitle": "Visit us at any of our global locations",
+      "main_office": "MAIN OFFICE",
+      "us_office": "SATELLITE OFFICE (US)",
+      "japan_office": "SATELLITE OFFICE (JP)",
+      "main_address": "6F Alliance Global Tower,\n11th Ave, corner 36th St,\nTaguig, Metro Manila, Philippines",
+      "us_address": "1209 Mountain Road PL NE STE N\nAlbuquerque, NM, 87110\nUnited States",
+      "japan_address": "20F, Trust Tower Main Building,\n1-8-3 Marunouchi, Chiyoda-ku,\nTokyo 100-8283, Japan",
+      "email": "info@inspirealliancefund.com",
+      "phone": "+63 (2) 8XXX-XXXX"
+    }
+  },
+  "common": {
+    "learn_more": "Learn More",
+    "read_more": "Read More",
+    "get_started": "Get Started",
+    "contact_us": "Contact Us"
+  },
+  "footer": {
+    "about_text": "At Inspire Alliance Fund Group Inc., our mission is to ignite change by empowering dreams. We are more than a funding platform; we are a movement that connects purpose-driven people with the support they need to turn ideas into impact. By investing in human potential, we cultivate a ripple effect—supporting lives, strengthening economies, and shaping a future where hope and innovation thrive together.",
+    "quick_links": "Quick Links",
+    "about_us": "About Us",
+    "services": "Services",
+    "investment_insights": "Investment Insights",
+    "success_stories": "Success Stories",
+    "contact_us": "Contact Us",
+    "our_services": "Our Services",
+    "banking_solutions": "International Banking Solutions",
+    "business_advisory": "Strategic Business Advisory",
+    "travel_security": "Comprehensive Travel Security",
+    "real_estate": "Premium Real Estate Solutions",
+    "japanese_products": "Japanese Product Innovation",
+    "contact_info": "Contact Info",
+    "email": "info@inspirealliancefund.com",
+    "phone": "+63 (2) 8XXX-XXXX",
+    "address": "MAIN OFFICE: 6F Alliance Global Tower, 11th Avenue, corner 36th St, Taguig, Metro Manila",
+    "copyright": "© {{year}} Inspire Alliance Fund Group. All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service"
+  }
+}
