@@ -966,6 +966,84 @@
       "phone": "+63 (2) 8XXX-XXXX"
     }
   },
+  "aboutPage": {
+    "title": "About Inspire Alliance Fund Group",
+    "subtitle": "Empowering dreams, igniting change, and building a better future through innovative financial solutions",
+    "companyOverview": {
+      "title": "Company Overview",
+      "description1": "At Inspire Alliance Fund Group Inc., we are driven by a powerful purpose: to empower dreams and ignite meaningful change. Founded on the belief that lasting progress begins with opportunity, we exist to support individuals who are ready to make a difference—not just in their own lives, but in the communities around them.",
+      "description2": "We go beyond traditional funding. We are a dynamic movement that bridges passionate visionaries with the support, trust, and resources they need to transform ideas into lasting impact. Whether it's launching a small business, starting a social initiative, or developing innovative solutions, we're here to back bold ambitions.",
+      "description3": "By investing in people, we help spark growth, nurture resilience, and create a ripple effect that uplifts entire economies. Our commitment is unwavering: to fund possibilities, champion potential, and walk alongside changemakers on a shared journey toward a more empowered, hopeful, and innovative world."
+    },
+    "leadership": {
+      "title": "Our Leadership",
+      "subtitle": "Meet the experienced leaders who guide Inspire Alliance Fund Group toward excellence and innovation",
+      "boardOfDirectors": {
+        "title": "Board of Directors",
+        "description": "Our Board of Directors brings together diverse expertise in finance, technology, real estate, and international business to provide strategic guidance and oversight."
+      },
+      "corporateOfficers": {
+        "title": "Corporate Officers",
+        "description": "Our Corporate Officers ensure proper governance, operational excellence, and administrative support across all organizational functions."
+      }
+    },
+    "howWeWork": {
+      "title": "How We Do Business",
+      "subtitle": "Our commitment to excellence is built on unwavering principles that guide every decision and action",
+      "principles": {
+        "integrity": {
+          "title": "Integrity & Trust",
+          "description": "We conduct business with the highest ethical standards, building lasting relationships based on transparency, honesty, and mutual respect with all our stakeholders."
+        },
+        "innovation": {
+          "title": "Innovation & Excellence",
+          "description": "We continuously innovate and adapt to changing market conditions, delivering exceptional value through cutting-edge financial solutions and superior service quality."
+        },
+        "clientCentric": {
+          "title": "Client-Centric Approach",
+          "description": "Our clients are at the heart of everything we do. We tailor our services to meet unique needs, providing personalized solutions that drive success and growth."
+        },
+        "globalPerspective": {
+          "title": "Global Perspective",
+          "description": "We leverage international expertise and cross-border partnerships to provide comprehensive solutions that bridge markets and create opportunities globally."
+        },
+        "sustainableGrowth": {
+          "title": "Sustainable Growth",
+          "description": "We focus on building long-term value through sustainable business practices that benefit our clients, communities, and the environment for generations to come."
+        },
+        "security": {
+          "title": "Security & Compliance",
+          "description": "We maintain the highest standards of security and regulatory compliance, ensuring our clients' interests are protected through robust risk management and governance frameworks."
+        }
+      },
+      "commitment": {
+        "title": "Our Commitment to Excellence",
+        "description": "For over a decade, we've served our clients, partners, and communities with integrity and respect. We work diligently to uphold our core values in everything we do, from the smallest transaction to the largest strategic initiative. Our success is measured not just by financial returns, but by the positive impact we create in the lives of those we serve."
+      }
+    },
+    "positions": {
+      "president": "President",
+      "vicePresident": "Vice President",
+      "nonExecutiveDirector": "Non-Executive Director",
+      "chiefCareerOfficer": "Chief of Career Track Officer",
+      "chiefTechnologyOfficer": "Chief of Technology Officer",
+      "hrOfficer": "HR/Administrative Officer",
+      "assistantHrOfficer": "Assistant HR/Administrative Officer",
+      "security": "Security",
+      "softwareDeveloper": "Software Developer/Secretary",
+      "secretary": "Secretary"
+    },
+    "profile": {
+      "directorSince": "Director since",
+      "withCompanySince": "With the company since",
+      "backToLeadership": "Back to Leadership",
+      "readMore": "Read More",
+      "biography": "Biography",
+      "expertise": "Expertise",
+      "education": "Education",
+      "achievements": "Key Achievements"
+    }
+  },
   "common": {
     "learn_more": "Learn More",
     "read_more": "Read More",

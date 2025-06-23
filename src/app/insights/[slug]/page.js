@@ -118,15 +118,27 @@ export default function InsightPage({ params }) {
     useEffect(() => {
         const currentInsight = insightsData[resolvedParams.slug];
         if (currentInsight) {
-            setInsight(currentInsight);
+            // Create insight object with localized content
+            const localizedInsight = {
+                ...currentInsight,
+                title: currentInsight.content[currentLang]?.title || currentInsight.content.en?.title || 'Title not available',
+                summary: currentInsight.content[currentLang]?.summary || currentInsight.content.en?.summary || 'Summary not available',
+                content: currentInsight.content[currentLang] || currentInsight.content.en || {}
+            };
+            setInsight(localizedInsight);
 
             // Get related insights (different category or random)
             const related = Object.values(insightsData)
                 .filter(item => item.slug !== resolvedParams.slug)
+                .map(item => ({
+                    ...item,
+                    title: item.content[currentLang]?.title || item.content.en?.title || 'Title not available',
+                    summary: item.content[currentLang]?.summary || item.content.en?.summary || 'Summary not available'
+                }))
                 .slice(0, 2);
             setRelatedInsights(related);
         }
-    }, [resolvedParams.slug]);
+    }, [resolvedParams.slug, currentLang]);
 
     const copyToClipboard = async () => {
         try {
