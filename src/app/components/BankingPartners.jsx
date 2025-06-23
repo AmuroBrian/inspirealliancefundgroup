@@ -2,6 +2,9 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 const BankingPartners = () => {
   const [animatedElements, setAnimatedElements] = useState(new Set());
