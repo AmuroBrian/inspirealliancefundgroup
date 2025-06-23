@@ -132,13 +132,26 @@ export default function SuccessStoryPage({ params }) {
     useEffect(() => {
         const currentStory = successStoriesData[resolvedParams.slug];
         if (currentStory) {
-            setStory(currentStory);
+            // Create story object with localized content
+            const localizedStory = {
+                ...currentStory,
+                title: currentStory.content[currentLang]?.title || currentStory.content.en?.title || 'Title not available',
+                summary: currentStory.content[currentLang]?.summary || currentStory.content.en?.summary || 'Summary not available',
+                content: currentStory.content[currentLang] || currentStory.content.en || {}
+            };
+            setStory(localizedStory);
+
             const related = Object.values(successStoriesData)
                 .filter(item => item.slug !== resolvedParams.slug)
+                .map(item => ({
+                    ...item,
+                    title: item.content[currentLang]?.title || item.content.en?.title || 'Title not available',
+                    summary: item.content[currentLang]?.summary || item.content.en?.summary || 'Summary not available'
+                }))
                 .slice(0, 2);
             setRelatedStories(related);
         }
-    }, [resolvedParams.slug]);
+    }, [resolvedParams.slug, currentLang]);
 
     if (!mounted || !story) {
         return (
