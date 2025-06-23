@@ -281,6 +281,28 @@ const corporateOfficers = [
     }
 ];
 
+const profilesData = {
+  'brian-perez': {
+    name: 'Brian Perez',
+    position: 'president',
+    category: 'boardOfDirectors',
+    since: '2021',
+    content: {
+      en: {
+        bio: "...",
+        // etc.
+      },
+      ja: {
+        bio: "...",
+        // etc.
+      }
+    },
+    expertise: [],
+    achievements: []
+  },
+  // ...next profile...
+};
+
 export default function AboutPage() {
     // HOOKS IN STRICT ORDER - NO CONDITIONAL CALLS ANYWHERE
     const [mounted, setMounted] = useState(false);
