@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -8,12 +8,11 @@ const Header = () => {
   // HOOKS IN STRICT ORDER - NO CONDITIONAL CALLS ANYWHERE
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [currentLang, setCurrentLang] = useState("en");
 
   const pathname = usePathname();
 
-  // Temporary static translations to avoid hooks order issues
+  // Static translations
   const translations = {
     en: {
       about: "About",
@@ -36,11 +35,18 @@ const Header = () => {
     return translations[currentLang][cleanKey] || cleanKey;
   };
 
-  // Moved useEffect before useCallback to test different order
-  useEffect(() => {
-    setMounted(true);
+  // Language data
+  const languages = [
+    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "ja", name: "日本語", flag: "🇯🇵" },
+  ];
 
-    // Check for saved language preference
+  const getCurrentLanguage = () => {
+    return languages.find((lang) => lang.code === currentLang) || languages[0];
+  };
+
+  // Load saved language preference on client side only
+  useEffect(() => {
     if (typeof window !== "undefined") {
       const savedLang = localStorage.getItem("selectedLanguage");
       if (savedLang && (savedLang === "en" || savedLang === "ja")) {
@@ -49,24 +55,19 @@ const Header = () => {
     }
   }, []);
 
+  // Handle click outside for dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        mounted &&
-        isLangDropdownOpen &&
-        !event.target.closest(".language-dropdown")
-      ) {
+      if (isLangDropdownOpen && !event.target.closest(".language-dropdown")) {
         setIsLangDropdownOpen(false);
       }
     };
 
-    if (mounted) {
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }
-  }, [mounted, isLangDropdownOpen]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isLangDropdownOpen]);
 
   // ALL REGULAR FUNCTIONS - NO HOOKS ALLOWED BELOW THIS POINT
   const toggleMenu = () => {
@@ -108,15 +109,7 @@ const Header = () => {
     setIsLangDropdownOpen(!isLangDropdownOpen);
   };
 
-  // Static data - no hooks
-  const languages = [
-    { code: "en", name: "English", flag: "🇺🇸" },
-    { code: "ja", name: "日本語", flag: "🇯🇵" },
-  ];
-
-  const getCurrentLanguage = () => {
-    return languages.find((lang) => lang.code === currentLang) || languages[0];
-  };
+  const isHomePage = pathname === "/";
 
   // 6. Render - No early returns to avoid hooks order issues
   return (
@@ -137,44 +130,41 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {mounted && pathname === "/" && (
-              // Main page - show all menu items
-              <>
-                <Link
-                  href="/about"
-                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
-                >
-                  {t("header.about")}
-                </Link>
-                <button
-                  onClick={() => handleScrollToSection("services")}
-                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
-                >
-                  {t("header.services")}
-                </button>
-                <button
-                  onClick={() => handleScrollToSection("investment-insights")}
-                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
-                >
-                  {t("header.investment_insights")}
-                </button>
-                <button
-                  onClick={() => handleScrollToSection("contact")}
-                  className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
-                >
-                  {t("header.contact")}
-                </button>
-              </>
-            )}
-          </nav>
+          {/* Desktop Navigation - Only for home page */}
+          {isHomePage && (
+            <nav className="hidden md:flex space-x-8">
+              <Link
+                href="/about"
+                className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+              >
+                {t("header.about")}
+              </Link>
+              <button
+                onClick={() => handleScrollToSection("services")}
+                className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
+              >
+                {t("header.services")}
+              </button>
+              <button
+                onClick={() => handleScrollToSection("investment-insights")}
+                className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
+              >
+                {t("header.investment_insights")}
+              </button>
+              <button
+                onClick={() => handleScrollToSection("contact")}
+                className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide cursor-pointer"
+              >
+                {t("header.contact")}
+              </button>
+            </nav>
+          )}
 
-          {/* Right Section */}
-          <div className="flex items-center space-x-4">
-            {/* Home and About for non-main pages */}
-            {mounted && pathname !== "/" && (
-              <div className="hidden md:flex items-center space-x-6 mr-6">
+          {/* Right Section with Navigation and Language Selector */}
+          <div className="flex items-center space-x-6">
+            {/* Home and About Navigation for non-home pages - positioned on the right */}
+            {!isHomePage && (
+              <nav className="hidden md:flex items-center space-x-6">
                 <Link
                   href="/"
                   className="text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
@@ -187,9 +177,8 @@ const Header = () => {
                 >
                   {t("header.about")}
                 </Link>
-              </div>
+              </nav>
             )}
-
             {/* Language Selector */}
             <div className="hidden md:block relative language-dropdown">
               <button
@@ -207,7 +196,7 @@ const Header = () => {
                   height={20}
                   className="w-5 h-5"
                 />
-                <span>{mounted ? getCurrentLanguage().name : "English"}</span>
+                <span>{getCurrentLanguage().name}</span>
                 <svg
                   className={`w-4 h-4 transition-transform duration-200 ${
                     isLangDropdownOpen ? "rotate-180" : ""
@@ -226,7 +215,7 @@ const Header = () => {
               </button>
 
               {/* Language Dropdown */}
-              {mounted && isLangDropdownOpen && (
+              {isLangDropdownOpen && (
                 <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-50">
                   {languages.map((language) => (
                     <button
@@ -292,12 +281,13 @@ const Header = () => {
         {/* Mobile Menu */}
         <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
-            {mounted && pathname === "/" ? (
-              // Main page - show all menu items
+            {isHomePage ? (
+              // Main page mobile navigation
               <>
                 <Link
                   href="/about"
                   className="block px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {t("header.about")}
                 </Link>
@@ -320,64 +310,65 @@ const Header = () => {
                   {t("header.contact")}
                 </button>
               </>
-            ) : mounted ? (
-              // Other pages - show only Home and About
+            ) : (
+              // Other pages mobile navigation
               <>
                 <Link
                   href="/"
                   className="block px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {t("header.home")}
                 </Link>
                 <Link
                   href="/about"
                   className="block px-3 py-1.5 text-gray-800 hover:text-[#80c32a] transition-colors duration-300 tracking-wide"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {t("header.about")}
                 </Link>
               </>
-            ) : null}
-            {/* Mobile Language Selector */}
-            {mounted && (
-              <div className="mt-2 space-y-2">
-                {languages.map((language) => (
-                  <button
-                    key={language.code}
-                    onClick={() => {
-                      changeLanguage(language.code);
-                      setIsMenuOpen(false);
-                    }}
-                    className={`w-full flex items-center justify-center space-x-2 px-3 py-2 rounded text-sm transition-colors duration-300 ${
-                      currentLang === language.code
-                        ? "text-white font-medium"
-                        : "text-white/80 hover:text-white"
-                    }`}
-                    style={{
-                      background:
-                        currentLang === language.code
-                          ? "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)"
-                          : "linear-gradient(0deg, rgba(128, 195, 42, 0.7) 0%, rgba(75, 136, 139, 0.7) 50%, rgba(56, 115, 175, 0.7) 100%)",
-                    }}
-                  >
-                    <span className="text-lg">{language.flag}</span>
-                    <span>{language.name}</span>
-                    {currentLang === language.code && (
-                      <svg
-                        className="w-4 h-4 ml-auto"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    )}
-                  </button>
-                ))}
-              </div>
             )}
+
+            {/* Mobile Language Selector */}
+            <div className="mt-2 space-y-2">
+              {languages.map((language) => (
+                <button
+                  key={language.code}
+                  onClick={() => {
+                    changeLanguage(language.code);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`w-full flex items-center justify-center space-x-2 px-3 py-2 rounded text-sm transition-colors duration-300 ${
+                    currentLang === language.code
+                      ? "text-white font-medium"
+                      : "text-white/80 hover:text-white"
+                  }`}
+                  style={{
+                    background:
+                      currentLang === language.code
+                        ? "linear-gradient(0deg, rgba(128, 195, 42, 1) 0%, rgba(75, 136, 139, 1) 50%, rgba(56, 115, 175, 1) 100%)"
+                        : "linear-gradient(0deg, rgba(128, 195, 42, 0.7) 0%, rgba(75, 136, 139, 0.7) 50%, rgba(56, 115, 175, 0.7) 100%)",
+                  }}
+                >
+                  <span className="text-lg">{language.flag}</span>
+                  <span>{language.name}</span>
+                  {currentLang === language.code && (
+                    <svg
+                      className="w-4 h-4 ml-auto"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -4,22 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { successStoriesData } from "../success-stories/successStoriesData";
 
-const successStories = Object.values(successStoriesData)
-  .map((story, index) => ({
-    id: index + 1,
-    title: story.title,
-    description: story.summary,
-    impact: story.impact,
-    impactText: story.impactText,
-    category: story.category,
-    image: story.image,
-    location: story.location,
-    year: story.year,
-    teamSize: story.teamSize,
-    funding: story.funding,
-    slug: story.slug,
-  }))
-  .slice(0, 6); // Show only first 6 for homepage
+// This will be computed inside the component to be language-aware
 
 const categories = [
   "Technology",
@@ -127,6 +112,30 @@ export default function SuccessStories() {
       </section>
     );
   }
+
+  // Compute success stories with current language
+  const successStories = Object.values(successStoriesData)
+    .map((story, index) => ({
+      id: index + 1,
+      title:
+        story.content[currentLang]?.title ||
+        story.content.en?.title ||
+        "Title not available",
+      description:
+        story.content[currentLang]?.summary ||
+        story.content.en?.summary ||
+        "Summary not available",
+      impact: story.impact,
+      impactText: story.impactText,
+      category: story.category,
+      image: story.image,
+      location: story.location,
+      year: story.year,
+      teamSize: story.teamSize,
+      funding: story.funding,
+      slug: story.slug,
+    }))
+    .slice(0, 6); // Show only first 6 for homepage
 
   const filteredStories = successStories.filter((story) => {
     const matchesCategory =
