@@ -1039,9 +1039,20 @@
       "backToLeadership": "Back to Leadership",
       "readMore": "Read More",
       "biography": "Biography",
-      "expertise": "Expertise",
+      "expertise": "Areas of Expertise",
       "education": "Education",
-      "achievements": "Key Achievements"
+      "achievements": "Key Achievements",
+      "quickFacts": "Quick Facts",
+      "position": "Position",
+      "department": "Department",
+      "introduction": "Introduction",
+      "journeyToLeadership": "Journey to Leadership",
+      "definingMoment": "Defining Moment",
+      "challengesAndLessons": "Challenges & Lessons"
+    },
+    "categories": {
+      "boardOfDirectors": "Board of Directors",
+      "corporateOfficers": "Corporate Officers"
     }
   },
   "common": {
