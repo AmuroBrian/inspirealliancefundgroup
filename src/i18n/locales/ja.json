@@ -997,7 +997,18 @@
       "biography": "経歴",
       "expertise": "専門分野",
       "education": "学歴",
-      "achievements": "主な実績"
+      "achievements": "主な実績",
+      "quickFacts": "基本情報",
+      "position": "役職",
+      "department": "部門",
+      "introduction": "紹介",
+      "journeyToLeadership": "リーダーシップへの道",
+      "definingMoment": "決定的瞬間",
+      "challengesAndLessons": "課題と学び"
+    },
+    "categories": {
+      "boardOfDirectors": "取締役会",
+      "corporateOfficers": "企業役員"
     }
   },
   "common": {
