@@ -9,16 +9,16 @@ const Mission = () => {
     en: {
       title: "Our Mission",
       description1:
-        "At Inspire Alliance Fund Group Inc., our mission is to ignite change by empowering dreams. We believe that real progress begins when individuals are given the resources, trust, and opportunities to build a better future—not just for themselves, but for their communities and beyond.",
+        "At Inspire Alliance Fund Group Inc., our mission is to ignite change by empowering dreams. We believe that real progress begins when individuals are given the resources, trust, and opportunities to build a better future not just for themselves, but for their communities and beyond.",
       description2:
-        "We are more than a funding platform; we are a movement that connects purpose-driven people with the support they need to turn ideas into impact. By investing in human potential, we cultivate a ripple effect—supporting lives, strengthening economies, and shaping a future where hope and innovation thrive together.",
+        "We are more than a funding platform; we are a movement that connects purpose-driven people with the support they need to turn ideas into impact. By investing in human potential, we cultivate a ripple effect supporting lives, strengthening economies, and shaping a future where hope and innovation thrive together.",
       description3:
         "Our commitment is clear: to inspire growth, fund possibilities, and fuel a collective journey toward a more empowered world.",
       vision_title: "Our Vision",
       vision_description1:
         "We envision a world where every individual has the opportunity to transform their dreams into reality. Through strategic partnerships, innovative solutions, and unwavering support, we aim to be the catalyst for sustainable growth and positive change across communities worldwide.",
       vision_description2:
-        "Our vision extends beyond financial success—we strive to create a legacy of empowerment, where each investment we make contributes to a more equitable and prosperous future for all.",
+        "Our vision extends beyond financial success we strive to create a legacy of empowerment, where each investment we make contributes to a more equitable and prosperous future for all.",
     },
     ja: {
       title: "私たちのミッション",

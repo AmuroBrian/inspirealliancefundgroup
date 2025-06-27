@@ -96,7 +96,7 @@ const JapaneseProducts = () => {
           },
           cysay: {
             description:
-              "Professional-grade microneedle skincare treatment for anti-aging and skin rejuvenation, suitable for full-body application.",
+              "Experience cutting-edge skincare with Dermashot Serum, featuring hollow microneedle technology for painless and effective beauty treatments.",
             features: {
               microneedle: "Professional Microneedle Technology",
               antiWrinkle: "Advanced Anti-Wrinkle Treatment",

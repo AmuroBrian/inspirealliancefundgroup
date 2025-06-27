@@ -116,8 +116,11 @@ export default function SuccessStoriesPage() {
 
     const filteredStories = stories.filter(story => {
         const matchesCategory = selectedCategory === "All" || story.category === selectedCategory;
-        const matchesSearch = story.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            story.summary.toLowerCase().includes(searchQuery.toLowerCase());
+        const title = story.title || "";
+        const summary = story.summary || "";
+        const matchesSearch =
+            title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            summary.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesCategory && matchesSearch;
     });
 
